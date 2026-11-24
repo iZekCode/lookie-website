@@ -28,12 +28,12 @@ export const id = {
     p2: 'Karena itu, banyak anak dengan CP perlu menjalani terapi secara rutin. Latihan tertentu juga perlu dilanjutkan di rumah sesuai arahan terapis.',
   },
   pain: {
-    title: 'Terapi di rumah tidak selalu mudah',
-    lead: 'Anak dengan CP perlu terapi minimal seminggu sekali. Di luar sesi itu, latihannya diteruskan di rumah bersama orang tua. Di sinilah biasanya mulai seret.',
+    title: 'Latihan di rumah juga punya tantangan',
+    lead: 'Di luar sesi terapi, anak bisa melanjutkan latihan di rumah bersama orang tua. Namun, menjalani rutinitas ini setiap hari bukan hal yang mudah.',
     items: [
-      { title: 'Itu-itu saja', text: 'Gerakannya diulang terus sampai terasa monoton.' },
-      { title: 'Cepat bosan', text: 'Anak kehilangan minat, dan orang tua kehabisan akal untuk membujuk.' },
-      { title: 'Kemajuan tak kelihatan', text: 'Perubahannya pelan, jadi orang tua sulit tahu apakah latihannya berhasil.' },
+      { title: 'Latihan terasa monoton', text: 'Gerakan yang sama perlu diulang berkali-kali. Lama-lama, latihan bisa terasa membosankan.' },
+      { title: 'Anak mudah bosan', text: 'Saat latihan mulai terasa seperti kewajiban, anak bisa kehilangan minat. Orang tua pun perlu mencari cara baru agar anak tetap semangat mencoba.' },
+      { title: 'Perkembangan sulit terlihat', text: 'Kemajuan bisa terjadi sedikit demi sedikit. Tanpa catatan yang konsisten, perubahan kecil dari waktu ke waktu sering kali terlewat.' },
     ],
   },
   how: {

@@ -30,12 +30,12 @@ export const en: Copy = {
     p2: 'That’s why many children with CP attend regular therapy sessions. Certain exercises may also need to be continued at home, following their therapist’s guidance.',
   },
   pain: {
-    title: 'Therapy at home isn’t always easy',
-    lead: 'Children with CP need therapy at least once a week. Between sessions, the exercises carry on at home with a parent. That is usually where things get stuck.',
+    title: 'Home practice comes with challenges',
+    lead: 'Outside therapy sessions, children can continue practising at home with their parents. But keeping up with these routines isn’t always easy.',
     items: [
-      { title: 'Same old thing', text: 'The movements repeat until they feel dull.' },
-      { title: 'Gets boring', text: 'The child loses interest, and the parent runs out of ways to coax them.' },
-      { title: 'Progress you can’t see', text: 'Change is slow, so it’s hard for a parent to tell whether the exercises are working.' },
+      { title: 'Repetitive exercises', text: 'The same movements need to be practised over and over. Eventually, they can start to feel repetitive.' },
+      { title: 'Losing interest', text: 'When practice starts to feel like a chore, children may lose interest. Parents are then left finding new ways to keep them engaged.' },
+      { title: 'Progress is hard to track', text: 'Progress can happen little by little. Without consistent records, small changes over time can easily go unnoticed.' },
     ],
   },
   how: {
