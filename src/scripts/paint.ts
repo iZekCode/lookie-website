@@ -93,7 +93,7 @@ export function initPaint() {
 
   function resize() {
     const rect = stage.getBoundingClientRect();
-    if (!rect.width) return;
+    if (rect.width < 60 || rect.height < 60) return;
     const snapshot = document.createElement('canvas');
     snapshot.width = ink.width;
     snapshot.height = ink.height;
