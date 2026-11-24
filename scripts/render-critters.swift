@@ -14,14 +14,16 @@ struct Animal {
     let others: [String]
     let yaw: Float
     var roll: Float = 0
+    // Bends in the skeleton instead of the idle clip: (joint index, axis, degrees).
+    var bends: [(Int, SIMD3<Float>, Float)] = []
 }
 
 let animals = [
     Animal(file: "kepik", root: "LB_Rig", others: ["BF_Root", "Bee_Root", "SN_Rig"], yaw: 0),
     Animal(file: "kupu", root: "BF_Root", others: ["LB_Rig", "Bee_Root", "SN_Rig"], yaw: 0),
     Animal(file: "lebah", root: "Bee_Root", others: ["LB_Rig", "BF_Root", "SN_Rig"], yaw: 0),
-    // Seen from the side and leaning over, so the long body and the green shell on its back show.
-    Animal(file: "siput", root: "SN_Rig", others: ["LB_Rig", "BF_Root", "Bee_Root"], yaw: 1.35, roll: 30),
+    // Body leaning over to one side, the neck bent back (joint 3) so the face stays upright. The idle clip would straighten it, so it is not played.
+    Animal(file: "siput", root: "SN_Rig", others: ["LB_Rig", "BF_Root", "Bee_Root"], yaw: -0.4, roll: 30, bends: [(3, [0, 0, 1], -30)]),
 ]
 
 @main struct Main {
@@ -67,7 +69,15 @@ let animals = [
             sun.look(at: [0, 0, 0], from: [-3, 5, 6], relativeTo: nil)
             anchor.addChild(sun)
 
-            if let clip = root.availableAnimations.first(where: { $0.name == "default subtree animation" }) {
+            if !a.bends.isEmpty, var poses = root.components[SkeletalPosesComponent.self], var pose = poses.poses.default {
+                var joints = pose.jointTransforms
+                for (joint, axis, degrees) in a.bends {
+                    joints[joint].rotation = simd_quatf(angle: degrees * .pi / 180, axis: axis) * joints[joint].rotation
+                }
+                pose.jointTransforms = joints
+                poses.poses.default = pose
+                root.components.set(poses)
+            } else if let clip = root.availableAnimations.first(where: { $0.name == "default subtree animation" }) {
                 root.playAnimation(clip.repeat(), transitionDuration: 0, startsPaused: false)
             }
             try await Task.sleep(nanoseconds: 1_200_000_000)

@@ -15,8 +15,8 @@ const sleep = (ms: number) => new Promise<void>((r) => window.setTimeout(r, ms))
 const EYE_W = 200;
 const EYE_H = 260;
 
-// The snail lies on its side, so its picture is mostly empty above and below; draw it a little bigger.
-const ANIMAL_SCALE = [1, 1, 1, 1.2];
+// Per animal, in case a picture needs to be drawn a little bigger or smaller than the rest.
+const ANIMAL_SCALE = [1, 1, 1, 1];
 
 interface Slot {
   x: number;
