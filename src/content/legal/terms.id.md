@@ -1,60 +1,78 @@
-Terakhir diperbarui: 18 November 2026
+**Terakhir diperbarui: 18 November 2026**
 
-Syarat ini berlaku saat kamu memakai Lookie, aplikasi melukis di udara untuk iPad. Dengan menekan Mulai, orang tua atau wali menyetujui syarat ini dan Kebijakan Privasi atas nama anak.
+Syarat ini berlaku bagi siapa pun yang menggunakan Lookie, aplikasi melukis di udara untuk iPad. Dengan menekan tombol Mulai, orang tua atau wali menyetujui syarat penggunaan ini dan Kebijakan Privasi atas nama anak.
 
-Pengembang: Little Crew. Kontak: littlecrewproject@gmail.com.
+**Pengembang:** Little Crew  
+**Kontak:** [littlecrewproject@gmail.com](mailto:littlecrewproject@gmail.com)
 
-## 1. Siapa yang boleh memakai
+## 1. Siapa yang boleh menggunakan Lookie?
 
-Lookie untuk anak yang didampingi orang tua atau wali. Orang tua atau wali yang menekan Mulai, membuat akun, dan bertanggung jawab atas pemakaian itu. Kalau kamu anak-anak, minta orang tuamu membaca syarat ini.
+Lookie ditujukan untuk anak yang menggunakan aplikasi bersama orang tua atau wali. Orang tua atau wali yang menekan tombol Mulai dan membuat akun bertanggung jawab atas penggunaan aplikasi tersebut.
+
+Jika kamu masih anak-anak, mintalah orang tua untuk membaca syarat penggunaan ini.
 
 ## 2. Akun
 
-- Anak bisa melukis tanpa akun. Lukisannya hanya ada di iPad itu.
-- Akun dibuat dengan Masuk dengan Apple. Satu akun untuk satu anak.
-- Jaga Apple ID yang dipakai. Lukisan hanya bisa dikembalikan lewat Apple ID yang sama; Apple ID lain, atau Sembunyikan Email Saya yang berbeda, akan membuat akun yang berbeda.
-- Orang tua bisa menghapus akun kapan saja dari halaman profil.
+- Anak tetap bisa melukis tanpa membuat akun. Dalam mode ini, lukisan hanya tersimpan di iPad yang digunakan.
+- Akun dibuat melalui fitur Masuk dengan Apple. Satu akun hanya digunakan untuk satu anak.
+- Pastikan Apple ID yang digunakan tetap sama. Lukisan hanya dapat dipulihkan menggunakan Apple ID yang sama. Penggunaan Apple ID lain atau alamat email Sembunyikan Email Saya yang berbeda akan membuat akun baru.
+- Orang tua dapat menghapus akun kapan saja melalui halaman profil.
 
 ## 3. Lukisan dan isinya
 
-- Lukisan milik anak dan keluarganya. Kami tidak mengklaim kepemilikan.
-- Kamu memberi kami izin terbatas untuk menyimpan, mencadangkan, dan menampilkan lukisan itu kepada akunmu sendiri. Kami tidak menampilkannya kepada orang lain atau memakainya untuk iklan.
-- Templat yang disediakan Lookie adalah milik kami dan boleh dipakai untuk melukis di dalam aplikasi.
+- Semua lukisan merupakan milik anak dan keluarganya. Kami tidak mengklaim kepemilikan atas lukisan tersebut.
+- Dengan menggunakan Lookie, kamu memberikan izin terbatas kepada kami untuk menyimpan, mencadangkan, dan menampilkan lukisan tersebut hanya di akun milikmu sendiri. Kami tidak menampilkan lukisan kepada orang lain atau menggunakannya untuk kepentingan iklan.
+- Template yang disediakan oleh Lookie merupakan milik kami dan hanya boleh digunakan untuk melukis di dalam aplikasi.
 
-## 4. "Buat Sendiri"
+## 4. Fitur pembuatan template
 
-- Butuh akun yang sudah masuk. Ada batas 20 gambar per akun per hari.
-- Foto atau kata-kata dikirim ke Google Gemini untuk dibuat menjadi garis gambar, seperti dijelaskan di Kebijakan Privasi. Pilih foto yang pantas dan hindari yang memperlihatkan wajah atau data pribadi.
-- Hasilnya dibuat oleh AI dan bisa kurang tepat atau aneh. Kami tidak menjamin hasilnya sesuai harapan. Kami boleh menolak atau membatasi permintaan yang tidak pantas.
+- Fitur ini hanya dapat digunakan oleh akun yang sudah masuk. Setiap akun dibatasi hingga 2 gambar per hari.
+- Foto atau teks yang dimasukkan akan dikirim ke Google Gemini untuk diubah menjadi garis gambar, sebagaimana dijelaskan dalam Kebijakan Privasi. Pilih foto yang sesuai dan hindari foto yang menampilkan wajah atau informasi pribadi.
+- Hasil gambar dibuat menggunakan AI sehingga bisa saja kurang tepat atau tidak sesuai harapan. Kami tidak menjamin hasilnya akan sesuai dengan yang diinginkan. Kami berhak menolak atau membatasi permintaan yang tidak pantas.
 
 ## 5. Bukan alat medis
 
-Statistik gerakan di halaman Laporan adalah perkiraan dua dimensi dari kamera depan, untuk hiburan dan gambaran umum. Itu bukan diagnosis, terapi, atau pengganti saran dokter atau terapis. Kalau ada kekhawatiran tentang gerak atau perkembangan anak, bicarakan dengan tenaga kesehatan. Hentikan jika anak merasa sakit atau lelah. Pastikan ada ruang yang aman di sekitar anak saat melukis, dan dampingi anak.
+Statistik gerakan pada halaman Laporan merupakan perkiraan dua dimensi berdasarkan kamera depan, yang ditujukan untuk hiburan dan memberikan gambaran umum mengenai aktivitas anak.
 
-## 6. Pemakaian yang tidak boleh
+Statistik tersebut bukan diagnosis, terapi, maupun pengganti saran dari dokter atau terapis. Jika kamu memiliki kekhawatiran mengenai gerakan atau perkembangan anak, konsultasikan dengan tenaga kesehatan.
 
-Jangan membongkar atau menyalahgunakan aplikasi dan server kami, mencoba mengakses data orang lain, melewati batas harian, atau memakai "Buat Sendiri" untuk konten yang melanggar hukum atau merugikan orang lain.
+Hentikan aktivitas jika anak merasa sakit atau lelah. Pastikan tersedia ruang yang aman di sekitar anak saat melukis dan selalu dampingi anak selama menggunakan aplikasi.
 
-## 7. Ketersediaan
+## 6. Penggunaan yang dilarang
 
-Lookie diberikan apa adanya dan gratis. Fitur yang butuh internet (cadangan, masuk, "Buat Sendiri") bisa terganggu saat server atau jaringan bermasalah. Kami bisa mengubah, menambah, atau menghentikan fitur.
+Kamu tidak diperbolehkan membongkar atau menyalahgunakan aplikasi maupun server kami, mencoba mengakses data milik pengguna lain, mengakali batas penggunaan harian, atau menggunakan fitur pembuatan template untuk membuat konten yang melanggar hukum atau merugikan orang lain.
+
+## 7. Ketersediaan layanan
+
+Lookie disediakan sebagaimana adanya dan dapat digunakan secara gratis.
+
+Fitur yang membutuhkan koneksi internet, seperti pencadangan, masuk ke akun, dan pembuatan template, dapat mengalami gangguan ketika server atau jaringan bermasalah.
+
+Kami berhak mengubah, menambahkan, atau menghentikan fitur yang tersedia di dalam aplikasi.
 
 ## 8. Batas tanggung jawab
 
-Sejauh diizinkan hukum, kami tidak bertanggung jawab atas kerugian tidak langsung, atau atas kehilangan lukisan yang tidak tercadang (misalnya aplikasi dihapus saat memakai mode tamu atau sebelum cadangan selesai). Ketentuan ini tidak menghapus hak konsumen yang tidak bisa dikecualikan menurut hukum.
+Sejauh diizinkan oleh hukum yang berlaku, kami tidak bertanggung jawab atas kerugian tidak langsung maupun kehilangan lukisan yang belum berhasil dicadangkan. Contohnya, ketika aplikasi dihapus saat menggunakan Mode Tamu atau sebelum proses pencadangan selesai.
 
-## 9. Penghentian
+Ketentuan ini tidak menghilangkan hak konsumen yang menurut hukum tidak dapat dikecualikan.
 
-Kamu bisa berhenti kapan saja dengan menghapus akun. Kami boleh menangguhkan atau menutup akun yang melanggar syarat ini.
+## 9. Penghentian penggunaan
 
-## 10. Perubahan syarat
+Kamu dapat berhenti menggunakan Lookie kapan saja dengan menghapus akun.
 
-Jika syarat ini berubah secara berarti, aplikasi menampilkan layar Mulai lagi supaya orang tua bisa membaca dan setuju kembali.
+Kami juga berhak menangguhkan atau menutup akun yang melanggar syarat penggunaan ini.
+
+## 10. Perubahan syarat penggunaan
+
+Jika terdapat perubahan penting pada syarat penggunaan ini, aplikasi akan menampilkan kembali layar Mulai agar orang tua dapat membaca dan memberikan persetujuan ulang.
 
 ## 11. Hukum yang berlaku
 
-Syarat ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan lebih dulu dengan musyawarah, lalu di Pengadilan Negeri Tangerang, Indonesia.
+Syarat penggunaan ini tunduk pada hukum Republik Indonesia.
+
+Jika terjadi perselisihan, penyelesaiannya akan diupayakan terlebih dahulu melalui musyawarah. Jika tidak tercapai kesepakatan, perselisihan akan diselesaikan melalui Pengadilan Negeri Tangerang, Indonesia.
 
 ## 12. Kontak
 
-littlecrewproject@gmail.com · Tangerang, Banten, Indonesia
+[littlecrewproject@gmail.com](mailto:littlecrewproject@gmail.com)  
+Tangerang, Banten, Indonesia.

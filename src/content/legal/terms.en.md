@@ -1,60 +1,78 @@
-Last updated: 18 November 2026
+**Last updated: 18 November 2026**
 
-These terms apply when you use Lookie, an app for painting in the air on iPad. By tapping Mulai, a parent or guardian agrees to these terms and the Privacy Policy on behalf of the child.
+These terms apply to anyone using Lookie, an iPad app that lets children paint by moving their hands and arms in the air. By tapping Start, a parent or guardian accepts these Terms of Use and the Privacy Policy on behalf of the child.
 
-Developer: Little Crew. Contact: littlecrewproject@gmail.com.
+**Developer:** Little Crew  
+**Contact:** [littlecrewproject@gmail.com](mailto:littlecrewproject@gmail.com)
 
-## 1. Who may use it
+## 1. Who may use Lookie?
 
-Lookie is for children together with a parent or guardian. The parent or guardian who taps Mulai and creates the account is responsible for that use. If you are a child, ask a parent to read these terms.
+Lookie is designed for children to use with a parent or guardian. The parent or guardian who taps Start and creates the account is responsible for how the app is used.
+
+If you are a child, please ask a parent to read these terms.
 
 ## 2. Accounts
 
-- A child can paint without an account. The paintings then exist only on that iPad.
-- An account is created with Sign in with Apple. One account is for one child.
-- Look after the Apple ID you use. Paintings can only be restored with the same Apple ID; a different Apple ID, or a different Hide My Email address, makes a different account.
-- A parent can delete the account at any time from the profile page.
+- Children can paint without creating an account. In this mode, paintings are stored only on the iPad being used.
+- Accounts are created through Sign in with Apple. Each account is for one child.
+- Make sure you keep using the same Apple ID. Paintings can only be restored using the same Apple ID. Using a different Apple ID or a different Hide My Email address will create a separate account.
+- Parents can delete the account at any time from the profile page.
 
 ## 3. Paintings and their content
 
-- The paintings belong to the child and their family. We do not claim ownership.
-- You give us a limited permission to store, back up and show those paintings to your own account. We do not show them to anyone else or use them for advertising.
-- The templates that come with Lookie belong to us and may be used to paint inside the app.
+- All paintings belong to the child and their family. We do not claim ownership of them.
+- By using Lookie, you grant us limited permission to store, back up, and display your paintings only within your own account. We do not show them to other people or use them for advertising.
+- Templates provided by Lookie belong to us and may only be used for painting within the app.
 
-## 4. "Buat Sendiri"
+## 4. Custom template creation
 
-- It needs a signed-in account. Each account is limited to 20 pictures a day.
-- A photo or words are sent to Google Gemini to become an outline, as the Privacy Policy explains. Choose suitable photos and avoid ones that show faces or personal details.
-- The result is made by AI and can be inaccurate or odd. We do not promise it will match what you hoped for. We may refuse or limit requests that are not appropriate.
+- This feature requires a signed-in account. Each account is limited to 2 images per day.
+- Photos or text submitted are sent to Google Gemini to be turned into outlines, as explained in the Privacy Policy. Please choose appropriate photos and avoid images showing faces or personal information.
+- Images are AI-generated and may be inaccurate or unexpected. We do not guarantee that the results will match your expectations. We reserve the right to refuse or limit inappropriate requests.
 
-## 5. Not a medical tool
+## 5. Not a medical device
 
-The movement stats on the Report page are 2D estimates from the front camera, for fun and a general picture. They are not a diagnosis, therapy, or a replacement for the advice of a doctor or therapist. If you are worried about a child's movement or development, talk to a health professional. Stop if the child feels pain or tiredness. Make sure there is safe space around the child while painting, and stay with them.
+The movement statistics on the Report page are two-dimensional estimates based on the front camera. They are intended for entertainment and to provide a general overview of a child's activity.
 
-## 6. What you may not do
+These statistics are not a diagnosis, therapy, or a replacement for advice from a doctor or therapist. If you have concerns about a child's movement or development, please consult a healthcare professional.
 
-Do not take apart or abuse the app or our servers, try to reach anyone else's data, get around the daily limit, or use "Buat Sendiri" for content that is unlawful or harms others.
+Stop the activity if the child feels pain or tiredness. Make sure there is enough safe space around the child while painting, and always supervise them during use.
+
+## 6. Prohibited use
+
+You may not take apart or misuse our app or servers, attempt to access another user's data, bypass daily usage limits, or use the custom template creation feature to generate content that is unlawful or harmful to others.
 
 ## 7. Availability
 
-Lookie is provided as it is, and free. Features that need the internet (backup, sign in, "Buat Sendiri") may be interrupted when servers or the network have problems. We may change, add or stop features.
+Lookie is provided as-is and is free to use.
 
-## 8. Limit of liability
+Features that require an internet connection, including backup, sign-in, and custom template creation, may experience interruptions when our servers or the network are unavailable.
 
-As far as the law allows, we are not liable for indirect losses, or for losing paintings that were not backed up (for example the app is deleted in guest mode or before a backup finished). This does not remove consumer rights that the law does not allow to be excluded.
+We reserve the right to modify, add, or discontinue features within the app.
 
-## 9. Ending
+## 8. Limitation of liability
 
-You can stop at any time by deleting the account. We may suspend or close an account that breaks these terms.
+To the extent permitted by applicable law, we are not responsible for indirect losses or for paintings that are lost because they were not successfully backed up. Examples include deleting the app while using Guest Mode or before the backup process is complete.
 
-## 10. Changes to the terms
+Nothing in these terms removes consumer rights that cannot be excluded under applicable law.
 
-If these terms change in substance, the app shows the "Mulai" screen again so a parent can read them and agree again.
+## 9. Termination
+
+You may stop using Lookie at any time by deleting your account.
+
+We also reserve the right to suspend or close accounts that violate these Terms of Use.
+
+## 10. Changes to these terms
+
+If there are significant changes to these Terms of Use, the app will display the Start screen again so parents can review the updated terms and provide their consent once more.
 
 ## 11. Governing law
 
-These terms are governed by the law of the Republic of Indonesia. Disputes are first settled by discussion, then in the Tangerang District Court (Pengadilan Negeri Tangerang), Indonesia.
+These Terms of Use are governed by the laws of the Republic of Indonesia.
+
+Any disputes will first be addressed through mutual discussion. If no agreement can be reached, the dispute will be brought before the Tangerang District Court (Pengadilan Negeri Tangerang), Indonesia.
 
 ## 12. Contact
 
-littlecrewproject@gmail.com · Tangerang, Banten, Indonesia
+[littlecrewproject@gmail.com](mailto:littlecrewproject@gmail.com)  
+Tangerang, Banten, Indonesia.
