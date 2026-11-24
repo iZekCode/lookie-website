@@ -22,9 +22,10 @@ export const id = {
       'Tur singkat Lookie di iPad: layar utama, memilih gambar, melukis dengan kepalan tangan dan ayunan lengan, hasil karya di galeri, dan laporan perkembangan.',
   },
   cp: {
-    title: 'Apa itu cerebral palsy?',
-    p1: 'Cerebral palsy (CP) memengaruhi cara seseorang mengendalikan gerakan dan menjaga postur tubuh. Anak dengan CP bergerak dengan cara yang berbeda dari anak lain, dan sebagian gerakan terasa lebih sulit baginya.',
-    p2: 'Karena itu mereka perlu terapi rutin. Dan latihannya tidak berhenti di ruang terapi.',
+    title: 'Setiap anak punya cara bergerak yang berbeda',
+    p0: 'Setiap anak memiliki kemampuan dan kebutuhan gerak yang berbeda. Salah satunya adalah anak dengan cerebral palsy (CP).',
+    p1: 'Cerebral palsy adalah kondisi yang memengaruhi cara seseorang mengendalikan gerakan dan menjaga postur tubuh. Ada gerakan yang mungkin terlihat sederhana, tetapi membutuhkan usaha lebih bagi anak dengan CP.',
+    p2: 'Karena itu, banyak anak dengan CP perlu menjalani terapi secara rutin. Latihan tertentu juga perlu dilanjutkan di rumah sesuai arahan terapis.',
   },
   pain: {
     title: 'Terapi di rumah tidak selalu mudah',

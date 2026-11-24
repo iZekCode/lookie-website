@@ -17,8 +17,9 @@ const c = copy.cp;
       <circle class="dot" r="9" />
     </svg>
 
-    <p class="lead" data-reveal style="--d:3">{c.p1}</p>
-    <p class="lead big" data-reveal style="--d:4">{c.p2}</p>
+    <p class="lead" data-reveal style="--d:3">{c.p0}</p>
+    <p class="lead" data-reveal style="--d:4">{c.p1}</p>
+    <p class="lead" data-reveal style="--d:5">{c.p2}</p>
   </div>
 </section>
 
@@ -33,6 +34,9 @@ const c = copy.cp;
   .cp .lead {
     margin-inline: auto;
     color: var(--ink);
+  }
+  .cp .lead + .lead {
+    margin-top: 1.1rem;
   }
   .h2 {
     margin-bottom: 1rem;
@@ -58,10 +62,5 @@ const c = copy.cp;
     from { offset-distance: 0%; }
     50% { offset-distance: 100%; }
     to { offset-distance: 0%; }
-  }
-  .big {
-    margin-top: 1.1rem;
-    font-weight: 700;
-    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
   }
 </style>

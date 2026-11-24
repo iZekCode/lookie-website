@@ -24,9 +24,10 @@ export const en: Copy = {
       'A short tour of Lookie on an iPad: the home screen, choosing a picture, painting with a fist and an arm sweep, the finished work in the gallery, and the progress report.',
   },
   cp: {
-    title: 'What is cerebral palsy?',
-    p1: 'Cerebral palsy (CP) affects how a person controls their movements and holds their posture. Children with CP move differently from other children, and some movements are harder for them.',
-    p2: 'That is why they need regular therapy. And the exercises don’t stop at the therapy room door.',
+    title: 'Every child moves in their own way',
+    p0: 'Every child has different movement abilities and needs. This is also true for children with cerebral palsy (CP).',
+    p1: 'Cerebral palsy is a condition that affects how a person controls their movements and maintains posture. Some movements that may seem simple can take extra effort for a child with CP.',
+    p2: 'That’s why many children with CP attend regular therapy sessions. Certain exercises may also need to be continued at home, following their therapist’s guidance.',
   },
   pain: {
     title: 'Therapy at home isn’t always easy',
