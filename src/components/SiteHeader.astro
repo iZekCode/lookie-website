@@ -18,7 +18,7 @@ const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
 ---
 
 <header class:list={['bar', { solid: onHome }]} data-header>
-  <div class="wrap bar-in">
+  <div class="bar-in">
     <a class="brand" href={home} aria-label={copy.nav.home}>
       <Image src={icon} alt="" width={96} height={96} class="brand-icon" />
       <span class="brand-name">Lookie</span>
@@ -46,25 +46,37 @@ const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
     top: 0;
     z-index: 50;
     padding-block: 12px;
-    transition: opacity 0.7s ease, background 0.3s, box-shadow 0.3s, padding 0.3s;
+    pointer-events: none;
+    transition: opacity 0.7s ease;
   }
   .bar.solid {
     position: fixed;
     left: 0;
     right: 0;
   }
-  .bar.solid,
-  .bar.scrolled {
-    background: color-mix(in srgb, var(--paper) 88%, transparent);
-    backdrop-filter: blur(14px);
-    box-shadow: 0 2px 0 rgba(42, 33, 69, 0.08);
-    padding-block: 8px;
-  }
   .bar-in {
+    pointer-events: auto;
+    width: min(100% - 24px, 1040px);
+    margin-inline: auto;
     display: flex;
     align-items: center;
     gap: 20px;
     justify-content: space-between;
+    padding: 8px 10px 8px 16px;
+    border-radius: 99px;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(14px);
+    box-shadow:
+      inset 0 2px 0 rgba(255, 255, 255, 0.9),
+      0 14px 30px -14px rgba(42, 33, 69, 0.4),
+      0 2px 0 rgba(42, 33, 69, 0.06);
+    transition: box-shadow 0.3s;
+  }
+  .bar.scrolled .bar-in {
+    box-shadow:
+      inset 0 2px 0 rgba(255, 255, 255, 0.9),
+      0 18px 34px -14px rgba(42, 33, 69, 0.5),
+      0 2px 0 rgba(42, 33, 69, 0.08);
   }
   .brand {
     display: flex;
