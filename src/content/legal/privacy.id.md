@@ -1,88 +1,105 @@
-Terakhir diperbarui: 18 November 2026
+**Terakhir diperbarui: 18 November 2026**
 
-Lookie adalah aplikasi melukis untuk anak di iPad. Anak melukis di udara: kamera depan melihat tangan dan lengan, lalu cat muncul di kanvas. Kebijakan ini menjelaskan data apa yang kami pegang, untuk apa, dan bagaimana menghapusnya. Kami menulisnya sesingkat mungkin supaya orang tua bisa membacanya sampai habis.
+Lookie adalah aplikasi melukis untuk anak di iPad. Anak bisa melukis di udara: kamera depan mendeteksi gerakan tangan dan lengan, lalu goresan cat muncul di kanvas. Kebijakan ini menjelaskan data apa saja yang kami simpan, tujuan penggunaannya, dan cara menghapusnya. Kami menyusunnya secara ringkas agar mudah dipahami oleh orang tua.
 
-Pengembang: Little Crew, Tangerang, Banten, Indonesia. Kontak: littlecrewproject@gmail.com.
+**Pengembang:** Little Crew - Tangerang, Banten, Indonesia.  
+**Kontak:** littlecrewproject@gmail.com
 
-## Ringkasnya
+## Ringkasan
 
-- Gambar dari kamera tidak pernah keluar dari iPad. Tangan dan lengan dikenali di dalam iPad.
-- Tanpa akun, semua tetap di iPad ini dan tidak ada yang kami terima.
+- Gambar dari kamera tidak pernah keluar dari iPad. Pengenalan gerakan tangan dan lengan dilakukan langsung di perangkat.
+- Tanpa akun, semua data tetap tersimpan di iPad dan tidak ada data yang kami terima.
 - Dengan Masuk dengan Apple, lukisan dan statistik gerakan dicadangkan ke server kami.
-- Foto yang dipilih anak untuk "Buat Sendiri" dikirim ke Google Gemini untuk diubah menjadi garis gambar, dan tidak kami simpan.
-- Tidak ada iklan, pelacak, atau analitik pihak ketiga. Kami tidak menjual data.
-- Orang tua bisa menghapus akun dan semua datanya kapan saja dari dalam aplikasi.
+- Foto yang dipilih anak melalui fitur pembuatan template dikirim ke Google Gemini untuk diubah menjadi garis gambar. Kami tidak menyimpan foto tersebut.
+- Lookie tidak menggunakan iklan, pelacak, atau analitik pihak ketiga. Kami juga tidak menjual data pengguna.
+- Orang tua dapat menghapus akun beserta seluruh datanya kapan saja melalui aplikasi.
 
-## Siapa yang memakai Lookie
+## Siapa yang menggunakan Lookie?
 
-Lookie dibuat untuk anak, dipakai bersama orang tua atau wali. Akun dibuat oleh orang tua atau wali, bukan oleh anak. Satu akun dipakai untuk satu anak. Kami tidak meminta nama lengkap, tanggal lahir, alamat, atau nomor telepon anak.
+Lookie dirancang untuk anak dan digunakan bersama orang tua atau wali. Akun dibuat oleh orang tua atau wali, bukan oleh anak. Satu akun digunakan untuk satu anak.
 
-## Tanpa akun (mode tamu)
+Kami tidak meminta nama lengkap, tanggal lahir, alamat, atau nomor telepon anak.
 
-Anak bisa melukis tanpa akun. Dalam mode ini lukisan, statistik, dan nama panggilan hanya disimpan di iPad. Kami tidak menerima apa pun. Kalau aplikasi dihapus atau iPad diganti, lukisan itu hilang. Hal ini juga tertulis di halaman profil aplikasi.
+## Tanpa akun (Mode Tamu)
+
+Anak tetap bisa melukis tanpa membuat akun. Dalam mode ini, lukisan, statistik, dan nama panggilan hanya disimpan di iPad yang digunakan. Kami tidak menerima data apa pun dari aktivitas tersebut.
+
+Jika aplikasi dihapus atau iPad diganti, lukisan yang tersimpan akan hilang. Informasi ini juga tersedia di halaman profil aplikasi.
 
 ## Data yang kami simpan setelah Masuk dengan Apple
 
-Setelah orang tua memilih Masuk dengan Apple, kami menyimpan:
+Setelah orang tua memilih Masuk dengan Apple, kami menyimpan data berikut:
 
-| Data | Isi | Untuk apa |
+| Jenis data | Isi | Tujuan penggunaan |
 |---|---|---|
-| Akun | Pengenal akun dari Apple. Kami tidak meminta nama atau email. | Mengenali akun dan mengembalikan lukisan di iPad baru |
-| Persetujuan | Waktu dan versi persetujuan Mulai | Bukti bahwa orang tua sudah setuju |
-| Nama panggilan | Opsional, maksimal 20 karakter, diketik oleh keluarga | Ditampilkan di halaman profil |
-| Lukisan | Gambar PNG tiap lukisan, tanggal, dan gambar templat yang dipakai | Galeri dan pencadangan |
-| Statistik gerakan | Lama melukis, peta panas posisi tangan (satu per tangan), lama mengepal per tangan untuk memperkirakan tangan dominan, dan nilai jangkauan gerak (ROM) | Halaman Laporan |
-| Templat buatan anak | Judul dan garis gambar dari "Buat Sendiri" (bukan foto aslinya) | Menampilkan garis gambar itu lagi di iPad mana pun |
-| Catatan batas harian | Waktu setiap permintaan "Buat Sendiri" | Membatasi 20 gambar per akun per hari |
+| Akun | Pengenal akun dari Apple. Kami tidak meminta nama atau alamat email. | Mengenali akun dan memulihkan lukisan saat menggunakan iPad baru. |
+| Persetujuan | Waktu dan versi persetujuan pada layar Mulai. | Sebagai bukti bahwa orang tua telah memberikan persetujuan. |
+| Nama panggilan | Opsional, maksimal 20 karakter, dan diisi oleh keluarga. | Ditampilkan di halaman profil. |
+| Lukisan | Gambar PNG dari setiap lukisan, tanggal pembuatan, dan gambar template yang digunakan. | Menampilkan lukisan di galeri dan menyediakan pencadangan. |
+| Statistik gerakan | Durasi melukis, peta panas posisi tangan (satu untuk setiap tangan), durasi mengepal untuk masing-masing tangan sebagai perkiraan tangan dominan, dan nilai jangkauan gerak (ROM). | Ditampilkan di halaman Laporan. |
+| Template buatan anak | Judul dan garis gambar yang dihasilkan melalui fitur pembuatan template, bukan foto aslinya. | Agar garis gambar tersebut dapat ditampilkan kembali di iPad mana pun. |
+| Catatan batas harian | Waktu setiap permintaan pembuatan template. | Membatasi pembuatan hingga 2 gambar per akun setiap hari. |
 
-Statistik gerakan adalah perkiraan dua dimensi dari kamera. Ini bukan hasil pengukuran medis dan tidak untuk diagnosis.
+Statistik gerakan merupakan perkiraan dua dimensi berdasarkan kamera. Data ini bukan hasil pengukuran medis dan tidak ditujukan untuk diagnosis.
 
 ## Kamera
 
-Lookie memakai kamera depan hanya saat anak melukis, untuk mengenali posisi tangan dan lengan. Pengenalan berjalan di dalam iPad dengan fitur Vision milik Apple. Gambar dari kamera tidak direkam, tidak disimpan, dan tidak dikirim ke mana pun. Yang tersimpan hanya angka-angka hasil gerakan di tabel di atas.
+Lookie menggunakan kamera depan hanya saat anak melukis untuk mengenali posisi tangan dan lengan. Proses pengenalan dilakukan langsung di iPad menggunakan framework Vision dari Apple.
 
-## "Buat Sendiri" dan Google Gemini
+Gambar dari kamera tidak direkam, tidak disimpan, dan tidak dikirim ke mana pun. Data yang disimpan hanya berupa angka hasil pengenalan gerakan seperti yang dijelaskan pada tabel di atas.
 
-"Buat Sendiri" butuh akun yang sudah masuk. Anak bisa memilih foto, mengambil foto, atau mengetik beberapa kata. Foto (diperkecil menjadi JPEG maksimal 768 piksel) atau kata-kata itu dikirim lewat server kami ke Google Gemini, yang mengubahnya menjadi garis gambar untuk diwarnai.
+## Fitur custom template
 
-- Kami tidak menyimpan foto atau kata-kata itu. Yang tersimpan hanya garis gambar hasilnya.
-- Selama Gemini memprosesnya, ketentuan data Google berlaku. Kami memakai layanan Gemini berbayar, yang menurut Google tidak memakai data masukan untuk melatih model.
-- Ini satu-satunya gambar dari dunia anak yang keluar dari iPad. Orang tua sebaiknya mendampingi dan menghindari foto yang memperlihatkan wajah, nama, atau tempat pribadi.
+Fitur pembuatan template membutuhkan akun yang sudah masuk. Anak dapat memilih foto dari galeri, mengambil foto langsung, atau mengetik beberapa kata untuk membuat template.
+
+Foto yang dipilih (diperkecil menjadi JPEG dengan ukuran maksimal 768 piksel) atau teks yang dimasukkan akan dikirim melalui server kami ke Google Gemini. Layanan ini mengubah foto atau teks tersebut menjadi garis gambar yang dapat diwarnai.
+
+- Kami tidak menyimpan foto maupun teks yang dikirim. Data yang disimpan hanya berupa garis gambar hasilnya.
+- Selama Google Gemini memproses permintaan, ketentuan pengelolaan data dari Google berlaku.
+- Ini adalah satu-satunya gambar dari lingkungan anak yang dikirim keluar dari iPad. Orang tua sebaiknya mendampingi anak saat menggunakan fitur ini dan menghindari foto yang menampilkan wajah, nama, atau tempat pribadi.
 
 ## Pihak ketiga yang menangani data
 
-| Pihak | Peran | Data |
+| Pihak | Peran | Data yang ditangani |
 |---|---|---|
-| Apple | Masuk dengan Apple | Proses masuk; kami hanya menerima pengenal akun |
-| Supabase | Basis data dan penyimpanan file, server di Singapura (ap-southeast-1) | Semua data di tabel di atas |
-| Google (Gemini) | Membuat garis gambar | Foto atau kata-kata dari "Buat Sendiri" saat diproses |
+| Apple | Masuk dengan Apple | Proses autentikasi. Kami hanya menerima pengenal akun. |
+| Supabase | Basis data dan penyimpanan file. | Seluruh data yang tercantum pada tabel di atas. |
+| Google (Gemini) | Membuat garis gambar. | Foto atau teks dari fitur pembuatan template selama proses berlangsung. |
 
-Kami tidak memakai iklan, SDK analitik, atau pelacak. Kami tidak menjual atau membagikan data untuk pemasaran.
+Kami tidak menggunakan iklan, SDK analitik, atau pelacak. Kami juga tidak menjual data atau membagikannya untuk kepentingan pemasaran.
 
-## Berapa lama disimpan
+## Berapa lama data disimpan?
 
-- Lukisan, statistik, dan templat disimpan sampai orang tua menghapusnya atau menghapus akun.
-- Lukisan atau templat yang dihapus ditandai terhapus agar ikut terhapus di iPad lain, lalu dibersihkan permanen dari server setelah 90 hari.
-- Catatan batas harian "Buat Sendiri" dihapus otomatis setelah 2 hari.
+- Lukisan, statistik, dan template disimpan sampai orang tua menghapusnya atau menghapus akun.
+- Lukisan atau template yang dihapus akan ditandai sebagai terhapus agar penghapusan tersinkron ke iPad lain. Data tersebut kemudian dihapus secara permanen dari server setelah 90 hari.
+- Catatan penggunaan batas harian fitur pembuatan template dihapus secara otomatis setelah 2 hari.
 
 ## Menghapus data
 
-- **Hapus akun** (di halaman profil, untuk akun yang sudah masuk): menghapus akun, semua lukisan, statistik, templat, dan file di penyimpanan kami, serta lukisan di iPad itu.
-- **Keluar**: aplikasi menyelesaikan pencadangan dulu, lalu menghapus lukisan di iPad itu supaya iPad bersama tidak menyalinnya ke akun lain. Orang tua diperingatkan kalau ada yang belum tercadang.
-- **Mode tamu**: menghapus aplikasi menghapus semuanya, karena kami tidak punya salinannya.
-- Bisa juga lewat email ke littlecrewproject@gmail.com.
+Orang tua dapat menghapus data melalui beberapa cara:
+
+- **Hapus akun:** Tersedia di halaman profil untuk akun yang sudah masuk. Tindakan ini menghapus akun, seluruh lukisan, statistik, template, dan file di penyimpanan kami, termasuk lukisan yang tersimpan di iPad tersebut.
+- **Keluar dari akun:** Aplikasi akan menyelesaikan proses pencadangan terlebih dahulu, lalu menghapus lukisan dari iPad tersebut. Langkah ini mencegah data dari iPad bersama tersalin ke akun lain. Orang tua akan mendapat peringatan jika masih ada data yang belum dicadangkan.
+- **Mode Tamu:** Menghapus aplikasi akan menghapus seluruh data karena kami tidak menyimpan salinannya.
+- **Melalui email:** Orang tua juga dapat meminta penghapusan data dengan menghubungi littlecrewproject@gmail.com.
 
 ## Hak orang tua
 
-Orang tua atau wali berhak melihat, meminta salinan, memperbaiki, dan menghapus data anak, serta menarik persetujuan. Kirim email ke littlecrewproject@gmail.com dan kami jawab dalam 7 hari kerja. Menarik persetujuan berarti menghapus akun.
+Orang tua atau wali berhak untuk melihat, meminta salinan, memperbaiki, dan menghapus data anak, serta menarik persetujuan yang telah diberikan.
+
+Kirim permintaan melalui littlecrewproject@gmail.com. Kami akan membalas dalam 7 hari kerja.
+
+Menarik persetujuan berarti menghapus akun.
 
 ## Keamanan
 
-Data dikirim lewat HTTPS. Lukisan disimpan di penyimpanan pribadi, dan aturan akses di tingkat baris memastikan sebuah akun hanya bisa membaca data miliknya sendiri. Tidak ada sistem yang sepenuhnya kebal; jika terjadi kebocoran yang berdampak pada pengguna, kami akan memberi tahu sesuai hukum yang berlaku.
+Data dikirim melalui koneksi HTTPS. Lukisan disimpan di penyimpanan pribadi, dan aturan akses pada tingkat baris (row-level security) memastikan setiap akun hanya dapat membaca datanya sendiri.
+
+Tidak ada sistem yang sepenuhnya aman dari risiko kebocoran. Jika terjadi kebocoran data yang berdampak pada pengguna, kami akan memberikan pemberitahuan sesuai hukum yang berlaku.
 
 ## Perubahan kebijakan
 
-Jika isi kebijakan ini berubah secara berarti, aplikasi menampilkan layar Mulai lagi sehingga orang tua bisa membacanya dan setuju kembali.
+Jika terdapat perubahan penting pada kebijakan ini, aplikasi akan menampilkan kembali layar Mulai agar orang tua dapat membaca dan memberikan persetujuan ulang.
 
 ## Hukum yang berlaku
 
@@ -90,4 +107,5 @@ Kebijakan ini mengikuti hukum Republik Indonesia, termasuk UU No. 27 Tahun 2022 
 
 ## Kontak
 
-littlecrewproject@gmail.com · Tangerang, Banten, Indonesia
+littlecrewproject@gmail.com  
+Tangerang, Banten, Indonesia.

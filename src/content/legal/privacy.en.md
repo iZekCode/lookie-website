@@ -1,93 +1,111 @@
-Last updated: 18 November 2026
+**Last updated: 18 November 2026**
 
-Lookie is a painting app for children on iPad. A child paints in the air: the front camera sees the hand and arm, and paint appears on the canvas. This policy explains what data we hold, what it is for, and how to delete it. We kept it short so a parent can read it to the end.
+Lookie is a painting app for children on iPad. Children paint in the air: the front camera detects their hand and arm movements, and brushstrokes appear on the canvas. This policy explains what data we store, why we use it, and how it can be deleted. We have kept it concise and easy for parents to understand.
 
-Developer: Little Crew, Tangerang, Banten, Indonesia. Contact: littlecrewproject@gmail.com.
+**Developer:** Little Crew - Tangerang, Banten, Indonesia.  
+**Contact:** littlecrewproject@gmail.com
 
 ## In short
 
-- Camera images never leave the iPad. The hand and arm are recognised on the iPad itself.
-- Without an account, everything stays on this iPad and we receive nothing.
-- With Sign in with Apple, paintings and movement stats are backed up to our server.
-- A photo a child picks for "Buat Sendiri" is sent to Google Gemini to turn it into an outline, and we do not keep it.
-- No ads, no trackers, no third-party analytics. We do not sell data.
-- A parent can delete the account and all its data at any time from inside the app.
+- Camera images never leave the iPad. Hand and arm detection takes place directly on the device.
+- Without an account, all data stays on the iPad, and we do not receive any of it.
+- With Sign in with Apple, paintings and movement statistics are backed up to our server.
+- Photos selected through the custom template creation feature are sent to Google Gemini to be turned into outlines. We do not store these photos.
+- Lookie does not use ads, trackers, or third-party analytics. We do not sell user data.
+- Parents can delete the account and all associated data at any time from within the app.
 
-## Who uses Lookie
+## Who uses Lookie?
 
-Lookie is made for children and used together with a parent or guardian. The account is created by the parent or guardian, not by the child. One account is for one child. We do not ask for a child's full name, date of birth, address or phone number.
+Lookie is designed for children to use together with a parent or guardian. Accounts are created by parents or guardians, not by children. Each account is for one child.
 
-## Without an account (guest mode)
+We do not ask for a child's full name, date of birth, address, or phone number.
 
-A child can paint without an account. In this mode the paintings, stats and nickname are kept on the iPad only. We receive nothing. If the app is deleted or the iPad is replaced, those paintings are lost. The profile page in the app says so too.
+## Without an account (Guest Mode)
 
-## Data we keep after Sign in with Apple
+Children can paint without creating an account. In this mode, paintings, statistics, and nicknames are stored only on the iPad being used. We do not receive any data from this activity.
 
-Once a parent chooses Sign in with Apple, we keep:
+If the app is deleted or the iPad is replaced, the stored paintings will be lost. This information is also stated on the app's profile page.
 
-| Data | What it is | What it is for |
+## Data we store after Sign in with Apple
+
+Once a parent chooses Sign in with Apple, we store the following data:
+
+| Data | What it contains | Why we use it |
 |---|---|---|
-| Account | An account identifier from Apple. We do not ask for a name or email. | Recognising the account and restoring paintings on a new iPad |
-| Agreement | The time and version of the "Mulai" agreement | Record that the parent agreed |
-| Nickname | Optional, at most 20 characters, typed by the family | Shown on the profile page |
-| Paintings | The PNG image of each painting, its date, and which template was used | Gallery and backup |
-| Movement stats | Painting time, heatmap of hand positions (one per hand), time with a closed fist per hand to estimate the dominant hand, and range-of-motion (ROM) values | The Report page |
-| Child-made templates | Title and outline paths from "Buat Sendiri" (not the original photo) | Showing that outline again on any iPad |
-| Daily limit log | The time of each "Buat Sendiri" request | Limiting each account to 20 pictures a day |
+| Account | An account identifier from Apple. We do not ask for a name or email address. | To recognise the account and restore paintings on a new iPad. |
+| Consent | The time and version of the agreement shown on the Start screen. | To keep a record of the parent's consent. |
+| Nickname | Optional, up to 20 characters, entered by the family. | To display on the profile page. |
+| Paintings | PNG images of each painting, its creation date, and the template used. | To display paintings in the gallery and back them up. |
+| Movement statistics | Painting duration, hand-position heatmaps (one for each hand), time spent making a fist with each hand to estimate the dominant hand, and range-of-motion (ROM) values. | To display on the Report page. |
+| Child-created templates | Titles and outline paths generated through the custom template creation feature, not the original photos. | To display the same outlines again on any iPad. |
+| Daily limit log | The time of each custom template creation request. | To limit each account to 2 images per day. |
 
-Movement stats are 2D estimates from the camera. They are not medical measurements and are not for diagnosis.
+Movement statistics are two-dimensional estimates based on camera data. They are not medical measurements and are not intended for diagnosis.
 
 ## Camera
 
-Lookie uses the front camera only while a child paints, to recognise the position of the hand and arm. Recognition runs on the iPad with Apple's Vision framework. Camera images are not recorded, not stored and not sent anywhere. Only the resulting numbers in the table above are kept.
+Lookie uses the front camera only while a child is painting, to detect the position of their hands and arms. This detection happens directly on the iPad using Apple's Vision framework.
 
-## "Buat Sendiri" and Google Gemini
+Camera images are not recorded, stored, or sent anywhere. The only data we store are the movement measurements described in the table above.
 
-"Buat Sendiri" needs a signed-in account. A child can pick a photo, take a photo, or type a few words. The photo (scaled down to a JPEG of at most 768 pixels) or the words are sent through our server to Google Gemini, which turns them into an outline to colour in.
+## Custom template creation
 
-- We do not keep the photo or the words. Only the resulting outline is kept.
-- While Gemini handles the request, Google's data terms apply. We use the paid Gemini service, which according to Google does not use inputs to train models.
-- This is the only image from a child's world that leaves the iPad. Parents should supervise and avoid photos that show faces, names or private places.
+The custom template creation feature requires a signed-in account. Children can choose a photo from their gallery, take a new photo, or type a few words to create a template.
+
+The selected photo (resized to a JPEG with a maximum size of 768 pixels) or entered text is sent through our server to Google Gemini. The service turns the photo or text into an outline that can be coloured in.
+
+- We do not store the photos or text submitted. Only the resulting outline is stored.
+- Google's data terms apply while Gemini processes the request.
+- This is the only type of image from a child's environment that is sent outside the iPad. Parents should supervise children when using this feature and avoid photos that show faces, names, or private places.
 
 ## Third parties that handle data
 
-| Party | Role | Data |
+| Party | Role | Data handled |
 |---|---|---|
-| Apple | Sign in with Apple | The sign-in itself; we receive only an account identifier |
-| Supabase | Database and file storage, servers in Singapore (ap-southeast-1) | All data in the table above |
-| Google (Gemini) | Makes the outlines | The photo or words from "Buat Sendiri" while being processed |
+| Apple | Sign in with Apple | The sign-in process. We receive only an account identifier. |
+| Supabase | Database and file storage. | All data listed in the table above. |
+| Google (Gemini) | Generates image outlines. | Photos or text submitted through the custom template creation feature while being processed. |
 
-We use no ads, no analytics SDKs and no trackers. We do not sell data or share it for marketing.
+We do not use ads, analytics SDKs, or trackers. We do not sell data or share it for marketing purposes.
 
-## How long we keep it
+## How long we keep data
 
-- Paintings, stats and templates are kept until a parent deletes them or deletes the account.
-- A deleted painting or template is marked as deleted so the deletion reaches other iPads, then removed from the server for good after 90 days.
-- The daily limit log is deleted automatically after 2 days.
+- Paintings, statistics, and templates are kept until a parent deletes them or deletes the account.
+- Deleted paintings or templates are marked as deleted so that the deletion is synchronised across other iPads. They are then permanently removed from our server after 90 days.
+- Daily usage limit logs for the custom template creation feature are automatically deleted after 2 days.
 
 ## Deleting data
 
-- **Delete account** (profile page, for a signed-in account): deletes the account, all paintings, stats, templates and files on our storage, and the paintings on that iPad.
-- **Sign out**: the app finishes the backup first, then erases the paintings on that iPad so a shared iPad does not copy them into another account. The parent is warned if something is not yet backed up.
-- **Guest mode**: deleting the app deletes everything, because we hold no copy.
-- You can also email littlecrewproject@gmail.com.
+Parents can delete data in the following ways:
+
+- **Delete account:** Available on the profile page for signed-in accounts. This deletes the account, all paintings, statistics, templates, and files in our storage, as well as paintings stored on that iPad.
+- **Sign out:** The app completes the backup process first, then removes paintings from that iPad. This prevents data from a shared iPad from being copied into another account. Parents will be warned if any data has not yet been backed up.
+- **Guest Mode:** Deleting the app removes all data because we do not keep a copy.
+- **By email:** Parents can also request data deletion by contacting littlecrewproject@gmail.com.
 
 ## Parents' rights
 
-A parent or guardian may see, request a copy of, correct and delete the child's data, and withdraw consent. Email littlecrewproject@gmail.com and we reply within 7 working days. Withdrawing consent means deleting the account.
+Parents or guardians have the right to view, request a copy of, correct, and delete their child's data, as well as withdraw their consent.
+
+Send your request to littlecrewproject@gmail.com. We will respond within 7 business days.
+
+Withdrawing consent means deleting the account.
 
 ## Security
 
-Data travels over HTTPS. Paintings are kept in private storage, and row-level access rules make sure an account can read only its own data. No system is completely safe; if a breach affects users we will tell them as the law requires.
+Data is transmitted over HTTPS. Paintings are stored in private storage, and row-level security rules ensure that each account can only read its own data.
+
+No system is completely secure. If a data breach affects users, we will notify them as required by applicable law.
 
 ## Changes to this policy
 
-If this policy changes in substance, the app shows the "Mulai" screen again so a parent can read it and agree again.
+If there are significant changes to this policy, the app will display the Start screen again so parents can review the policy and provide their consent once more.
 
 ## Applicable law
 
-This policy follows the law of the Republic of Indonesia, including Law No. 27 of 2022 on Personal Data Protection.
+This policy is governed by the laws of the Republic of Indonesia, including Law No. 27 of 2022 on Personal Data Protection.
 
 ## Contact
 
-littlecrewproject@gmail.com · Tangerang, Banten, Indonesia
+littlecrewproject@gmail.com  
+Tangerang, Banten, Indonesia.
