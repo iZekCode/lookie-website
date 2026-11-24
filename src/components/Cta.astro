@@ -20,9 +20,12 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
         <a class="btn btn--red" href={testflightUrl} rel="noopener">{c.testflight}</a>
       </div>
     </div>
-    <a class="qr" href={testflightUrl} rel="noopener" aria-label={c.qrAlt} data-reveal style="--d:1">
-      <span set:html={qr} />
-    </a>
+    <div class="scan" data-reveal style="--d:1">
+      <a class="qr" href={testflightUrl} rel="noopener" aria-label={c.qrAlt}>
+        <span set:html={qr} />
+      </a>
+      <p>{c.scan}</p>
+    </div>
   </div>
 </section>
 
@@ -54,20 +57,26 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
     flex-wrap: wrap;
     gap: 14px;
   }
-  .qr {
-    display: block;
+  .scan {
     flex: none;
     width: clamp(200px, 26vw, 320px);
-    aspect-ratio: 1;
-    padding: clamp(16px, 2.4vw, 28px);
-    border-radius: 12%;
-    background: #fff;
-    box-shadow: inset 0 -10px 16px rgba(0, 0, 60, 0.1), 0 40px 50px -26px rgba(120, 60, 0, 0.6);
-    rotate: 3deg;
-    transition: rotate 0.3s ease;
+    display: grid;
+    gap: 16px;
+    justify-items: center;
+    text-align: center;
   }
-  .qr:hover {
-    rotate: 0deg;
+  .scan p {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .qr {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    padding: clamp(14px, 2vw, 24px);
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 30px 40px -26px rgba(120, 60, 0, 0.6);
   }
   .qr span,
   .qr :global(svg) {
@@ -76,7 +85,7 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
     height: 100%;
   }
   @media (max-width: 760px) {
-    .qr {
+    .scan {
       margin-inline: auto;
     }
   }

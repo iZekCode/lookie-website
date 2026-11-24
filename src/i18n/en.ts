@@ -100,6 +100,7 @@ export const en: Copy = {
     title: 'Come paint with Lookie!',
     text: 'Lookie is open for testing on TestFlight, and the App Store version is on its way.',
     testflight: 'Try Lookie on TestFlight',
+    scan: 'Scan with your iPad to try Lookie',
     qrAlt: 'QR code for the Lookie TestFlight invite',
   },
   footer: {
