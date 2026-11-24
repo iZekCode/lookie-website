@@ -4,7 +4,7 @@ export const id = {
   meta: {
     title: 'Lookie: melukis di udara untuk anak dengan CP',
     description:
-      'Lookie adalah game menggambar untuk iPad. Anak melukis dengan gerakan tangan dan lengan, sambil melatih gerak tubuh bagian atas.',
+      'Game menggambar interaktif untuk anak dengan CP, untuk membantu latihan motorik. Anak melukis dengan menggerakkan tangannya, dan computer vision mencatat setiap gerakan.',
   },
   nav: {
     about: 'Tentang',

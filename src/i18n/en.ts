@@ -6,7 +6,7 @@ export const en: Copy = {
   meta: {
     title: 'Lookie: painting in the air for children with CP',
     description:
-      'Lookie is a drawing game for iPad. Children paint with their hands and arms, and get to practise upper-body movement while they do.',
+      'Interactive drawing game for children with CP to support motor skill exercise. Children with CP paint by moving their hands, with computer vision tracking every movement.',
   },
   nav: {
     about: 'About',
