@@ -57,7 +57,7 @@ export const en: Copy = {
       {
         title: 'Pick a picture',
         text: 'There are 39 dotted outlines to colour in. A child can also paint freely on a blank canvas.',
-        alt: 'Screen recording of Lookie: choosing Template mode, then picking a dotted octagon outline.',
+        alt: 'Screen recording of Lookie: from the home screen to Template mode, then picking a dotted octagon outline.',
       },
       {
         title: 'Make a fist, swing your arm',
