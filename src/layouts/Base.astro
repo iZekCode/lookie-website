@@ -14,7 +14,7 @@ interface Props {
 }
 const { lang, title, description, twinPath } = Astro.props;
 const copy = useCopy(lang);
-const site = Astro.site ?? new URL('https://izekcode.github.io');
+const site = Astro.site ?? new URL('https://playwithlookie.com');
 const abs = (path: string) => new URL(path, site).href;
 const canonical = abs(localePath(lang, twinPath));
 const og = abs(assetUrl('og.jpg'));

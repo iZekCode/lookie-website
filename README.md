@@ -67,6 +67,6 @@ Each clip also has a `.jpg` poster, shown before the video loads and when the vi
 
 ## Deploy
 
-`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`. It reads the base path from the repo name, so renaming the repo is enough to move the site's URL.
+`.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`. The site is served from the custom domain `playwithlookie.com` (set in the repo's Settings, Pages, and in DNS at Hostinger), so the workflow builds with `SITE_URL=https://playwithlookie.com` and `SITE_BASE=/`. If the site ever moves back to a plain `github.io` project address, set `SITE_URL` to that address and `SITE_BASE` to `/` plus the repo name.
 
 The last section links to the app's App Store page (`src/lib/links.ts`) and shows a QR code of the same link, drawn at build time. Set `PUBLIC_APPSTORE_URL` to use a different link.
