@@ -7,7 +7,6 @@ export const id = {
       'Game menggambar interaktif untuk anak dengan Cerebral Palsy (CP) sebagai media latihan motorik. Cukup gerakkan tangan untuk menciptakan karya seni, sementara setiap gerakan dilacak secara real-time menggunakan teknologi computer vision.',
   },
   nav: {
-    about: 'Tentang',
     how: 'Cara main',
     parents: 'Orang tua',
     support: 'Bantuan',
@@ -24,12 +23,6 @@ export const id = {
     note: 'Gratis. Khusus iPad.',
     videoAlt:
       'Tur singkat Lookie di iPad: layar utama, memilih gambar, melukis dengan kepalan tangan dan ayunan lengan, hasil karya di galeri, dan laporan perkembangan.',
-  },
-  about: {
-    title: 'Tangan bergerak, cat muncul.',
-    p1: 'Lookie adalah game menggambar untuk anak dengan cerebral palsy (CP). Anak berdiri di depan iPad, mengepalkan tangan, lalu mengayunkan lengan. Kamera depan membaca gerakannya, dan cat minyak muncul di kanvas.',
-    p2: 'Gerakan menjangkau, menyapu, dan mengepal itu juga yang dilatih di terapi. Bedanya, di sini anak sedang melukis, bukan disuruh mengulang latihan.',
-    stickers: ['Lukis pakai tangan', 'Cat minyak basah', 'Gratis di iPad'],
   },
   cp: {
     title: 'Apa itu cerebral palsy?',

@@ -9,7 +9,6 @@ export const en: Copy = {
       'Interactive drawing game for children with cerebral palsy (CP) to support motor skill exercise. Children with CP paint by moving their hands, with computer vision tracking every movement.',
   },
   nav: {
-    about: 'About',
     how: 'How to play',
     parents: 'Parents',
     support: 'Support',
@@ -26,12 +25,6 @@ export const en: Copy = {
     note: 'Free. iPad only.',
     videoAlt:
       'A short tour of Lookie on an iPad: the home screen, choosing a picture, painting with a fist and an arm sweep, the finished work in the gallery, and the progress report.',
-  },
-  about: {
-    title: 'Hands move, paint appears.',
-    p1: 'Lookie is a drawing game for children with cerebral palsy (CP). A child stands in front of the iPad, makes a fist, and swings an arm. The front camera reads the movement and wet oil paint shows up on the canvas.',
-    p2: 'Reaching, sweeping and gripping are the same movements practised in therapy. The difference is that here the child is busy painting, not repeating an exercise.',
-    stickers: ['Paint with your hands', 'Wet oil paint', 'Free on iPad'],
   },
   cp: {
     title: 'What is cerebral palsy?',

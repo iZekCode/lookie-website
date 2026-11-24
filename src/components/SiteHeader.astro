@@ -25,7 +25,6 @@ const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
     </a>
 
     <nav class="links" aria-label="Main">
-      <a href={anchor('#tentang')}>{copy.nav.about}</a>
       <a href={anchor('#cara-main')}>{copy.nav.how}</a>
       <a href={anchor('#orang-tua')}>{copy.nav.parents}</a>
       <a href={localePath(lang, 'support')}>{copy.nav.support}</a>
