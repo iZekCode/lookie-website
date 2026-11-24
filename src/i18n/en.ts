@@ -22,7 +22,6 @@ export const en: Copy = {
     sub: 'Lookie turns therapy exercises into painting. A child with cerebral palsy moves their hands and arms in front of the iPad, and paint shows up on the canvas.',
     primary: 'Try Lookie',
     secondary: 'Meet Lookie',
-    note: 'Free. iPad only.',
     videoAlt:
       'A short tour of Lookie on an iPad: the home screen, choosing a picture, painting with a fist and an arm sweep, the finished work in the gallery, and the progress report.',
   },

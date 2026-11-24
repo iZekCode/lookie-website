@@ -20,7 +20,6 @@ export const id = {
     sub: 'Lookie mengubah latihan terapi jadi main lukis. Anak dengan cerebral palsy menggerakkan tangan dan lengannya di depan iPad, lalu cat muncul di kanvas.',
     primary: 'Coba Lookie',
     secondary: 'Kenalan dengan Lookie',
-    note: 'Gratis. Khusus iPad.',
     videoAlt:
       'Tur singkat Lookie di iPad: layar utama, memilih gambar, melukis dengan kepalan tangan dan ayunan lengan, hasil karya di galeri, dan laporan perkembangan.',
   },
