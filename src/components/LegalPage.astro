@@ -135,10 +135,55 @@ const labels = { privacy: copy.footer.privacy, terms: copy.footer.terms, support
   .prose :global(tr:last-child td) {
     border-bottom: 0;
   }
+  /* On a phone each table row becomes a small card, with the column name above each value. */
   @media (max-width: 640px) {
-    .prose :global(table) {
+    .prose :global(table),
+    .prose :global(tbody),
+    .prose :global(tr),
+    .prose :global(td) {
       display: block;
-      overflow-x: auto;
+    }
+    .prose :global(thead) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+    .prose :global(tr) {
+      padding: 0.4em 0;
+      border-bottom: 1px solid rgba(42, 33, 69, 0.15);
+    }
+    .prose :global(tr:last-child) {
+      border-bottom: 0;
+    }
+    .prose :global(td) {
+      border-bottom: 0;
+      padding: 0.35em 0.9em;
+    }
+    .prose :global(td:first-child) {
+      font-weight: 700;
+      background: #ffe9a8;
+      margin-bottom: 0.3em;
+    }
+    .prose :global(td[data-label]:not(:first-child)::before) {
+      content: attr(data-label);
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
     }
   }
 </style>
+
+<script>
+  // Copies each column name onto its cells so the phone layout can show it above the value.
+  document.querySelectorAll<HTMLTableElement>('.prose table').forEach((table) => {
+    const heads = [...table.querySelectorAll('thead th')].map((th) => th.textContent?.trim() ?? '');
+    table.querySelectorAll('tbody tr').forEach((row) => {
+      row.querySelectorAll('td').forEach((cell, i) => cell.setAttribute('data-label', heads[i] ?? ''));
+    });
+  });
+</script>
