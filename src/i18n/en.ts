@@ -6,7 +6,7 @@ export const en: Copy = {
   meta: {
     title: 'Lookie: painting in the air for children with CP',
     description:
-      'Interactive drawing game for children with CP to support motor skill exercise. Children with CP paint by moving their hands, with computer vision tracking every movement.',
+      'Interactive drawing game for children with cerebral palsy (CP) to support motor skill exercise. Children with CP paint by moving their hands, with computer vision tracking every movement.',
   },
   nav: {
     about: 'About',
