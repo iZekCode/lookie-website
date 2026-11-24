@@ -1,6 +1,7 @@
 ---
 import type { Copy } from '../i18n/id';
 import QRCode from 'qrcode';
+import { assetUrl } from '../i18n';
 import { appStoreUrl } from '../lib/links';
 
 interface Props {
@@ -8,6 +9,8 @@ interface Props {
 }
 const { copy } = Astro.props;
 const c = copy.cta;
+// Apple's own badge, in Indonesian or English. It is used as it comes from Apple, without changes.
+const badge = assetUrl(`badges/app-store-${copy.lang === 'id' ? 'id' : 'en'}.svg`);
 const qr = await QRCode.toString(appStoreUrl, { type: 'svg', margin: 0, color: { dark: '#2a2145', light: '#0000' } });
 ---
 
@@ -17,7 +20,9 @@ const qr = await QRCode.toString(appStoreUrl, { type: 'svg', margin: 0, color: {
       <h2 class="h2" data-reveal>{c.title}</h2>
       <p class="lead" data-reveal style="--d:1">{c.text}</p>
       <div class="btns" data-reveal style="--d:2">
-        <a class="btn btn--red" href={appStoreUrl} rel="noopener">{c.download}</a>
+        <a class="badge" href={appStoreUrl} rel="noopener">
+          <img src={badge} alt={c.download} width="200" height="67" />
+        </a>
       </div>
     </div>
     <div class="scan" data-reveal style="--d:1">
@@ -56,6 +61,19 @@ const qr = await QRCode.toString(appStoreUrl, { type: 'svg', margin: 0, color: {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
+  }
+  .badge {
+    display: inline-block;
+    line-height: 0;
+    transition: transform 0.2s var(--ease-bounce);
+  }
+  .badge:hover {
+    transform: translateY(-3px);
+  }
+  .badge img {
+    display: block;
+    width: clamp(190px, 21vw, 240px);
+    height: auto;
   }
   .scan {
     --qr: clamp(200px, 26vw, 320px);

@@ -36,6 +36,7 @@ Indonesian is the default and English lives under `/en`. The ID/EN switch in the
 
 ## Pictures
 
+- `public/badges/`: Apple's official "Download on the App Store" badge in Indonesian and English, from Apple Marketing Tools. Use them as they are; Apple does not allow changing the artwork.
 - `public/clips/`: four short, silent screen recordings (pick a picture, painting, gallery, report) used in the "How to play" section, plus `highlights.mp4`, a 16-second montage used next to the headline at the top of the page. Each has a still poster. They were cut from a screen recording of the app and encoded as 960x720 H.264. See the README section on clips to redo them.
 - `src/assets/critters/`: renders of the app's own 3D animals (from `animal_idle.usdz`). To redo them, build `scripts/render-critters.swift` (see the comment at its top), then run `node scripts/finish-critters.mjs <folder>`; it crops each animal into a square PNG. The old flat Figma art is in `docs/design-source/critters-2d/`.
 - `src/assets/logo/`: the app's own letter SVGs. The hero logo is built from them as a still picture.
