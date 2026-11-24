@@ -26,10 +26,6 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
         <div class="qr" role="img" aria-label={c.qrAlt} set:html={qr} />
         <p>{c.scan}</p>
       </div>
-      <div class="btns more" data-reveal style="--d:3">
-        <a class="btn btn--ghost" href="mailto:littlecrewproject@gmail.com">{c.email}</a>
-        <a class="btn btn--ghost" href="https://www.instagram.com/playwithlookie/" rel="noopener" target="_blank">{c.instagram}</a>
-      </div>
     </div>
     <Image src={icon} alt="" width={360} height={360} class="mascot" data-reveal style="--d:1" />
   </div>
@@ -99,9 +95,6 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
   .scan p {
     font-weight: 600;
     color: var(--ink);
-  }
-  .more {
-    margin-top: 1.6rem;
   }
   .cta :global(.mascot) {
     width: clamp(150px, 22vw, 260px);

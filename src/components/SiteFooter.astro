@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import icon from '../assets/icon.png';
 import { localePath, type Lang } from '../i18n';
+import { contactEmail, instagramUrl } from '../lib/links';
 import type { Copy } from '../i18n/id';
 
 interface Props {
@@ -9,24 +10,36 @@ interface Props {
   copy: Copy;
 }
 const { lang, copy } = Astro.props;
+const f = copy.footer;
 ---
 
 <footer class="foot">
-  <div class="wrap foot-in">
-    <div class="who">
-      <Image src={icon} alt="" width={96} height={96} class="foot-icon" />
-      <div>
-        <p class="name">Lookie</p>
-        <p class="made">{copy.footer.made}</p>
+  <div class="wrap">
+    <div class="top">
+      <div class="who">
+        <div class="brand">
+          <Image src={icon} alt="" width={96} height={96} class="foot-icon" />
+          <p class="name">Lookie</p>
+        </div>
+        <p class="tagline">{f.tagline}</p>
       </div>
+      <nav class="col" aria-label={f.contact}>
+        <h2 class="head">{f.contact}</h2>
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        <a href={instagramUrl} rel="noopener" target="_blank">{f.instagram}</a>
+      </nav>
+      <nav class="col" aria-label={f.help}>
+        <h2 class="head">{f.help}</h2>
+        <a href={localePath(lang, 'support')}>{f.support}</a>
+        <a href={localePath(lang, 'privacy')}>{f.privacy}</a>
+        <a href={localePath(lang, 'terms')}>{f.terms}</a>
+      </nav>
     </div>
-    <nav class="legal" aria-label="Legal">
-      <a href={localePath(lang, 'privacy')}>{copy.footer.privacy}</a>
-      <a href={localePath(lang, 'terms')}>{copy.footer.terms}</a>
-      <a href={localePath(lang, 'support')}>{copy.footer.support}</a>
-    </nav>
+    <div class="bottom">
+      <p>{f.copyright}</p>
+      <p class="medical">{f.medical}</p>
+    </div>
   </div>
-  <p class="wrap medical">{copy.footer.medical}</p>
 </footer>
 
 <style>
@@ -35,7 +48,7 @@ const { lang, copy } = Astro.props;
     position: relative;
     background: var(--ink);
     color: #efeaff;
-    padding: 72px 0 40px;
+    padding: 72px 0 36px;
   }
   .foot::before {
     content: '';
@@ -48,14 +61,13 @@ const { lang, copy } = Astro.props;
     -webkit-mask: var(--cloud) repeat-x bottom left / 420px 48px;
     mask: var(--cloud) repeat-x bottom left / 420px 48px;
   }
-  .foot-in {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 28px;
-    align-items: center;
+  .top {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 40px clamp(40px, 8vw, 120px);
+    align-items: start;
   }
-  .who {
+  .brand {
     display: flex;
     gap: 14px;
     align-items: center;
@@ -70,27 +82,53 @@ const { lang, copy } = Astro.props;
     font-size: 1.8rem;
     line-height: 1;
   }
-  .made {
-    font-size: 0.9rem;
-    opacity: 0.75;
+  .tagline {
+    margin-top: 0.9rem;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    opacity: 0.8;
   }
-  .legal {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px 24px;
+  .col {
+    display: grid;
+    gap: 14px;
+    justify-items: start;
   }
-  .legal a {
+  .head {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--sun);
+    margin-bottom: 2px;
+  }
+  .col a {
+    font-family: var(--font-display);
+    font-size: 1.35rem;
     text-decoration: none;
-    font-weight: 600;
     border-bottom: 2px solid transparent;
     transition: border-color 0.2s;
   }
-  .legal a:hover {
+  .col a:hover {
     border-color: var(--sun);
   }
-  .medical {
-    margin-top: 32px;
-    font-size: 0.85rem;
-    opacity: 0.6;
+  .bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 24px;
+    margin-top: 44px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+  @media (max-width: 720px) {
+    .top {
+      grid-template-columns: 1fr;
+    }
+    .col a {
+      overflow-wrap: anywhere;
+    }
   }
 </style>
