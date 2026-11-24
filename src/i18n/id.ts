@@ -120,7 +120,7 @@ export const id = {
     privacyDesc: 'Data apa yang Lookie simpan, untuk apa, dan cara menghapusnya.',
     termsDesc: 'Syarat memakai Lookie, aplikasi melukis di udara untuk iPad.',
     supportDesc: 'Pertanyaan yang sering muncul tentang Lookie, dan cara menghubungi kami.',
-    otherPages: 'Halaman lain',
+    otherPages: 'Halaman lainnya',
   },
 };
 

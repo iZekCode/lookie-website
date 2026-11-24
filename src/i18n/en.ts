@@ -118,7 +118,7 @@ export const en: Copy = {
     back: 'Back to home',
     privacyTitle: 'Lookie Privacy Policy',
     termsTitle: 'Lookie Terms of Use',
-    supportTitle: 'Lookie Support',
+    supportTitle: 'Lookie Help Center',
     privacyDesc: 'What data Lookie keeps, what it is for, and how to delete it.',
     termsDesc: 'The terms for using Lookie, a painting-in-the-air app for iPad.',
     supportDesc: 'Common questions about Lookie, and how to reach us.',
