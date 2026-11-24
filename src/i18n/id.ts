@@ -84,7 +84,7 @@ export const id = {
     },
   },
   team: {
-    title: 'Orang-orang di balik Lookie',
+    title: 'Kenalan dengan tim Lookie',
     linkedin: 'Profil LinkedIn',
     members: [
       { name: 'Rizki Hidayatul Laeli', role: 'Project Manager' },

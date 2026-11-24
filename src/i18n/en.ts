@@ -86,7 +86,7 @@ export const en: Copy = {
     },
   },
   team: {
-    title: 'The people behind Lookie',
+    title: 'Meet the team behind Lookie',
     linkedin: 'LinkedIn profile',
     members: [
       { name: 'Rizki Hidayatul Laeli', role: 'Project Manager' },
