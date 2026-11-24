@@ -46,7 +46,7 @@ export const id = {
       },
       {
         title: 'Kepalkan tangan, lalu gerakkan lengan',
-        text: 'Berdiri di depan iPad hingga tangan dan lengan terlihat di layar. Kepalkan tangan untuk mulai melukis, lalu gerakkan lengan untuk membuat goresan. Setiap tangan punya warna masing-masing!',
+        text: 'Posisikan diri di depan iPad hingga tangan dan lengan terlihat di layar. Kepalkan tangan untuk mulai melukis, lalu gerakkan lengan untuk membuat goresan. Setiap tangan punya warna masing-masing!',
         alt: 'Rekaman layar Lookie: tangan dan lengan yang bergerak di depan kamera melukis garis merah dan biru di kanvas.',
       },
       {

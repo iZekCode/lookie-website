@@ -48,7 +48,7 @@ export const en: Copy = {
       },
       {
         title: 'Make a fist, then move your arm',
-        text: 'Stand in front of the iPad until your hands and arms are visible on screen. Make a fist to start painting, then move your arm to create brushstrokes. Each hand has its own colour!',
+        text: 'Position yourself in front of the iPad until your hands and arms are visible on screen. Make a fist to start painting, then move your arm to create brushstrokes. Each hand has its own colour!',
         alt: 'Screen recording of Lookie: hands and arms moving in front of the camera paint red and blue lines on the canvas.',
       },
       {
