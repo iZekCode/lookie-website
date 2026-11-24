@@ -9,7 +9,7 @@ export const id = {
   nav: {
     how: 'Cara main',
     support: 'Bantuan',
-    try: 'Coba',
+    download: 'Download',
     toggleLabel: 'Pilih bahasa',
     home: 'Ke beranda Lookie',
   },
@@ -97,9 +97,9 @@ export const id = {
   cta: {
     title: 'Yuk, melukis bersama Lookie!',
     text: 'Lookie sudah tersedia di App Store! Yuk, mulai berkreasi dan ubah gerakan kecil jadi karya seni.',
-    download: 'Unduh Lookie di App Store',
-    scan: 'Pindai kode QR dengan iPad untuk mengunduh Lookie.',
-    qrAlt: 'Kode QR untuk mengunduh Lookie di App Store',
+    download: 'Download Lookie di App Store',
+    scan: 'Pindai kode QR dengan iPad untuk download Lookie.',
+    qrAlt: 'Kode QR untuk download Lookie di App Store',
   },
   footer: {
     tagline: 'Ubah gerakan kecil jadi karya seni',

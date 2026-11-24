@@ -11,7 +11,7 @@ export const en: Copy = {
   nav: {
     how: 'How to play',
     support: 'Support',
-    try: 'Try it',
+    download: 'Download',
     toggleLabel: 'Choose language',
     home: 'Lookie home',
   },
