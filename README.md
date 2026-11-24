@@ -36,7 +36,7 @@ Indonesian is the default and English lives under `/en`. The ID/EN switch in the
 
 ## Pictures
 
-- `public/clips/`: four short, silent screen recordings (pick a picture, painting, gallery, report) used in the "How to play" section, each with a still poster. They were cut from a screen recording of the app and encoded as 960x720 H.264. See the README section on clips to redo them.
+- `public/clips/`: four short, silent screen recordings (pick a picture, painting, gallery, report) used in the "How to play" section, plus `highlights.mp4`, a 19-second montage used next to the headline at the top of the page. Each has a still poster. They were cut from a screen recording of the app and encoded as 960x720 H.264. See the README section on clips to redo them.
 - `src/assets/critters/`: renders of the app's own 3D animals (from `animal_idle.usdz`). To redo them, build `scripts/render-critters.swift` (see the comment at its top), then run `node scripts/finish-critters.mjs <folder>`; it crops each animal into a square PNG. The old flat Figma art is in `docs/design-source/critters-2d/`.
 - `src/assets/logo/`: the app's own letter SVGs. The eyes in the hero are real paths, so the pupils can follow the pointer.
 - `docs/design-source/`: the original Figma marketing frames, kept for reference only.
@@ -59,6 +59,8 @@ ffmpeg -ss 0:26.5 -to 0:42.0 -i lookie_demo.mov -an \
   -vf "fps=30,scale=960:720:flags=lanczos,format=yuv420p" \
   -c:v libx264 -preset slow -crf 27 -movflags +faststart public/clips/paint.mp4
 ```
+
+`highlights.mp4` joins eleven short cuts from the same recording, each at a screen change: home 0:03.1 to 0:04.2, mode 0:05.2 to 0:06.0, octagon 0:10.2 to 0:11.2, fist and buckets 0:15.0 to 0:17.5, painting 0:30.0 to 0:32.5 and 0:44.5 to 0:46.5, the "Hore!" screen 0:49.5 to 0:51.0, a colourful painting 1:10.0 to 1:12.5, gallery 1:44.0 to 1:45.5, report 1:50.0 to 1:52.0 and its heatmap 1:55.0 to 1:56.5. Each cut is trimmed with `trim`, scaled to 960x720 and joined with the `concat` filter, with the same encoding settings as above.
 
 Each clip also has a `.jpg` poster, shown before the video loads and when the visitor prefers reduced motion. Videos play only while they are on screen (`src/scripts/clips.ts`).
 

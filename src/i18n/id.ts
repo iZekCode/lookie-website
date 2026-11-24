@@ -22,7 +22,8 @@ export const id = {
     primary: 'Coba Lookie',
     secondary: 'Kenalan dengan Lookie',
     note: 'Gratis. Khusus iPad.',
-    deviceAlt: 'Layar utama Lookie di iPad: easel dengan lukisan rumah, dan tombol Start, Gallery, Report.',
+    videoAlt:
+      'Tur singkat Lookie di iPad: layar utama, memilih gambar, mengisi ember cat dengan kepalan tangan, melukis dengan ayunan lengan, hasil karya di galeri, dan laporan perkembangan.',
   },
   about: {
     title: 'Tangan bergerak, cat muncul.',

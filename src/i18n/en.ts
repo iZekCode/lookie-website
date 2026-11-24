@@ -24,7 +24,8 @@ export const en: Copy = {
     primary: 'Try Lookie',
     secondary: 'Meet Lookie',
     note: 'Free. iPad only.',
-    deviceAlt: 'The Lookie home screen on an iPad: an easel with a painted house, and Start, Gallery and Report buttons.',
+    videoAlt:
+      'A short tour of Lookie on an iPad: the home screen, choosing a picture, filling the paint buckets with a fist, painting with an arm sweep, the finished work in the gallery, and the progress report.',
   },
   about: {
     title: 'Hands move, paint appears.',

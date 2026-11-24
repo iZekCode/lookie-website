@@ -6,12 +6,13 @@ interface Props {
   clip: string;
   label: string;
   class?: string;
+  preload?: 'none' | 'metadata' | 'auto';
 }
-const { clip, label, class: className = '' } = Astro.props;
+const { clip, label, class: className = '', preload = 'metadata' } = Astro.props;
 ---
 
 <div class:list={['ipad', className]}>
-  <video class="shot" muted loop playsinline preload="metadata" data-clip poster={assetUrl(`clips/${clip}.jpg`)} aria-label={label}>
+  <video class="shot" muted loop playsinline preload={preload} data-clip poster={assetUrl(`clips/${clip}.jpg`)} aria-label={label}>
     <source src={assetUrl(`clips/${clip}.mp4`)} type="video/mp4" />
   </video>
 </div>
