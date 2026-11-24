@@ -57,7 +57,8 @@ export function initStory() {
     H = stage.clientHeight;
     const cx = W / 2;
     const cy = H / 2;
-    B = Math.min(W * 0.86, H * 0.74);
+    // The 3D pictures fill their box, so everything is a little smaller than the old flat art needed.
+    B = Math.min(W * 0.78, H * 0.66);
     stage.style.setProperty('--pal', `${B}px`);
     const mid = eyeMid(0);
     soloEye = { x: cx - (mid.x / PIC - 0.5) * B, y: cy - (mid.y / PIC - 0.5) * B, size: B, rot: 0 };
@@ -66,12 +67,12 @@ export function initStory() {
     const portrait = W < H * 0.95;
     const rots = [-6, 5, -4, 6];
     // Four animals side by side, in the middle of the screen...
-    const s1 = portrait ? Math.min(W * 0.34, H * 0.3) : Math.min(W * 0.25, H * 0.42);
-    const g1 = portrait ? W * 0.235 : s1 * 0.92;
+    const s1 = portrait ? Math.min(W * 0.3, H * 0.27) : Math.min(W * 0.22, H * 0.37);
+    const g1 = portrait ? W * 0.235 : s1 * 1.0;
     rowMid = rots.map((rot, i) => ({ x: cx + (i - 1.5) * g1, y: cy, size: s1, rot }));
     // ...which then drop to the bottom and make room for the headline.
-    const s2 = portrait ? Math.min(W * 0.3, H * 0.16) : Math.min(W * 0.22, H * 0.28);
-    const g2 = portrait ? W * 0.235 : s2 * 0.95;
+    const s2 = portrait ? Math.min(W * 0.27, H * 0.145) : Math.min(W * 0.19, H * 0.25);
+    const g2 = portrait ? W * 0.235 : s2 * 1.02;
     const y2 = H * (portrait ? 0.88 : 0.8);
     rowEnd = rots.map((rot, i) => ({ x: cx + (i - 1.5) * g2, y: y2, size: s2, rot: rot * 0.7 }));
     render(current);
@@ -331,7 +332,8 @@ export function initStory() {
     if (stopped) return;
 
     // 4. the body grows out from between the eyes
-    run(pals[0], [{ clipPath: 'circle(0% at 57.2% 57.8%)' }, { clipPath: 'circle(88% at 57.2% 57.8%)' }], { duration: 1050, easing: 'cubic-bezier(0.3, 0.7, 0.2, 1)' });
+    const mid = getComputedStyle(pals[0]).getPropertyValue('--mid').trim();
+    run(pals[0], [{ clipPath: `circle(0% at ${mid})` }, { clipPath: `circle(88% at ${mid})` }], { duration: 1050, easing: 'cubic-bezier(0.3, 0.7, 0.2, 1)' });
     await sleep(1150);
     if (stopped) return;
 

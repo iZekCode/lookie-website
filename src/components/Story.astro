@@ -7,7 +7,7 @@ import lebah from '../assets/critters/lebah.png';
 import siput from '../assets/critters/siput.png';
 import Wordmark from './Wordmark.astro';
 import { eyeSvg, eyeDefs } from '../lib/eyes';
-import { ANIMAL_EYES, eyeStyle } from '../lib/animalEyes';
+import { ANIMAL_EYES, eyeMidPercent, eyeStyle } from '../lib/animalEyes';
 import type { Copy } from '../i18n/id';
 
 interface Props {
@@ -26,7 +26,7 @@ const pals = [kepik, kupu, lebah, siput];
     <div class="pals" aria-hidden="true">
       {
         pals.map((src, i) => (
-          <div class={`pal pal${i}`} data-pal={i}>
+          <div class={`pal pal${i}`} data-pal={i} style={i === 0 ? `--mid:${eyeMidPercent(0)}` : undefined}>
             <Image src={src} alt="" width={640} height={640} widths={[480, 800, 1100]} sizes="(max-width: 700px) 60vw, 640px" loading="eager" />
             <div class="peye" data-peye style={eyeStyle(ANIMAL_EYES[i].l)}><div class="lid" set:html={eyeSvg} /></div>
             <div class="peye" data-peye style={eyeStyle(ANIMAL_EYES[i].r)}><div class="lid" set:html={eyeSvg} /></div>
@@ -195,7 +195,7 @@ const pals = [kepik, kupu, lebah, siput];
     pointer-events: none;
   }
   :global(html.opening) .pal0 {
-    clip-path: circle(0% at 57.2% 57.8%);
+    clip-path: circle(0% at var(--mid));
   }
   .eye {
     position: absolute;

@@ -18,7 +18,7 @@ The top of the landing page is one pinned story (`Story.astro`, `src/scripts/sto
 
 1. A full-screen blue page with two big cute eyes. They look left and right, blink twice and slide onto a ladybug's face while the ladybug is drawn around them. Any scroll, tap or key skips it, and it plays once per browser session.
 2. Scrolling slides the butterfly, bee and snail out from behind the ladybug until the four stand in a row. The row then drops to the bottom while the headline fades in and the blue turns to cream.
-   Every animal wears the same cute eyes (`src/lib/eyes.ts`) on top of its painted ones, slightly larger so they hide them. The pupils follow the pointer. Eye positions inside each picture are in `src/lib/animalEyes.ts`; re-measure them if a critter picture changes.
+   Every animal wears the same cute eyes (`src/lib/eyes.ts`) on top of its own 3D eyes, slightly larger so they hide them. The pupils follow the pointer. Eye positions inside each picture are in `src/lib/animalEyes.ts`; update them if a critter picture changes.
 3. `ParallaxCanvas.astro` (`src/scripts/canvas.ts`) is a big canvas that the page scrolls through, with layers at different speeds and paint strokes that draw themselves.
 
 With reduced motion enabled, or without scripting, none of this runs: the hero is a plain static layout with the four animals in the corners.
@@ -48,7 +48,7 @@ Indonesian is the default and English lives under `/en`. The ID/EN switch in the
 ## Pictures
 
 - `src/assets/app/`: simulator screenshots (cropped to the app's own landscape frame) and the hand images from the app's asset catalog.
-- `src/assets/critters/`: the four animals from Figma. The Figma export has a white box behind each one, so `scripts/cutout.mjs` turns it transparent (already done; run it again only for new exports).
+- `src/assets/critters/`: renders of the app's own 3D animals (from `animal_idle.usdz`). To redo them, build `scripts/render-critters.swift` (see the comment at its top), then run `node scripts/finish-critters.mjs <folder>`; it crops each animal and prints where the eyes are, which go into `src/lib/animalEyes.ts`. The old flat Figma art is in `docs/design-source/critters-2d/`.
 - `src/assets/logo/`: the app's own letter SVGs. The eyes in the hero are real paths, so the pupils can follow the pointer.
 - `docs/design-source/`: the original Figma marketing frames, kept for reference only.
 
