@@ -2,7 +2,7 @@ Terakhir diperbarui: 18 November 2026
 
 Lookie adalah aplikasi melukis untuk anak di iPad. Anak melukis di udara: kamera depan melihat tangan dan lengan, lalu cat muncul di kanvas. Kebijakan ini menjelaskan data apa yang kami pegang, untuk apa, dan bagaimana menghapusnya. Kami menulisnya sesingkat mungkin supaya orang tua bisa membacanya sampai habis.
 
-Pengembang: Filbert Naldo Wijaya, Tangerang, Banten, Indonesia. Kontak: littlecrewproject@gmail.com.
+Pengembang: Little Crew, Tangerang, Banten, Indonesia. Kontak: littlecrewproject@gmail.com.
 
 ## Ringkasnya
 

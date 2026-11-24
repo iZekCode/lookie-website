@@ -2,7 +2,7 @@ Last updated: 18 November 2026
 
 Lookie is a painting app for children on iPad. A child paints in the air: the front camera sees the hand and arm, and paint appears on the canvas. This policy explains what data we hold, what it is for, and how to delete it. We kept it short so a parent can read it to the end.
 
-Developer: Filbert Naldo Wijaya, Tangerang, Banten, Indonesia. Contact: littlecrewproject@gmail.com.
+Developer: Little Crew, Tangerang, Banten, Indonesia. Contact: littlecrewproject@gmail.com.
 
 ## In short
 
