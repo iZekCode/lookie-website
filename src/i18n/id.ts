@@ -17,7 +17,7 @@ export const id = {
   hero: {
     titleA: 'Ubah gerakan kecil',
     titleB: 'jadi karya seni.',
-    sub: 'Lookie mengubah latihan terapi jadi main lukis. Anak dengan cerebral palsy menggerakkan tangan dan lengannya di depan iPad, lalu cat muncul di kanvas.',
+    sub: 'Game menggambar interaktif untuk anak dengan Cerebral Palsy sebagai media latihan motorik. Cukup gerakkan tangan untuk menciptakan karya seni, sementara setiap gerakan dibaca secara real-time menggunakan computer vision.',
     primary: 'Coba Lookie',
     secondary: 'Kenalan dengan Lookie',
     videoAlt:

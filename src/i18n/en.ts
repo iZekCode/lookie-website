@@ -19,7 +19,7 @@ export const en: Copy = {
   hero: {
     titleA: 'Turn little moves',
     titleB: 'into art.',
-    sub: 'Lookie turns therapy exercises into painting. A child with cerebral palsy moves their hands and arms in front of the iPad, and paint shows up on the canvas.',
+    sub: 'Interactive drawing game for children with Cerebral Palsy to support motor skill exercise. Children with Cerebral Palsy paint by moving their hands, with computer vision tracking every movement.',
     primary: 'Try Lookie',
     secondary: 'Meet Lookie',
     videoAlt:
