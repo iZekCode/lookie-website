@@ -9,7 +9,6 @@ import kupu from '../assets/critters/kupu.png';
 import lebah from '../assets/critters/lebah.png';
 import siput from '../assets/critters/siput.png';
 import DeviceFrame from './DeviceFrame.astro';
-import Ribbon from './Ribbon.astro';
 import type { Copy } from '../i18n/id';
 
 interface Props {
@@ -20,8 +19,6 @@ const c = copy.canvas;
 ---
 
 <section class="pc" id="kanvas">
-  <Ribbon items={copy.marquee} />
-
   <div class="paper" data-pc>
     <div class="item blob b1" data-s="-0.25"></div>
     <div class="item blob b2" data-s="-0.4"></div>
@@ -49,15 +46,15 @@ const c = copy.canvas;
 
     <div class="item fr f1" data-s="0.18" data-x="-1" data-r="-1">
       <DeviceFrame src={homeShot} alt={c.alts[0]} width={900} />
-      <span class="tag">{c.labels[0]}</span>
+      <span class="tag puffy">{c.labels[0]}</span>
     </div>
     <div class="item fr f2" data-s="-0.12" data-x="1" data-r="1">
       <DeviceFrame src={templates} alt={c.alts[1]} width={900} />
-      <span class="tag">{c.labels[1]}</span>
+      <span class="tag puffy">{c.labels[1]}</span>
     </div>
     <div class="item fr f3" data-s="0.22" data-x="-1" data-r="-1">
       <DeviceFrame src={canvasShot} alt={c.alts[2]} width={900} />
-      <span class="tag">{c.labels[2]}</span>
+      <span class="tag puffy">{c.labels[2]}</span>
     </div>
 
     <div class="item pet c1" data-s="0.75" data-x="1" data-r="2"><Image src={kepik} alt="" width={180} height={180} /></div>
@@ -80,14 +77,14 @@ const c = copy.canvas;
     width: min(100% - var(--gutter) * 1.2, 1240px);
     height: max(150svh, 900px);
     background: #fffdf6;
-    border: 4px solid var(--ink);
-    border-radius: 44px;
-    box-shadow: 0 12px 0 var(--ink);
+    border-radius: 60px;
+    box-shadow:
+      inset 0 -20px 40px -16px rgba(200, 150, 70, 0.25),
+      inset 0 8px 14px -4px #fff,
+      0 50px 70px -40px rgba(42, 33, 69, 0.55);
     overflow: hidden;
     transform: scale(calc(0.9 + 0.1 * var(--arrive)));
     transform-origin: 50% 40%;
-    background-image: radial-gradient(rgba(42, 33, 69, 0.07) 1.5px, transparent 1.5px);
-    background-size: 24px 24px;
   }
   .item {
     position: absolute;
@@ -130,9 +127,10 @@ const c = copy.canvas;
     width: min(88%, 720px);
     text-align: center;
     z-index: 3;
-    background: rgba(255, 253, 246, 0.86);
-    padding: 22px 26px;
-    border-radius: 28px;
+    background: rgba(255, 253, 246, 0.82);
+    backdrop-filter: blur(6px);
+    padding: 24px 28px;
+    border-radius: 36px;
   }
   .copy .h2 {
     margin-bottom: 0.7rem;
@@ -161,15 +159,13 @@ const c = copy.canvas;
     bottom: -14px;
     font-family: var(--font-display);
     font-size: 1.35rem;
-    background: var(--sun);
-    border: 3px solid var(--ink);
-    border-radius: 12px;
-    padding: 0.05em 0.7em 0.15em;
-    box-shadow: 0 4px 0 var(--ink);
+    --tint: #ffd75a;
+    border-radius: 99px;
+    padding: 0.15em 0.9em 0.25em;
     transform: rotate(-3deg);
   }
-  .f2 .tag { left: auto; right: 6%; transform: rotate(3deg); background: var(--pink); }
-  .f3 .tag { background: var(--leaf-l); }
+  .f2 .tag { left: auto; right: 6%; transform: rotate(3deg); --tint: #ffa9cb; }
+  .f3 .tag { --tint: #bfe8a8; }
 
   .pet {
     z-index: 4;

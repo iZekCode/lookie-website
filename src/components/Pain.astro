@@ -24,8 +24,8 @@ const motion = ['crawl', 'drift', 'spin'];
     <ol class="cards">
       {
         p.items.map((it, i) => (
-          <li class={`card ${motion[i]}`} data-reveal style={`--d:${i + 2};--r:${[-2, 1.5, -1][i]}deg`}>
-            <span class="num">{i + 1}</span>
+          <li class={`card puffy ${motion[i]}`} data-reveal style={`--d:${i + 2};--r:${[-2, 1.5, -1][i]}deg`}>
+            <span class="num puffy">{i + 1}</span>
             <h3>{it.title}</h3>
             <p>{it.text}</p>
             <Image src={pics[i]} alt="" width={150} height={150} class="pic" />
@@ -38,11 +38,11 @@ const motion = ['crawl', 'drift', 'spin'];
 
 <style>
   .pain {
-    background: var(--cream);
+    --bg: var(--cream);
   }
   .head {
     max-width: 760px;
-    margin-bottom: 3rem;
+    margin-bottom: 3.4rem;
   }
   .h2 {
     margin-bottom: 1rem;
@@ -53,50 +53,49 @@ const motion = ['crawl', 'drift', 'spin'];
     margin: 0;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    gap: 32px;
   }
   .card {
+    --tint: #fff8e6;
     position: relative;
-    background: var(--paper);
-    border: 4px solid var(--ink);
-    border-radius: var(--radius);
-    box-shadow: 0 8px 0 var(--ink);
-    padding: 28px 24px 96px;
+    border-radius: 44px;
+    padding: 40px 28px 100px;
     rotate: var(--r);
-    transition: rotate 0.3s var(--ease-bounce), translate 0.3s var(--ease-bounce);
+    transition: rotate 0.35s var(--ease-bounce), translate 0.35s var(--ease-bounce);
   }
   .card:hover {
     rotate: 0deg;
-    translate: 0 -6px;
+    translate: 0 -8px;
   }
   .num {
+    --tint: #ee4a30;
     position: absolute;
-    top: -22px;
-    left: 22px;
-    width: 48px;
-    height: 48px;
+    top: -24px;
+    left: 26px;
+    width: 54px;
+    height: 54px;
     display: grid;
     place-items: center;
-    background: var(--red);
     color: #fff;
-    border: 4px solid var(--ink);
     border-radius: 50%;
     font-family: var(--font-display);
-    font-size: 1.6rem;
+    font-size: 1.8rem;
+    text-shadow: 0 2px 0 rgba(90, 0, 0, 0.25);
   }
   h3 {
     font-size: 2rem;
-    margin: 0.5rem 0 0.6rem;
+    margin: 0.4rem 0 0.6rem;
   }
   .card p {
     color: var(--ink-soft);
   }
   .card :global(.pic) {
     position: absolute;
-    right: 14px;
-    bottom: 6px;
+    right: 18px;
+    bottom: 10px;
     width: 92px;
     height: auto;
+    filter: drop-shadow(0 8px 6px rgba(42, 33, 69, 0.18));
   }
   .crawl :global(.pic) { animation: crawl 5s ease-in-out infinite; }
   .drift :global(.pic) { animation: drift 4s ease-in-out infinite; }
@@ -116,7 +115,7 @@ const motion = ['crawl', 'drift', 'spin'];
   @media (max-width: 860px) {
     .cards {
       grid-template-columns: 1fr;
-      gap: 40px;
+      gap: 44px;
     }
   }
 </style>

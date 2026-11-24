@@ -23,6 +23,10 @@ The top of the landing page is one pinned story (`Story.astro`, `src/scripts/sto
 
 With reduced motion enabled, or without scripting, none of this runs: the hero is a plain static layout with the four animals in the corners.
 
+## Look
+
+Soft 3D: puffy surfaces lit from the top left (the `.puffy` class in `src/styles/global.css`, tinted with `--tint`), glossy buttons like the logo's letters, and cloudy section edges (`.sheet::before`). No outlines and no hard shadows. A section sets `--bg` to its own colour so the cloud edge matches it.
+
 ## Pages
 
 | Indonesian | English | What |

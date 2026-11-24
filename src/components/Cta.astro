@@ -11,7 +11,7 @@ const { copy } = Astro.props;
 const c = copy.cta;
 ---
 
-<section class="cta sheet">
+<section class="cta sheet" id="mencoba">
   <div class="wrap inner">
     <div class="txt">
       <h2 class="h2" data-reveal>{c.title}</h2>
@@ -28,7 +28,7 @@ const c = copy.cta;
 
 <style>
   .cta {
-    background: var(--sun);
+    --bg: #ffc933;
     padding-bottom: 150px;
   }
   .inner {
@@ -57,9 +57,11 @@ const c = copy.cta;
   .cta :global(.mascot) {
     width: clamp(150px, 22vw, 260px);
     height: auto;
-    border-radius: 34%;
-    border: 5px solid var(--ink);
-    box-shadow: 0 10px 0 var(--ink);
+    border-radius: 36%;
+    box-shadow:
+      inset 0 -14px 24px -8px rgba(0, 0, 60, 0.3),
+      inset 0 8px 12px -2px rgba(255, 255, 255, 0.6),
+      0 40px 50px -26px rgba(120, 60, 0, 0.6);
     rotate: 6deg;
     animation: wave 3.6s ease-in-out infinite;
   }

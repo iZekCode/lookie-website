@@ -13,6 +13,7 @@ const p = copy.privacy;
 <section class="priv sheet">
   <div class="wrap inner">
     <svg class="cam" viewBox="0 0 120 120" aria-hidden="true" data-reveal>
+      <defs><linearGradient id="cam-fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe985" /><stop offset="1" stop-color="#f2a30f" /></linearGradient></defs>
       <rect x="10" y="32" width="70" height="56" rx="14" />
       <path d="M84 50 L112 34 V86 L84 70 Z" />
       <line x1="14" y1="108" x2="106" y2="12" class="slash" />
@@ -27,7 +28,7 @@ const p = copy.privacy;
 
 <style>
   .priv {
-    background: var(--red-d);
+    --bg: #8e1a0c;
     color: #fff;
   }
   .inner {
@@ -41,11 +42,12 @@ const p = copy.privacy;
     width: clamp(100px, 16vw, 160px);
     flex: none;
   }
+  .cam {
+    filter: drop-shadow(0 14px 10px rgba(40, 0, 0, 0.4));
+  }
   .cam rect,
   .cam path {
-    fill: var(--sun);
-    stroke: var(--ink);
-    stroke-width: 6;
+    fill: url(#cam-fill);
     stroke-linejoin: round;
   }
   .slash {

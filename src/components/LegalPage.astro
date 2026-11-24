@@ -61,9 +61,11 @@ const labels = { privacy: copy.footer.privacy, terms: copy.footer.terms, support
   }
   .paper {
     background: var(--paper);
-    border: 4px solid var(--ink);
-    border-radius: 36px;
-    box-shadow: 0 10px 0 var(--ink);
+    border-radius: 48px;
+    box-shadow:
+      inset 0 8px 12px -4px #fff,
+      inset 0 -16px 30px -12px rgba(200, 150, 70, 0.22),
+      0 40px 60px -36px rgba(42, 33, 69, 0.5);
     padding: clamp(28px, 5vw, 56px);
   }
   h1 {
@@ -116,12 +118,12 @@ const labels = { privacy: copy.footer.privacy, terms: copy.footer.terms, support
     border-spacing: 0;
     margin: 1rem 0 1.4rem;
     font-size: 0.95rem;
-    border: 3px solid var(--ink);
-    border-radius: 18px;
+    border: 1px solid rgba(42, 33, 69, 0.14);
+    border-radius: 20px;
     overflow: hidden;
   }
   .prose :global(th) {
-    background: var(--sun);
+    background: #ffe9a8;
     text-align: left;
   }
   .prose :global(th),

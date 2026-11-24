@@ -26,7 +26,6 @@
   --leaf-l: #e0f7d6;
   --pink: #ff9ec4;
   --radius: 28px;
-  --shadow: 0 6px 0 var(--ink);
   --font-display: 'Schoolbell', 'Comic Sans MS', cursive;
   --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
   --gutter: clamp(20px, 5vw, 64px);
@@ -100,15 +99,19 @@ a {
 
 .kicker {
   display: inline-block;
-  font-weight: 700;
-  font-size: 0.82rem;
+  font-weight: 800;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--blue-d);
-  background: var(--sky);
-  padding: 0.35em 0.9em;
+  background: linear-gradient(180deg, #f6fbff, #d3e8ff);
+  padding: 0.42em 1em;
   border-radius: 99px;
   margin-bottom: 1rem;
+  box-shadow:
+    inset 0 -3px 5px rgba(31, 95, 214, 0.18),
+    inset 0 2px 2px #fff,
+    0 6px 10px -6px rgba(31, 95, 214, 0.5);
 }
 
 .h2 {
@@ -210,12 +213,36 @@ a {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-/* Sections stack like rounded sheets of paper. */
+/* Soft puffy surfaces, like the inflated letters of the logo: light from the top left, a darker belly, a soft coloured shadow. */
+.puffy {
+  --t: var(--tint, #ffffff);
+  background:
+    radial-gradient(80% 55% at 22% 2%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0) 62%),
+    linear-gradient(180deg, color-mix(in srgb, var(--t), #fff 30%) 0%, var(--t) 52%, color-mix(in srgb, var(--t), #000 9%) 100%);
+  box-shadow:
+    inset 0 -16px 26px -10px color-mix(in srgb, var(--t), #000 24%),
+    inset 0 8px 12px -4px rgba(255, 255, 255, 0.7),
+    0 30px 44px -26px color-mix(in srgb, var(--t), #000 50%);
+}
+
+/* Sections are soft slabs with a cloudy top edge. */
 .sheet {
+  --cloud: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 48' preserveAspectRatio='none'%3E%3Cpath d='M0 48V32C20 32 28 12 56 12C78 12 84 26 106 26C128 26 134 4 168 4C196 4 200 24 224 24C250 24 254 10 286 10C314 10 318 28 342 28C368 28 372 14 398 14C410 14 416 26 420 32V48Z'/%3E%3C/svg%3E");
   position: relative;
-  border-radius: 56px 56px 0 0;
-  margin-top: -56px;
+  background: var(--bg, var(--cream));
   padding-block: clamp(72px, 10vw, 128px) clamp(72px, 10vw, 128px);
+}
+.sheet::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -47px;
+  height: 48px;
+  background: var(--bg-top, var(--bg, var(--cream)));
+  -webkit-mask: var(--cloud) repeat-x bottom left / 420px 48px;
+  mask: var(--cloud) repeat-x bottom left / 420px 48px;
+  pointer-events: none;
 }
 
 /* Elements that slide in as they scroll into view. */

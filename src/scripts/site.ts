@@ -6,7 +6,6 @@ import { initStory } from './story';
 import { initCanvas } from './canvas';
 import { initCritters } from './critters';
 import { initCounters } from './counters';
-import { initPaint } from './paint';
 
 initLang();
 initHeader();
@@ -16,4 +15,3 @@ initStory();
 initCanvas();
 initCritters();
 initCounters();
-initPaint();

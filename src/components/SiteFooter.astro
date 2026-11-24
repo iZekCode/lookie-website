@@ -31,12 +31,22 @@ const { lang, copy } = Astro.props;
 
 <style>
   .foot {
+    --cloud: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 48' preserveAspectRatio='none'%3E%3Cpath d='M0 48V32C20 32 28 12 56 12C78 12 84 26 106 26C128 26 134 4 168 4C196 4 200 24 224 24C250 24 254 10 286 10C314 10 318 28 342 28C368 28 372 14 398 14C410 14 416 26 420 32V48Z'/%3E%3C/svg%3E");
     position: relative;
-    margin-top: -56px;
     background: var(--ink);
     color: #efeaff;
-    border-radius: 56px 56px 0 0;
-    padding: 96px 0 40px;
+    padding: 72px 0 40px;
+  }
+  .foot::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -47px;
+    height: 48px;
+    background: var(--ink);
+    -webkit-mask: var(--cloud) repeat-x bottom left / 420px 48px;
+    mask: var(--cloud) repeat-x bottom left / 420px 48px;
   }
   .foot-in {
     display: flex;

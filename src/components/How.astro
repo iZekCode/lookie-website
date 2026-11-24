@@ -29,7 +29,7 @@ const h = copy.how;
           <DeviceFrame src={templates} alt={h.steps[0].alt} class="front" width={800} />
         </div>
         <div class="txt">
-          <span class="badge">1</span>
+          <span class="badge puffy">1</span>
           <h3>{h.steps[0].title}</h3>
           <p>{h.steps[0].text}</p>
         </div>
@@ -37,7 +37,7 @@ const h = copy.how;
 
       <article class="step flip" data-reveal>
         <div class="vis hands" aria-hidden="true">
-          <div class="disc">
+          <div class="disc puffy">
             <Image src={handOpen} alt="" width={360} height={360} class="h open" />
             <Image src={handFist} alt="" width={360} height={360} class="h fist" />
             <span class="spark s1"></span>
@@ -46,7 +46,7 @@ const h = copy.how;
           </div>
         </div>
         <div class="txt">
-          <span class="badge">2</span>
+          <span class="badge puffy">2</span>
           <h3>{h.steps[1].title}</h3>
           <p>{h.steps[1].text}</p>
         </div>
@@ -57,7 +57,7 @@ const h = copy.how;
           <DeviceFrame src={canvas} alt={h.steps[2].alt} width={1000} />
         </div>
         <div class="txt">
-          <span class="badge">3</span>
+          <span class="badge puffy">3</span>
           <h3>{h.steps[2].title}</h3>
           <p>{h.steps[2].text}</p>
         </div>
@@ -68,12 +68,14 @@ const h = copy.how;
 
 <style>
   .how {
+    --bg: #2f8bec;
     background: linear-gradient(180deg, #2f8bec, #1b55c0);
     color: #fff;
   }
   .how .kicker {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.22);
     color: #fff;
+    box-shadow: inset 0 2px 2px rgba(255, 255, 255, 0.4), 0 6px 10px -6px rgba(0, 0, 60, 0.5);
   }
   .head {
     margin-bottom: 4rem;
@@ -99,14 +101,12 @@ const h = copy.how;
     place-items: center;
     width: 56px;
     height: 56px;
-    background: var(--sun);
     color: var(--ink);
-    border: 4px solid var(--ink);
     border-radius: 50%;
     font-family: var(--font-display);
     font-size: 2rem;
-    box-shadow: 0 5px 0 var(--ink);
     margin-bottom: 1rem;
+    --tint: #ffd54a;
   }
   h3 {
     font-size: clamp(2.2rem, 1.6rem + 2vw, 3.4rem);
@@ -160,10 +160,8 @@ const h = copy.how;
     position: relative;
     width: min(100%, 400px);
     aspect-ratio: 1;
-    background: var(--cream);
-    border: 5px solid var(--ink);
+    --tint: #fff3d6;
     border-radius: 50%;
-    box-shadow: 0 10px 0 var(--ink);
   }
   .disc :global(.h) {
     position: absolute;

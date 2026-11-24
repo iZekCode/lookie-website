@@ -1,53 +1,43 @@
 ---
-// Faint animal shapes scattered behind the page, like the wallpaper in the app's marketing art.
-import kepik from '../assets/critters/kepik.png';
-import kupu from '../assets/critters/kupu.png';
-import lebah from '../assets/critters/lebah.png';
-import siput from '../assets/critters/siput.png';
-
-const shapes = [kepik, kupu, lebah, siput];
-const spots = [
-  [4, 6, 90, -12], [22, 3, 70, 10], [41, 9, 84, -6], [63, 4, 76, 14], [84, 8, 92, -10],
-  [10, 26, 78, 8], [33, 31, 68, -14], [56, 27, 88, 6], [78, 30, 72, -8], [94, 24, 80, 12],
-  [6, 52, 86, -6], [27, 58, 74, 12], [49, 54, 90, -10], [71, 60, 70, 8], [91, 50, 84, -4],
-  [14, 80, 82, 10], [38, 86, 72, -12], [60, 82, 88, 6], [82, 88, 76, -8],
+// Soft bubbles drifting behind the page.
+const bubbles = [
+  [6, 8, 220], [78, 4, 160], [90, 34, 260], [14, 42, 190], [52, 58, 240],
+  [84, 72, 170], [8, 78, 250], [40, 90, 150], [66, 38, 120], [30, 18, 110],
 ];
 ---
 
-<div class="doodles" aria-hidden="true">
+<div class="bubbles" aria-hidden="true">
   {
-    spots.map(([x, y, size, rot], i) => (
-      <span
-        class="doodle"
-        style={`--x:${x}%;--y:${y}%;--s:${size}px;--r:${rot}deg;--n:${i};--m:url(${shapes[i % 4].src})`}
-      />
+    bubbles.map(([x, y, size], i) => (
+      <span class="bubble" style={`--x:${x}%;--y:${y}%;--s:${size}px;--n:${i}`} />
     ))
   }
 </div>
 
 <style>
-  .doodles {
+  .bubbles {
     position: fixed;
     inset: 0;
     z-index: -1;
     pointer-events: none;
     overflow: hidden;
-    background: var(--cream);
+    background: linear-gradient(180deg, #fff8e8 0%, #ffeecf 100%);
   }
-  .doodle {
+  .bubble {
     position: absolute;
     left: var(--x);
     top: var(--y);
     width: var(--s);
     height: var(--s);
-    background: #ffe9bd;
-    -webkit-mask: var(--m) center / contain no-repeat;
-    mask: var(--m) center / contain no-repeat;
-    transform: rotate(var(--r));
-    animation: drift 14s ease-in-out calc(var(--n) * -1.3s) infinite;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 30% 26%, rgba(255, 255, 255, 0.9) 0 7%, rgba(255, 255, 255, 0) 24%),
+      radial-gradient(circle at 50% 55%, rgba(255, 214, 140, 0.35), rgba(255, 190, 110, 0.18) 70%, rgba(255, 170, 90, 0.28));
+    box-shadow: inset 0 -10px 24px rgba(255, 170, 80, 0.18);
+    animation: drift 16s ease-in-out calc(var(--n) * -2.1s) infinite;
   }
   @keyframes drift {
-    0%, 100% { transform: translate(0, 0) rotate(var(--r)); }
-    50% { transform: translate(14px, -22px) rotate(calc(var(--r) + 9deg)); }
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(16px, -30px) scale(1.04); }
   }
 </style>

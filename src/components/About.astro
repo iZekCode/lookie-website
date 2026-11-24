@@ -20,7 +20,7 @@ const a = copy.about;
       <p class="lead" data-reveal style="--d:2">{a.p1}</p>
       <p class="lead second" data-reveal style="--d:3">{a.p2}</p>
       <ul class="stickers" data-reveal style="--d:4">
-        {a.stickers.map((s, i) => <li style={`--r:${[-3, 2, -1.5][i]}deg`}>{s}</li>)}
+        {a.stickers.map((s, i) => <li class="puffy" style={`--r:${[-3, 2, -1.5][i]}deg`}>{s}</li>)}
       </ul>
     </div>
 
@@ -35,7 +35,7 @@ const a = copy.about;
 
 <style>
   .about {
-    background: var(--paper);
+    --bg: #fffbf1;
   }
   .grid {
     display: grid;
@@ -52,7 +52,7 @@ const a = copy.about;
   .stickers {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
     margin: 2rem 0 0;
     padding: 0;
     list-style: none;
@@ -60,20 +60,15 @@ const a = copy.about;
   .stickers li {
     font-family: var(--font-display);
     font-size: 1.3rem;
-    padding: 0.2em 0.9em 0.3em;
-    background: var(--sun);
-    border: 3px solid var(--ink);
-    border-radius: 14px;
-    box-shadow: 0 4px 0 var(--ink);
+    padding: 0.35em 1.1em 0.45em;
+    border-radius: 99px;
+    color: var(--ink);
     transform: rotate(var(--r));
-    transition: transform 0.25s var(--ease-bounce);
+    transition: transform 0.3s var(--ease-bounce);
   }
-  .stickers li:nth-child(2) {
-    background: var(--pink);
-  }
-  .stickers li:nth-child(3) {
-    background: var(--leaf-l);
-  }
+  .stickers li:nth-child(1) { --tint: #ffd75a; }
+  .stickers li:nth-child(2) { --tint: #ffa9cb; }
+  .stickers li:nth-child(3) { --tint: #bfe8a8; }
   .stickers li:hover {
     transform: rotate(0) scale(1.1);
   }
@@ -89,9 +84,11 @@ const a = copy.about;
     width: 82%;
     height: 82%;
     margin: 9%;
-    border-radius: 34%;
-    border: 5px solid var(--ink);
-    box-shadow: 0 12px 0 var(--ink);
+    border-radius: 36%;
+    box-shadow:
+      inset 0 -14px 24px -8px rgba(0, 0, 60, 0.3),
+      inset 0 8px 12px -2px rgba(255, 255, 255, 0.6),
+      0 40px 50px -26px rgba(31, 95, 214, 0.65);
     animation: breathe 4.5s ease-in-out infinite;
     transition: transform 0.4s var(--ease-bounce);
   }
@@ -102,15 +99,15 @@ const a = copy.about;
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    border: 4px dashed var(--blue);
+    background: radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0) 30%), radial-gradient(circle, rgba(150, 200, 255, 0.25), rgba(150, 200, 255, 0.5));
+    box-shadow: inset 0 -16px 30px rgba(60, 130, 230, 0.25);
     animation: spin 40s linear infinite;
-    opacity: 0.55;
   }
   .mascot :global(.mini) {
     position: absolute;
     width: 28%;
     height: auto;
-    filter: drop-shadow(0 8px 5px rgba(42, 33, 69, 0.22));
+    filter: drop-shadow(0 12px 8px rgba(42, 33, 69, 0.22));
   }
   .mascot :global(.m1) {
     left: -4%;

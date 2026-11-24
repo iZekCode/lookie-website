@@ -10,8 +10,8 @@ const t = copy.testing;
 
 <section class="test sheet">
   <div class="wrap">
-    <div class="card" data-reveal>
-      <p class="ribbon">{t.kicker}</p>
+    <div class="card puffy" data-reveal>
+      <p class="ribbon puffy">{t.kicker}</p>
       <h2 class="h2">{t.title}</h2>
       <div class="cols">
         <p class="lead">{t.p1}</p>
@@ -23,31 +23,30 @@ const t = copy.testing;
 
 <style>
   .test {
-    background: var(--paper);
+    --bg: #fffbf1;
   }
   .card {
+    --tint: #fff0d2;
     position: relative;
     max-width: 920px;
     margin-inline: auto;
-    background: var(--cream);
-    border: 4px solid var(--ink);
-    border-radius: 40px;
-    box-shadow: 0 10px 0 var(--ink);
-    padding: clamp(40px, 6vw, 72px) clamp(24px, 5vw, 64px) clamp(32px, 5vw, 56px);
+    border-radius: 52px;
+    padding: clamp(44px, 6vw, 76px) clamp(24px, 5vw, 64px) clamp(32px, 5vw, 56px);
     text-align: center;
   }
   .ribbon {
+    --tint: #cf3a22;
     position: absolute;
-    top: -22px;
+    top: -24px;
     left: 50%;
     translate: -50% 0;
     rotate: -2deg;
-    background: var(--red-d);
     color: #fff;
     font-family: var(--font-display);
     font-size: 1.5rem;
-    padding: 0.15em 1.2em;
-    border: 3px solid var(--ink);
+    padding: 0.15em 1.3em 0.25em;
+    border-radius: 99px;
+    text-shadow: 0 2px 0 rgba(90, 0, 0, 0.3);
   }
   .h2 {
     margin-bottom: 1.4rem;
