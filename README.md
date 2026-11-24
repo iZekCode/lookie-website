@@ -37,7 +37,7 @@ Indonesian is the default and English lives under `/en`. The ID/EN switch in the
 ## Pictures
 
 - `src/assets/app/`: simulator screenshots (cropped to the app's own landscape frame) and the hand images from the app's asset catalog.
-- `src/assets/critters/`: renders of the app's own 3D animals (from `animal_idle.usdz`). To redo them, build `scripts/render-critters.swift` (see the comment at its top), then run `node scripts/finish-critters.mjs <folder>`; it crops each animal and prints where the eyes are, which go into `src/lib/animalEyes.ts`. The old flat Figma art is in `docs/design-source/critters-2d/`.
+- `src/assets/critters/`: renders of the app's own 3D animals (from `animal_idle.usdz`). To redo them, build `scripts/render-critters.swift` (see the comment at its top), then run `node scripts/finish-critters.mjs <folder>`; it crops each animal into a square PNG. The old flat Figma art is in `docs/design-source/critters-2d/`.
 - `src/assets/logo/`: the app's own letter SVGs. The eyes in the hero are real paths, so the pupils can follow the pointer.
 - `docs/design-source/`: the original Figma marketing frames, kept for reference only.
 
