@@ -16,7 +16,7 @@ export const id = {
   hero: {
     titleA: 'Ubah gerakan kecil',
     titleB: 'jadi karya seni.',
-    sub: 'Game menggambar interaktif untuk anak dengan Cerebral Palsy sebagai media latihan motorik. Cukup gerakkan tangan untuk menciptakan karya seni, sementara setiap gerakan dibaca secara real-time menggunakan computer vision.',
+    sub: 'Game menggambar interaktif untuk anak dengan Cerebral Palsy sebagai media latihan motorik. Cukup gerakkan tangan untuk melukis, di mana setiap gerakan di-track menggunakan computer vision.',
     primary: 'Coba Lookie',
     videoAlt:
       'Tur singkat Lookie di iPad: layar utama, memilih gambar, melukis dengan kepalan tangan dan ayunan lengan, hasil karya di galeri, dan laporan perkembangan.',
