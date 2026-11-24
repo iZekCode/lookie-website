@@ -10,7 +10,6 @@ export const en: Copy = {
   },
   nav: {
     how: 'How to play',
-    parents: 'Parents',
     support: 'Support',
     try: 'Try it',
     toggleLabel: 'Choose language',
@@ -63,24 +62,6 @@ export const en: Copy = {
         alt: 'Screen recording of the Lookie report: the painting, how much each hand was used, range of motion and progress over time.',
       },
     ],
-  },
-  audience: {
-    kids: {
-      title: 'For children',
-      items: [
-        'Paint with the whole body, not just a finger.',
-        'Practise the arm’s range of motion (ROM).',
-        'The exercise feels like play.',
-      ],
-    },
-    parents: {
-      title: 'For parents',
-      items: [
-        'A progress report you can open any time.',
-        'See how your child’s range of motion changes over time.',
-        'Know what your child actually did during home practice.',
-      ],
-    },
   },
   testing: {
     title: 'Tested with children, guided by experts',

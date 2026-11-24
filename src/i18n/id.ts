@@ -8,7 +8,6 @@ export const id = {
   },
   nav: {
     how: 'Cara main',
-    parents: 'Orang tua',
     support: 'Bantuan',
     try: 'Coba',
     toggleLabel: 'Pilih bahasa',
@@ -61,24 +60,6 @@ export const id = {
         alt: 'Rekaman layar laporan Lookie: lukisan, porsi tangan kiri dan kanan, jangkauan gerak, dan grafik perkembangan.',
       },
     ],
-  },
-  audience: {
-    kids: {
-      title: 'Untuk anak',
-      items: [
-        'Melukis dengan gerakan badan, bukan cuma jari.',
-        'Melatih jangkauan gerak (ROM) lengan.',
-        'Latihannya terasa seperti main.',
-      ],
-    },
-    parents: {
-      title: 'Untuk orang tua',
-      items: [
-        'Laporan perkembangan yang bisa dibuka kapan saja.',
-        'Jangkauan gerak anak terlihat dari waktu ke waktu.',
-        'Tahu apa yang anak lakukan saat latihan di rumah.',
-      ],
-    },
   },
   testing: {
     title: 'Diuji bersama anak, diarahkan para ahli',
