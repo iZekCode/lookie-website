@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import rizki from '../assets/team/rizki.png';
+import filbert from '../assets/team/filbert.png';
+import grace from '../assets/team/grace.png';
+import kezia from '../assets/team/kezia.png';
+import adri from '../assets/team/adri.png';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const t = copy.team;
+// Same order as the members in the copy.
+const photos = [rizki, filbert, grace, kezia, adri];
+const tints = ['#ffd1c9', '#cfe6ff', '#fff0b3', '#d9f3c9', '#e6d9ff'];
+---
+
+<section class="team sheet" id="tim">
+  <div class="wrap">
+    <header class="head" data-reveal>
+      <p class="kicker">{t.kicker}</p>
+      <h2 class="h2">{t.title}</h2>
+    </header>
+    <ul class="grid">
+      {
+        t.members.map((m, i) => (
+          <li class="person" data-reveal style={`--d:${i % 3}; --tint:${tints[i]}`}>
+            <Image class="photo puffy" src={photos[i]} alt={m.name} width={160} height={160} widths={[160, 320]} sizes="140px" />
+            <p class="name">{m.name}</p>
+            <p class="role">{m.role}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .team {
+    --bg: #fffbf1;
+    padding-bottom: 100px;
+  }
+  .head {
+    text-align: center;
+    margin-bottom: 2.4rem;
+  }
+  .h2 {
+    margin-top: 0.4rem;
+  }
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 34px 28px;
+  }
+  .person {
+    width: 170px;
+    text-align: center;
+  }
+  .person :global(.photo) {
+    width: 132px;
+    height: 132px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s cubic-bezier(0.3, 1.6, 0.5, 1);
+  }
+  .person:hover :global(.photo) {
+    transform: translateY(-6px) rotate(-3deg) scale(1.04);
+  }
+  .name {
+    font-weight: 800;
+    line-height: 1.25;
+  }
+  .role {
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    margin-top: 2px;
+  }
+  @media (max-width: 560px) {
+    .person {
+      width: 140px;
+    }
+    .person :global(.photo) {
+      width: 110px;
+      height: 110px;
+    }
+  }
+</style>

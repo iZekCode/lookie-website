@@ -8,6 +8,7 @@ import How from './How.astro';
 import Audience from './Audience.astro';
 import Report from './Report.astro';
 import Testing from './Testing.astro';
+import Team from './Team.astro';
 import Cta from './Cta.astro';
 import { useCopy, type Lang } from '../i18n';
 
@@ -28,6 +29,7 @@ const copy = useCopy(lang);
     <Audience copy={copy} />
     <Report copy={copy} />
     <Testing copy={copy} />
+    <Team copy={copy} />
     <Cta copy={copy} />
   </main>
 </Base>

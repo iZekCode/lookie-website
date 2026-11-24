@@ -109,6 +109,17 @@ export const en: Copy = {
     p1: 'Lookie was built with guidance from medical experts, then tested with children with CP and their parents.',
     p2: 'In early testing, the children had fun and stuck with the painting. We’re still testing and still listening.',
   },
+  team: {
+    kicker: 'Team',
+    title: 'The people behind Lookie',
+    members: [
+      { name: 'Rizki Hidayatul Laeli', role: 'Project Manager' },
+      { name: 'Filbert Naldo Wijaya', role: 'iOS Developer' },
+      { name: 'Graceilla Natasya', role: 'UI/UX Designer' },
+      { name: 'Kezia Karen Amelia', role: 'UI/UX Designer' },
+      { name: 'Adri Maulana Putra', role: 'Product Researcher' },
+    ],
+  },
   cta: {
     title: 'Want to try Lookie?',
     text: 'Lookie is open for testing on TestFlight, and the App Store version is on its way. Questions? Send an email or a message on Instagram.',

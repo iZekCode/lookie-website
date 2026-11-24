@@ -107,6 +107,17 @@ export const id = {
     p1: 'Lookie dikembangkan dengan arahan tenaga medis, lalu diuji bersama anak dengan CP dan orang tuanya.',
     p2: 'Dari uji awal, anak-anak senang dan betah melukis. Kami masih terus menguji dan mendengarkan masukan.',
   },
+  team: {
+    kicker: 'Tim',
+    title: 'Orang-orang di balik Lookie',
+    members: [
+      { name: 'Rizki Hidayatul Laeli', role: 'Project Manager' },
+      { name: 'Filbert Naldo Wijaya', role: 'iOS Developer' },
+      { name: 'Graceilla Natasya', role: 'UI/UX Designer' },
+      { name: 'Kezia Karen Amelia', role: 'UI/UX Designer' },
+      { name: 'Adri Maulana Putra', role: 'Product Researcher' },
+    ],
+  },
   cta: {
     title: 'Mau mencoba Lookie?',
     text: 'Lookie sudah bisa dicoba lewat TestFlight. Versi App Store menyusul. Ada pertanyaan? Kirim email atau pesan lewat Instagram.',
