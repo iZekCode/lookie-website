@@ -13,14 +13,15 @@ struct Animal {
     let root: String
     let others: [String]
     let yaw: Float
+    var roll: Float = 0
 }
 
 let animals = [
     Animal(file: "kepik", root: "LB_Rig", others: ["BF_Root", "Bee_Root", "SN_Rig"], yaw: 0),
     Animal(file: "kupu", root: "BF_Root", others: ["LB_Rig", "Bee_Root", "SN_Rig"], yaw: 0),
     Animal(file: "lebah", root: "Bee_Root", others: ["LB_Rig", "BF_Root", "SN_Rig"], yaw: 0),
-    // Turned a little so the green shell on its back shows.
-    Animal(file: "siput", root: "SN_Rig", others: ["LB_Rig", "BF_Root", "Bee_Root"], yaw: 0.55),
+    // Seen from the side and leaning over, so the long body and the green shell on its back show.
+    Animal(file: "siput", root: "SN_Rig", others: ["LB_Rig", "BF_Root", "Bee_Root"], yaw: 1.35, roll: 30),
 ]
 
 @main struct Main {
@@ -46,7 +47,8 @@ let animals = [
             let scene = try await Entity(contentsOf: usdz)
             for o in a.others { scene.findEntity(named: o)?.removeFromParent() }
             guard let root = scene.findEntity(named: a.root) else { fatalError(a.root) }
-            root.orientation = simd_quatf(angle: a.yaw, axis: [0, 1, 0]) * root.orientation
+            let lean = simd_quatf(angle: a.roll * .pi / 180, axis: [0, 0, 1])
+            root.orientation = lean * simd_quatf(angle: a.yaw, axis: [0, 1, 0]) * root.orientation
 
             let anchor = AnchorEntity(world: .zero)
             anchor.addChild(scene)

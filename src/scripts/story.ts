@@ -15,6 +15,9 @@ const sleep = (ms: number) => new Promise<void>((r) => window.setTimeout(r, ms))
 const EYE_W = 200;
 const EYE_H = 260;
 
+// The snail lies on its side, so its picture is mostly empty above and below; draw it a little bigger.
+const ANIMAL_SCALE = [1, 1, 1, 1.2];
+
 interface Slot {
   x: number;
   y: number;
@@ -130,6 +133,7 @@ export function initStory() {
         slot.y += Math.sin(now / 650 + i * 1.7) * 6 * calm;
         slot.rot += Math.sin(now / 820 + i * 2.3) * 2.2 * calm;
       }
+      slot.size *= ANIMAL_SCALE[i];
       pal.style.transform = `translate(${slot.x - B / 2}px, ${slot.y - B / 2}px) rotate(${slot.rot}deg) scale(${slot.size / B})`;
       if (i > 0) pal.style.opacity = String(clamp(s * 25));
     });

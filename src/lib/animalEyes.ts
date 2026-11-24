@@ -17,7 +17,7 @@ export const ANIMAL_EYES: Array<{ l: EyeBox; r: EyeBox }> = [
   { l: { x: 366, y: 525, w: 210, h: 205 }, r: { x: 660, y: 522, w: 210, h: 208 } },
   { l: { x: 452, y: 365, w: 135, h: 142 }, r: { x: 606, y: 338, w: 132, h: 138 } },
   { l: { x: 402, y: 410, w: 182, h: 192 }, r: { x: 630, y: 404, w: 190, h: 200 } },
-  { l: { x: 478, y: 392, w: 178, h: 178 }, r: { x: 640, y: 488, w: 150, h: 165 } },
+  { l: { x: 771, y: 426, w: 138, h: 150 }, r: { x: 792, y: 578, w: 138, h: 152 } },
 ];
 
 // Where the middle of an animal's eyes is, as percentages of its box (the opening grows the body out from there).

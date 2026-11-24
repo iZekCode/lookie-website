@@ -9,7 +9,7 @@ const OUT = 'src/assets/critters';
 const SIZE = 1024;
 const MARGIN = 0.06;
 // Where to look for the eyes, as a share of the animal's height from its top.
-const BAND = { kepik: [0.25, 0.85], kupu: [0, 0.5], lebah: [0, 0.55], siput: [0, 0.6] };
+const BAND = { kepik: [0.25, 0.85], kupu: [0, 0.5], lebah: [0, 0.55], siput: [0.05, 0.85] };
 
 await mkdir(OUT, { recursive: true });
 const report = {};
