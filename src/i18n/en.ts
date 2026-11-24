@@ -112,6 +112,7 @@ export const en: Copy = {
   team: {
     kicker: 'Team',
     title: 'The people behind Lookie',
+    linkedin: 'LinkedIn profile',
     members: [
       { name: 'Rizki Hidayatul Laeli', role: 'Project Manager' },
       { name: 'Filbert Naldo Wijaya', role: 'iOS Developer' },

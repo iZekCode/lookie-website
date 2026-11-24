@@ -1,4 +1,4 @@
-Butuh bantuan atau punya pertanyaan tentang Lookie? Email kami di filbertnaldow@gmail.com. Kami menjawab dalam 7 hari kerja.
+Butuh bantuan atau punya pertanyaan tentang Lookie? Email kami di littlecrewproject@gmail.com. Kami menjawab dalam 7 hari kerja.
 
 Pengembang: Filbert Naldo Wijaya, Tangerang, Banten, Indonesia.
 

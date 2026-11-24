@@ -2,7 +2,7 @@ Last updated: 18 November 2026
 
 Lookie is a painting app for children on iPad. A child paints in the air: the front camera sees the hand and arm, and paint appears on the canvas. This policy explains what data we hold, what it is for, and how to delete it. We kept it short so a parent can read it to the end.
 
-Developer: Filbert Naldo Wijaya, Tangerang, Banten, Indonesia. Contact: filbertnaldow@gmail.com.
+Developer: Filbert Naldo Wijaya, Tangerang, Banten, Indonesia. Contact: littlecrewproject@gmail.com.
 
 ## In short
 
@@ -70,11 +70,11 @@ We use no ads, no analytics SDKs and no trackers. We do not sell data or share i
 - **Delete account** (profile page, for a signed-in account): deletes the account, all paintings, stats, templates and files on our storage, and the paintings on that iPad.
 - **Sign out**: the app finishes the backup first, then erases the paintings on that iPad so a shared iPad does not copy them into another account. The parent is warned if something is not yet backed up.
 - **Guest mode**: deleting the app deletes everything, because we hold no copy.
-- You can also email filbertnaldow@gmail.com.
+- You can also email littlecrewproject@gmail.com.
 
 ## Parents' rights
 
-A parent or guardian may see, request a copy of, correct and delete the child's data, and withdraw consent. Email filbertnaldow@gmail.com and we reply within 7 working days. Withdrawing consent means deleting the account.
+A parent or guardian may see, request a copy of, correct and delete the child's data, and withdraw consent. Email littlecrewproject@gmail.com and we reply within 7 working days. Withdrawing consent means deleting the account.
 
 ## Security
 
@@ -90,4 +90,4 @@ This policy follows the law of the Republic of Indonesia, including Law No. 27 o
 
 ## Contact
 
-filbertnaldow@gmail.com · Tangerang, Banten, Indonesia
+littlecrewproject@gmail.com · Tangerang, Banten, Indonesia

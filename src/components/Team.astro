@@ -14,6 +14,8 @@ const { copy } = Astro.props;
 const t = copy.team;
 // Same order as the members in the copy.
 const photos = [rizki, filbert, grace, kezia, adri];
+// LinkedIn profile of each member, in the same order. Leave one empty and its icon is not shown.
+const linkedin = ['', 'https://www.linkedin.com/in/filbertnaldowijaya', '', '', ''];
 const tints = ['#ffd1c9', '#cfe6ff', '#fff0b3', '#d9f3c9', '#e6d9ff'];
 ---
 
@@ -30,6 +32,13 @@ const tints = ['#ffd1c9', '#cfe6ff', '#fff0b3', '#d9f3c9', '#e6d9ff'];
             <Image class="photo puffy" src={photos[i]} alt={m.name} width={160} height={160} widths={[160, 320]} sizes="140px" />
             <p class="name">{m.name}</p>
             <p class="role">{m.role}</p>
+            {linkedin[i] && (
+              <a class="social" href={linkedin[i]} target="_blank" rel="noopener" aria-label={`${m.name}: ${t.linkedin}`} title={t.linkedin}>
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 3.2a1.96 1.96 0 1 0 0 3.92 1.96 1.96 0 0 0 0-3.92ZM20.44 20h-3.38v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.15 1.46-2.15 2.96V20H9.66V8.5h3.24v1.57h.05c.45-.85 1.55-1.75 3.19-1.75 3.41 0 4.04 2.25 4.04 5.17V20Z" />
+                </svg>
+              </a>
+            )}
           </li>
         ))
       }
@@ -73,6 +82,26 @@ const tints = ['#ffd1c9', '#cfe6ff', '#fff0b3', '#d9f3c9', '#e6d9ff'];
   }
   .person:hover :global(.photo) {
     transform: translateY(-6px) rotate(-3deg) scale(1.04);
+  }
+  .social {
+    display: inline-grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin-top: 10px;
+    border-radius: 50%;
+    color: #fff;
+    background: radial-gradient(80% 50% at 30% 8%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 60%), linear-gradient(180deg, #4fa0ff, #1f5fd6);
+    box-shadow: inset 0 -4px 7px rgba(0, 0, 60, 0.3), 0 8px 12px -6px rgba(31, 95, 214, 0.7);
+    transition: transform 0.25s cubic-bezier(0.3, 1.6, 0.5, 1);
+  }
+  .social:hover {
+    transform: translateY(-3px) scale(1.1);
+  }
+  .social svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
   }
   .name {
     font-weight: 800;

@@ -1,4 +1,4 @@
-Need help or have a question about Lookie? Email us at filbertnaldow@gmail.com. We reply within 7 working days.
+Need help or have a question about Lookie? Email us at littlecrewproject@gmail.com. We reply within 7 working days.
 
 Developer: Filbert Naldo Wijaya, Tangerang, Banten, Indonesia.
 

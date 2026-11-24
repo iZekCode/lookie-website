@@ -110,6 +110,7 @@ export const id = {
   team: {
     kicker: 'Tim',
     title: 'Orang-orang di balik Lookie',
+    linkedin: 'Profil LinkedIn',
     members: [
       { name: 'Rizki Hidayatul Laeli', role: 'Project Manager' },
       { name: 'Filbert Naldo Wijaya', role: 'iOS Developer' },

@@ -2,7 +2,7 @@ Last updated: 18 November 2026
 
 These terms apply when you use Lookie, an app for painting in the air on iPad. By tapping Mulai, a parent or guardian agrees to these terms and the Privacy Policy on behalf of the child.
 
-Developer: Filbert Naldo Wijaya. Contact: filbertnaldow@gmail.com.
+Developer: Filbert Naldo Wijaya. Contact: littlecrewproject@gmail.com.
 
 ## 1. Who may use it
 
@@ -57,4 +57,4 @@ These terms are governed by the law of the Republic of Indonesia. Disputes are f
 
 ## 12. Contact
 
-filbertnaldow@gmail.com · Tangerang, Banten, Indonesia
+littlecrewproject@gmail.com · Tangerang, Banten, Indonesia

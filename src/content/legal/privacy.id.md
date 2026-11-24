@@ -2,7 +2,7 @@ Terakhir diperbarui: 18 November 2026
 
 Lookie adalah aplikasi melukis untuk anak di iPad. Anak melukis di udara: kamera depan melihat tangan dan lengan, lalu cat muncul di kanvas. Kebijakan ini menjelaskan data apa yang kami pegang, untuk apa, dan bagaimana menghapusnya. Kami menulisnya sesingkat mungkin supaya orang tua bisa membacanya sampai habis.
 
-Pengembang: Filbert Naldo Wijaya, Tangerang, Banten, Indonesia. Kontak: filbertnaldow@gmail.com.
+Pengembang: Filbert Naldo Wijaya, Tangerang, Banten, Indonesia. Kontak: littlecrewproject@gmail.com.
 
 ## Ringkasnya
 
@@ -70,11 +70,11 @@ Kami tidak memakai iklan, SDK analitik, atau pelacak. Kami tidak menjual atau me
 - **Hapus akun** (di halaman profil, untuk akun yang sudah masuk): menghapus akun, semua lukisan, statistik, templat, dan file di penyimpanan kami, serta lukisan di iPad itu.
 - **Keluar**: aplikasi menyelesaikan pencadangan dulu, lalu menghapus lukisan di iPad itu supaya iPad bersama tidak menyalinnya ke akun lain. Orang tua diperingatkan kalau ada yang belum tercadang.
 - **Mode tamu**: menghapus aplikasi menghapus semuanya, karena kami tidak punya salinannya.
-- Bisa juga lewat email ke filbertnaldow@gmail.com.
+- Bisa juga lewat email ke littlecrewproject@gmail.com.
 
 ## Hak orang tua
 
-Orang tua atau wali berhak melihat, meminta salinan, memperbaiki, dan menghapus data anak, serta menarik persetujuan. Kirim email ke filbertnaldow@gmail.com dan kami jawab dalam 7 hari kerja. Menarik persetujuan berarti menghapus akun.
+Orang tua atau wali berhak melihat, meminta salinan, memperbaiki, dan menghapus data anak, serta menarik persetujuan. Kirim email ke littlecrewproject@gmail.com dan kami jawab dalam 7 hari kerja. Menarik persetujuan berarti menghapus akun.
 
 ## Keamanan
 
@@ -90,4 +90,4 @@ Kebijakan ini mengikuti hukum Republik Indonesia, termasuk UU No. 27 Tahun 2022 
 
 ## Kontak
 
-filbertnaldow@gmail.com · Tangerang, Banten, Indonesia
+littlecrewproject@gmail.com · Tangerang, Banten, Indonesia

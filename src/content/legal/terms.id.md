@@ -2,7 +2,7 @@ Terakhir diperbarui: 18 November 2026
 
 Syarat ini berlaku saat kamu memakai Lookie, aplikasi melukis di udara untuk iPad. Dengan menekan Mulai, orang tua atau wali menyetujui syarat ini dan Kebijakan Privasi atas nama anak.
 
-Pengembang: Filbert Naldo Wijaya. Kontak: filbertnaldow@gmail.com.
+Pengembang: Filbert Naldo Wijaya. Kontak: littlecrewproject@gmail.com.
 
 ## 1. Siapa yang boleh memakai
 
@@ -57,4 +57,4 @@ Syarat ini tunduk pada hukum Republik Indonesia. Sengketa diselesaikan lebih dul
 
 ## 12. Kontak
 
-filbertnaldow@gmail.com · Tangerang, Banten, Indonesia
+littlecrewproject@gmail.com · Tangerang, Banten, Indonesia
