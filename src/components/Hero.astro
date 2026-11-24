@@ -7,6 +7,8 @@ import lebah from '../assets/critters/lebah.png';
 import siput from '../assets/critters/siput.png';
 import DeviceFrame from './DeviceFrame.astro';
 import Wordmark from './Wordmark.astro';
+import { assetUrl } from '../i18n';
+import { appStoreUrl } from '../lib/links';
 import type { Copy } from '../i18n/id';
 
 interface Props {
@@ -15,6 +17,8 @@ interface Props {
 const { copy } = Astro.props;
 const h = copy.hero;
 const pals = [kepik, kupu, lebah, siput];
+// Apple's own badge, in Indonesian or English, used without changes.
+const badge = assetUrl(`badges/app-store-${copy.lang === 'id' ? 'id' : 'en'}.svg`);
 ---
 
 <section class="hero" id="top">
@@ -26,7 +30,9 @@ const pals = [kepik, kupu, lebah, siput];
       </h1>
       <p class="lead">{h.sub}</p>
       <div class="cta">
-        <a class="btn" href="#mencoba">{h.primary}</a>
+        <a class="badge" href={appStoreUrl} rel="noopener">
+          <img src={badge} alt={copy.cta.download} width="200" height="67" />
+        </a>
       </div>
     </div>
 
@@ -94,6 +100,19 @@ const pals = [kepik, kupu, lebah, siput];
     justify-content: center;
     gap: 14px;
     margin: 1.6rem 0 0;
+  }
+  .badge {
+    display: inline-block;
+    line-height: 0;
+    transition: transform 0.2s var(--ease-bounce);
+  }
+  .badge:hover {
+    transform: translateY(-3px);
+  }
+  .badge img {
+    display: block;
+    width: clamp(170px, 20vw, 210px);
+    height: auto;
   }
   .stage {
     position: relative;

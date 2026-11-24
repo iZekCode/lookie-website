@@ -17,7 +17,6 @@ export const id = {
     titleA: 'Ubah gerakan kecil',
     titleB: 'jadi karya seni.',
     sub: 'Lookie adalah game menggambar interaktif untuk anak dengan Cerebral Palsy sebagai media latihan motorik. Cukup gerakkan tangan untuk melukis, di mana setiap gerakan di-track menggunakan computer vision.',
-    primary: 'Download Lookie',
     videoAlt:
       'Tur singkat Lookie di iPad: layar utama, memilih gambar, melukis dengan kepalan tangan dan ayunan lengan, hasil karya di galeri, dan laporan perkembangan.',
   },

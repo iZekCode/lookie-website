@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import icon from '../assets/icon.png';
 import { localePath, otherLang, type Lang } from '../i18n';
+import { appStoreUrl } from '../lib/links';
 import type { Copy } from '../i18n/id';
 
 interface Props {
@@ -35,7 +36,7 @@ const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
         <a href={localePath('id', twinPath)} data-lang="id" aria-current={lang === 'id' ? 'true' : undefined} hreflang="id" lang="id">ID</a>
         <a href={localePath('en', twinPath)} data-lang="en" aria-current={lang === 'en' ? 'true' : undefined} hreflang="en" lang="en">EN</a>
       </div>
-      <a class="btn btn--sun try" href={anchor('#mencoba')}>{copy.nav.download}</a>
+      <a class="btn btn--sun try" href={appStoreUrl} rel="noopener">{copy.nav.download}</a>
     </div>
   </div>
 </header>
