@@ -6,7 +6,8 @@ import kupu from '../assets/critters/kupu.png';
 import lebah from '../assets/critters/lebah.png';
 import siput from '../assets/critters/siput.png';
 import Wordmark from './Wordmark.astro';
-import { eyeLeftSvg, eyeRightSvg } from '../lib/eyes';
+import { eyeSvg, eyeDefs } from '../lib/eyes';
+import { ANIMAL_EYES, eyeStyle } from '../lib/animalEyes';
 import type { Copy } from '../i18n/id';
 
 interface Props {
@@ -14,29 +15,29 @@ interface Props {
 }
 const { copy } = Astro.props;
 const h = copy.hero;
-// Every animal brings its own pair of eyes: the logo eyes that sit on top of it and travel between the animals.
+// Every animal wears a pair of cute eyes on top of its painted ones, and the eyes follow the pointer.
 const pals = [kepik, kupu, lebah, siput];
 ---
 
 <section class="story" id="top" data-story>
   <div class="stage">
+    <Fragment set:html={eyeDefs} />
+
     <div class="pals" aria-hidden="true">
       {
         pals.map((src, i) => (
           <div class={`pal pal${i}`} data-pal={i}>
             <Image src={src} alt="" width={640} height={640} widths={[480, 800, 1100]} sizes="(max-width: 700px) 60vw, 640px" loading="eager" />
+            <div class="peye" data-peye style={eyeStyle(ANIMAL_EYES[i].l)}><div class="lid" set:html={eyeSvg} /></div>
+            <div class="peye" data-peye style={eyeStyle(ANIMAL_EYES[i].r)}><div class="lid" set:html={eyeSvg} /></div>
           </div>
         ))
       }
     </div>
 
     <div class="eyes" aria-hidden="true">
-      {
-        pals.flatMap((_, i) => [
-          <div class="eye" data-eye={`${i}l`}><div class="lid" set:html={eyeLeftSvg} /></div>,
-          <div class="eye" data-eye={`${i}r`}><div class="lid" set:html={eyeRightSvg} /></div>,
-        ])
-      }
+      <div class="eye" data-oeye><div class="lid" set:html={eyeSvg} /></div>
+      <div class="eye" data-oeye><div class="lid" set:html={eyeSvg} /></div>
     </div>
 
     <div class="hero-copy" data-copy>
@@ -102,7 +103,7 @@ const pals = [kepik, kupu, lebah, siput];
     padding-block: 40px;
   }
   .hero-copy :global(.mark) {
-    width: min(100%, 440px, 44vh);
+    width: min(100%, 400px, 34vh);
     margin: 0.2rem 0 1rem;
     filter: drop-shadow(0 8px 0 rgba(42, 33, 69, 0.14));
   }
@@ -161,20 +162,15 @@ const pals = [kepik, kupu, lebah, siput];
     transform-origin: 50% 50%;
     will-change: transform;
   }
-  :global(html.story-js) .pal1,
-  :global(html.story-js) .pal2,
-  :global(html.story-js) .pal3 {
-    clip-path: circle(0% at 50% 50%);
-  }
-  :global(html.story-js) .pal0 { z-index: 1; }
-  :global(html.story-js) .pal1 { z-index: 2; }
-  :global(html.story-js) .pal2 { z-index: 3; }
-  :global(html.story-js) .pal3 { z-index: 4; }
+  :global(html.story-js) .pal1 { z-index: 1; opacity: 0; }
+  :global(html.story-js) .pal2 { z-index: 2; opacity: 0; }
+  :global(html.story-js) .pal3 { z-index: 3; opacity: 0; }
+  :global(html.story-js) .pal0 { z-index: 4; }
   :global(html.story-js) .hero-copy {
     z-index: 7;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 41%;
     translate: -50% -50%;
     opacity: 0;
     padding-block: 0;
@@ -185,8 +181,11 @@ const pals = [kepik, kupu, lebah, siput];
     inset: 0;
   }
 
-  /* The eyes sit above the animals. During the opening they are all that exists, until the ladybug is drawn around them. */
-  :global(html.story-js) .eyes {
+  /* The opening eyes are only there until the ladybug is drawn around them. */
+  .eyes {
+    display: none;
+  }
+  :global(html.opening) .eyes {
     display: block;
     position: absolute;
     inset: 0;
@@ -206,18 +205,32 @@ const pals = [kepik, kupu, lebah, siput];
     transform-origin: 50% 50%;
     will-change: transform;
   }
+  /* The eyes that live on each animal. Without scripting the painted eyes stay as they are. */
+  .peye {
+    display: none;
+    position: absolute;
+    translate: -50% -50%;
+    pointer-events: none;
+  }
+  :global(html.story-js) .peye {
+    display: block;
+  }
+  :global(html.opening) .pal0 .peye {
+    opacity: 0;
+  }
   .lid {
     width: 100%;
     height: 100%;
     transform-origin: 50% 55%;
   }
-  .eye :global(.eye-svg) {
+  .lid :global(.eye-svg) {
+    display: block;
     width: 100%;
     height: 100%;
     overflow: visible;
   }
-  .eye :global(.pupil) {
-    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  .lid :global(.pupil) {
+    transition: transform 0.22s cubic-bezier(0.3, 0.7, 0.3, 1);
   }
 
   .hint {

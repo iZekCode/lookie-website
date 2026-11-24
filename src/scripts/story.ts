@@ -1,6 +1,9 @@
 // The opening and the scroll story.
 // Opening: two big eyes look around, blink twice and slide onto a ladybug's face while the ladybug is drawn around them.
-// Scroll: the pair of eyes multiplies into four pairs, and each pair grows its own animal around it. The animals then settle around the headline.
+// Scroll: three more animals slide out from behind the ladybug and line up with it in a row. The row drops to the bottom while the headline comes in.
+// Every animal wears cute eyes that follow the pointer.
+import { ANIMAL_EYES, COVER, PIC, SCLERA, type EyeBox } from '../lib/animalEyes';
+
 const html = document.documentElement;
 
 const clamp = (n: number, a = 0, b = 1) => Math.min(b, Math.max(a, n));
@@ -8,24 +11,7 @@ const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const ease = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
 const sleep = (ms: number) => new Promise<void>((r) => window.setTimeout(r, ms));
 
-// Where each animal's two eyes sit in its 556px picture (centre and size).
-interface EyeBox {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-}
-const ANIMAL_EYES: Array<{ l: EyeBox; r: EyeBox }> = [
-  { l: { x: 271.5, y: 322, w: 93, h: 106 }, r: { x: 364.5, y: 321, w: 85, h: 102 } },
-  { l: { x: 250.5, y: 232.5, w: 53, h: 63 }, r: { x: 307.5, y: 232.5, w: 53, h: 63 } },
-  { l: { x: 234, y: 234.5, w: 88, h: 101 }, r: { x: 325, y: 234.5, w: 86, h: 101 } },
-  { l: { x: 132, y: 237, w: 66, h: 79 }, r: { x: 198, y: 237, w: 66, h: 79 } },
-];
-const PIC = 556;
-// The logo eye file is a little bigger than the white inside it, and the new eye should hide the painted one completely.
-const SCLERA = { w: 0.894, h: 0.939 };
-const COVER = 1.16;
-// The size the eye elements have in CSS; everything else is a scale of this.
+// The size the opening eye elements have in CSS; everything else is a scale of this.
 const EYE_W = 200;
 const EYE_H = 260;
 
@@ -40,7 +26,6 @@ interface Eye {
   cy: number;
   w: number;
   h: number;
-  rot: number;
 }
 
 export function initStory() {
@@ -48,7 +33,8 @@ export function initStory() {
   if (!root || !html.classList.contains('story-js')) return;
   const stage = root.querySelector<HTMLElement>('.stage')!;
   const pals = [...root.querySelectorAll<HTMLElement>('[data-pal]')];
-  const eyeEls = [...root.querySelectorAll<HTMLElement>('[data-eye]')];
+  const peyes = [...root.querySelectorAll<HTMLElement>('[data-peye]')];
+  const openingEyes = [...root.querySelectorAll<HTMLElement>('[data-oeye]')];
   const copy = root.querySelector<HTMLElement>('[data-copy]')!;
   const hint = root.querySelector<HTMLElement>('[data-hint]')!;
 
@@ -59,14 +45,12 @@ export function initStory() {
   let soloCenter: Slot;
   // 1 while the opening lines the ladybug's eyes up with the big eyes, then eases to 0 as it settles in the middle.
   let shift = html.classList.contains('opening') ? 1 : 0;
-  let cluster: Slot[] = [];
-  let corners: Slot[] = [];
+  let rowMid: Slot[] = [];
+  let rowEnd: Slot[] = [];
   let target = 0;
   let current = 0;
   let raf = 0;
   let inView = true;
-  let pointer: { x: number; y: number } | null = null;
-  let eyeCenters: Array<{ x: number; y: number; opacity: number }> = eyeEls.map(() => ({ x: 0, y: 0, opacity: 0 }));
 
   function measure() {
     W = stage.clientWidth;
@@ -79,25 +63,17 @@ export function initStory() {
     soloEye = { x: cx - (mid.x / PIC - 0.5) * B, y: cy - (mid.y / PIC - 0.5) * B, size: B, rot: 0 };
     soloCenter = { x: cx, y: cy, size: B, rot: 0 };
 
-    const sc = Math.min(H * 0.4, W * 0.5);
-    const d = sc / 2;
-    cluster = [
-      { x: cx - d, y: cy - d, size: sc, rot: -6 },
-      { x: cx + d, y: cy - d, size: sc, rot: 5 },
-      { x: cx - d, y: cy + d, size: sc, rot: 6 },
-      { x: cx + d, y: cy + d, size: sc, rot: -5 },
-    ];
-
     const portrait = W < H * 0.95;
-    const sk = portrait ? Math.min(W * 0.34, H * 0.2) : Math.min(H * 0.3, W * 0.2);
-    const xs = portrait ? [0.2, 0.8] : [0.13, 0.87];
-    const ys = portrait ? [0.11, 0.89] : [0.24, 0.76];
-    corners = [
-      { x: W * xs[0], y: H * ys[0], size: sk, rot: -8 },
-      { x: W * xs[1], y: H * ys[0], size: sk, rot: 7 },
-      { x: W * xs[0], y: H * ys[1], size: sk, rot: 6 },
-      { x: W * xs[1], y: H * ys[1], size: sk, rot: -6 },
-    ];
+    const rots = [-6, 5, -4, 6];
+    // Four animals side by side, in the middle of the screen...
+    const s1 = portrait ? Math.min(W * 0.34, H * 0.3) : Math.min(W * 0.25, H * 0.42);
+    const g1 = portrait ? W * 0.235 : s1 * 0.92;
+    rowMid = rots.map((rot, i) => ({ x: cx + (i - 1.5) * g1, y: cy, size: s1, rot }));
+    // ...which then drop to the bottom and make room for the headline.
+    const s2 = portrait ? Math.min(W * 0.3, H * 0.16) : Math.min(W * 0.22, H * 0.28);
+    const g2 = portrait ? W * 0.235 : s2 * 0.95;
+    const y2 = H * (portrait ? 0.88 : 0.8);
+    rowEnd = rots.map((rot, i) => ({ x: cx + (i - 1.5) * g2, y: y2, size: s2, rot: rot * 0.7 }));
     render(current);
   }
 
@@ -113,7 +89,7 @@ export function initStory() {
     return { x: (e.l.x + e.r.x) / 2, y: (e.l.y + e.r.y) / 2 };
   }
 
-  // Where an animal's eye lands on screen once the animal sits in a slot.
+  // Where one of the ladybug's eyes lands on screen once it sits in a slot.
   function eyeOn(slot: Slot, box: EyeBox): Eye {
     const dx = (box.x / PIC - 0.5) * slot.size;
     const dy = (box.y / PIC - 0.5) * slot.size;
@@ -123,81 +99,39 @@ export function initStory() {
       cy: slot.y + dx * Math.sin(a) + dy * Math.cos(a),
       w: ((box.w / PIC) * slot.size * COVER) / SCLERA.w,
       h: ((box.h / PIC) * slot.size * COVER) / SCLERA.h,
-      rot: slot.rot,
     };
   }
 
-  const eyeMatrix = (e: Eye) =>
-    `translate(${e.cx - EYE_W / 2}px, ${e.cy - EYE_H / 2}px) rotate(${e.rot}deg) scale(${e.w / EYE_W}, ${e.h / EYE_H})`;
+  const eyeMatrix = (e: Eye, scale = 1) =>
+    `translate(${e.cx - EYE_W / 2}px, ${e.cy - EYE_H / 2}px) scale(${(e.w / EYE_W) * scale}, ${(e.h / EYE_H) * scale})`;
 
   function render(raw: number, now = 0) {
     // The last stretch of scroll just holds the finished picture.
     const p = clamp(raw / 0.9);
-    const s = clamp((p - 0.05) / 0.38);
-    const gather = ease(clamp((p - 0.52) / 0.3));
-    const bgT = ease(clamp((p - 0.48) / 0.3));
+    const s = clamp((p - 0.05) / 0.4);
+    const gather = ease(clamp((p - 0.54) / 0.28));
+    const bgT = ease(clamp((p - 0.5) / 0.3));
     const fade = ease(clamp((p - 0.84) / 0.16));
-    const textT = ease(clamp((p - 0.62) / 0.24));
+    const textT = ease(clamp((p - 0.64) / 0.24));
     const calm = clamp((p - 0.86) / 0.08);
     const opening = html.classList.contains('opening');
     const solo = mix(soloCenter, soloEye, shift);
 
-    const slots: Slot[] = [];
-    const reveal: number[] = [];
-    pals.forEach((_, i) => {
+    pals.forEach((pal, i) => {
       const dir = i % 2 ? 1 : -1;
-      let slot: Slot;
-      if (i === 0) {
-        const a = mix(solo, cluster[0], ease(s));
-        slot = mix(a, corners[0], gather);
-        slot.rot += Math.sin(Math.PI * ease(s)) * 14 * dir;
-      } else {
-        slot = mix(cluster[i], corners[i], gather);
-      }
+      // The ladybug walks to the left end of the row. The others start small, hidden behind it, and slide out.
+      const own = i === 0 ? ease(s) : ease(clamp((s - 0.08 * (i - 1)) / (1 - 0.2)));
+      const start: Slot = i === 0 ? solo : { x: solo.x, y: solo.y, size: B * 0.45, rot: 0 };
+      const slot = mix(mix(start, rowMid[i], own), rowEnd[i], gather);
+      slot.rot += Math.sin(Math.PI * own) * 12 * dir;
       // A little idle sway once everything has settled.
       if (calm > 0 && now) {
         slot.y += Math.sin(now / 650 + i * 1.7) * 6 * calm;
         slot.rot += Math.sin(now / 820 + i * 2.3) * 2.2 * calm;
       }
-      const rev = i === 0 ? 1 : ease(clamp((s - 0.38 - 0.06 * (i - 1)) / 0.5));
-      reveal.push(rev);
-      if (i > 0) slot.size *= lerp(0.8, 1, rev);
-      slots.push(slot);
-    });
-
-    pals.forEach((pal, i) => {
-      const slot = slots[i];
       pal.style.transform = `translate(${slot.x - B / 2}px, ${slot.y - B / 2}px) rotate(${slot.rot}deg) scale(${slot.size / B})`;
-      if (i > 0 && !opening) {
-        const mid = eyeMid(i);
-        pal.style.clipPath = reveal[i] >= 1 ? 'none' : `circle(${reveal[i] * 95}% at ${(mid.x / PIC) * 100}% ${(mid.y / PIC) * 100}%)`;
-      }
+      if (i > 0) pal.style.opacity = String(clamp(s * 25));
     });
-
-    // The eyes: pair 0 stays on the ladybug. The other pairs start there, then travel to their own animal.
-    if (!opening) {
-      const lady = [eyeOn(slots[0], ANIMAL_EYES[0].l), eyeOn(slots[0], ANIMAL_EYES[0].r)];
-      pals.forEach((_, i) => {
-        const pair = [eyeOn(slots[i], ANIMAL_EYES[i].l), eyeOn(slots[i], ANIMAL_EYES[i].r)];
-        const travel = i === 0 ? 1 : ease(clamp((s - 0.06 * (i - 1)) / 0.5));
-        [0, 1].forEach((side) => {
-          const from = lady[side];
-          const to = pair[side];
-          const e: Eye = {
-            cx: lerp(from.cx, to.cx, travel),
-            cy: lerp(from.cy, to.cy, travel) - Math.sin(Math.PI * travel) * (i === 0 ? 0 : H * 0.05),
-            w: lerp(from.w, to.w, travel),
-            h: lerp(from.h, to.h, travel),
-            rot: lerp(from.rot, to.rot, travel),
-          };
-          const el = eyeEls[i * 2 + side];
-          const opacity = i === 0 ? 1 : clamp(s * 12) ;
-          el.style.opacity = String(opacity);
-          el.style.transform = eyeMatrix(e);
-          eyeCenters[i * 2 + side] = { x: e.cx, y: e.cy, opacity };
-        });
-      });
-    }
 
     // Blue turns to cream, then lets the page's own wallpaper show through.
     const r = Math.round(lerp(45, 255, bgT));
@@ -244,59 +178,58 @@ export function initStory() {
   render(current);
 
   // ---------- pupils ----------
-  interface Pupil {
-    el: SVGGraphicsElement;
-    nx: number;
-    ny: number;
-    lx: number;
-    ly: number;
-  }
-  function pupilOf(eye: HTMLElement): Pupil | null {
-    const svg = eye.querySelector<SVGSVGElement>('svg');
-    const el = eye.querySelector<SVGGraphicsElement>('.pupil');
-    const sclera = svg?.querySelector<SVGGraphicsElement>('path');
-    if (!svg || !el || !sclera) return null;
-    const s = sclera.getBBox();
-    const p = el.getBBox();
-    return {
-      el,
-      nx: p.x + p.width / 2 - (s.x + s.width / 2),
-      ny: p.y + p.height / 2 - (s.y + s.height / 2),
-      lx: ((s.width - p.width) / 2) * 0.8,
-      ly: ((s.height - p.height) / 2) * 0.8,
-    };
-  }
-  const pupils = eyeEls.map(pupilOf);
-  const look = (i: number, ux: number, uy: number) => {
-    const p = pupils[i];
-    if (p) p.el.style.transform = `translate(${ux * p.lx - p.nx}px, ${uy * p.ly - p.ny}px)`;
+  // All eyes are drawn the same way, so the pupil's room to move is measured once.
+  const sample = openingEyes[0].querySelector<SVGSVGElement>('svg')!;
+  const sclera = sample.querySelector<SVGGraphicsElement>('.sclera')!.getBBox();
+  const pupilBox = sample.querySelector<SVGGraphicsElement>('.pupil')!.getBBox();
+  const room = {
+    nx: pupilBox.x + pupilBox.width / 2 - (sclera.x + sclera.width / 2),
+    ny: pupilBox.y + pupilBox.height / 2 - (sclera.y + sclera.height / 2),
+    lx: ((sclera.width - pupilBox.width) / 2) * 0.9,
+    ly: ((sclera.height - pupilBox.height) / 2) * 0.9,
   };
-  pupils.forEach((_, i) => look(i, 0, 0.2));
+  const look = (eye: HTMLElement, ux: number, uy: number) => {
+    const pupil = eye.querySelector<SVGGraphicsElement>('.pupil');
+    if (pupil) pupil.style.transform = `translate(${ux * room.lx - room.nx}px, ${uy * room.ly - room.ny}px)`;
+  };
+  [...openingEyes, ...peyes].forEach((e) => look(e, 0, 0.1));
 
-  // After the opening the pupils follow the pointer.
+  // After the opening the pupils follow the pointer: up and to the right of an eye means the pupil goes up and to the right.
+  let pointer: { x: number; y: number } | null = null;
   let lookQueued = false;
+  let lastMove = 0;
+  const lookAtPointer = () => {
+    lookQueued = false;
+    if (!pointer || !inView) return;
+    for (const eye of peyes) {
+      if (!eye.offsetParent) continue;
+      const rect = eye.getBoundingClientRect();
+      const dx = pointer.x - (rect.left + rect.width / 2);
+      const dy = pointer.y - (rect.top + rect.height / 2);
+      const dist = Math.hypot(dx, dy) || 1;
+      const k = Math.min(1, dist / 110);
+      look(eye, (dx / dist) * k, (dy / dist) * k);
+    }
+  };
   window.addEventListener(
     'pointermove',
     (event) => {
       pointer = { x: event.clientX, y: event.clientY };
+      lastMove = performance.now();
       if (lookQueued || html.classList.contains('opening')) return;
       lookQueued = true;
-      requestAnimationFrame(() => {
-        lookQueued = false;
-        if (!pointer || !inView) return;
-        const box = stage.getBoundingClientRect();
-        eyeCenters.forEach((c, i) => {
-          if (c.opacity < 0.5) return;
-          const dx = pointer!.x - (box.left + c.x);
-          const dy = pointer!.y - (box.top + c.y);
-          const dist = Math.hypot(dx, dy) || 1;
-          const k = Math.min(1, dist / 220);
-          look(i, (dx / dist) * k, (dy / dist) * k);
-        });
-      });
+      requestAnimationFrame(lookAtPointer);
     },
     { passive: true },
   );
+  // With no pointer around (a phone), the eyes glance about now and then.
+  window.setInterval(() => {
+    if (html.classList.contains('opening') || !inView || performance.now() - lastMove < 3000) return;
+    const ux = Math.random() * 2 - 1;
+    const uy = Math.random() * 1.4 - 0.7;
+    peyes.forEach((e, i) => i % 2 === 0 && look(e, ux, uy));
+    peyes.forEach((e, i) => i % 2 === 1 && look(e, ux, uy));
+  }, 2200);
 
   if (html.classList.contains('opening')) playOpening();
   else hint.style.opacity = '1';
@@ -315,6 +248,12 @@ export function initStory() {
       if (stopped) return;
       stopped = true;
       anims.forEach((a) => a.cancel());
+      // The ladybug's own cute eyes take over from the big ones, looking where they were looking.
+      const pupilOf = (e: HTMLElement) => e.querySelector<SVGGraphicsElement>('.pupil')?.style.transform ?? '';
+      pals[0].querySelectorAll<HTMLElement>('[data-peye]').forEach((e, i) => {
+        const pupil = e.querySelector<SVGGraphicsElement>('.pupil');
+        if (pupil) pupil.style.transform = pupilOf(openingEyes[i]);
+      });
       html.classList.remove('opening');
       if (immediate) shift = 0;
       try {
@@ -346,13 +285,13 @@ export function initStory() {
     window.addEventListener('pointerdown', skip);
     window.addEventListener('keydown', keys);
 
-    const [el, er] = eyeEls;
+    const [el, er] = openingEyes;
     const lids = [el.querySelector('.lid')!, er.querySelector('.lid')!];
     // Two big eyes side by side, touching a little like the "oo" in the logo.
     const ew = Math.min(W * 0.5, H * 0.68 * 0.77);
     const eh = ew / 0.77;
-    const gap = ew * 0.9;
-    const at = (side: number, scale: number): Eye => ({ cx: W / 2 + (side ? gap / 2 : -gap / 2), cy: H / 2, w: ew * scale, h: eh * scale, rot: 0 });
+    const gap = ew * 0.92;
+    const at = (side: number): Eye => ({ cx: W / 2 + (side ? gap / 2 : -gap / 2), cy: H / 2, w: ew, h: eh });
     const L = eyeOn(soloEye, ANIMAL_EYES[0].l);
     const R = eyeOn(soloEye, ANIMAL_EYES[0].r);
 
@@ -360,13 +299,13 @@ export function initStory() {
     if (stopped) return;
     // 1. the eyes pop in and look around
     [el, er].forEach((e, side) =>
-      run(e, [{ opacity: 0, transform: eyeMatrix(at(side, 0.2)) }, { opacity: 1, transform: eyeMatrix(at(side, 1)) }], { duration: 750, easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }),
+      run(e, [{ opacity: 0, transform: eyeMatrix(at(side), 0.2) }, { opacity: 1, transform: eyeMatrix(at(side)) }], { duration: 750, easing: 'cubic-bezier(0.34, 1.56, 0.64, 1)' }),
     );
     await sleep(900);
     if (stopped) return;
     const gaze = (ux: number, uy: number) => {
-      look(0, ux, uy);
-      look(1, ux, uy);
+      look(el, ux, uy);
+      look(er, ux, uy);
     };
     gaze(-1, -0.2);
     await sleep(520);
@@ -387,13 +326,12 @@ export function initStory() {
     // 3. the eyes slide onto the ladybug's face
     gaze(0, 0);
     const moveEase = 'cubic-bezier(0.55, 0, 0.2, 1)';
-    [el, er].forEach((e, side) => run(e, [{ opacity: 1, transform: eyeMatrix(at(side, 1)) }, { opacity: 1, transform: eyeMatrix(side ? R : L) }], { duration: 850, easing: moveEase }));
+    [el, er].forEach((e, side) => run(e, [{ opacity: 1, transform: eyeMatrix(at(side)) }, { opacity: 1, transform: eyeMatrix(side ? R : L) }], { duration: 850, easing: moveEase }));
     await sleep(620);
     if (stopped) return;
 
     // 4. the body grows out from between the eyes
-    const pal0 = pals[0];
-    run(pal0, [{ clipPath: 'circle(0% at 57.2% 57.8%)' }, { clipPath: 'circle(88% at 57.2% 57.8%)' }], { duration: 1050, easing: 'cubic-bezier(0.3, 0.7, 0.2, 1)' });
+    run(pals[0], [{ clipPath: 'circle(0% at 57.2% 57.8%)' }, { clipPath: 'circle(88% at 57.2% 57.8%)' }], { duration: 1050, easing: 'cubic-bezier(0.3, 0.7, 0.2, 1)' });
     await sleep(1150);
     if (stopped) return;
 
