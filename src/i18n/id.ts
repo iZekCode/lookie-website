@@ -4,7 +4,7 @@ export const id = {
   meta: {
     title: 'Lookie: melukis di udara untuk anak dengan CP',
     description:
-      'Game menggambar interaktif untuk anak dengan cerebral palsy (CP), untuk membantu latihan motorik. Anak melukis dengan menggerakkan tangannya, dan computer vision mencatat setiap gerakan.',
+      'Mengubah latihan motorik menjadi pengalaman bermain yang menyenangkan. Cukup gerakkan tangan untuk menciptakan karya seni, dengan setiap gerakan dilacak langsung menggunakan computer vision.',
   },
   nav: {
     about: 'Tentang',
