@@ -27,19 +27,6 @@ export const en: Copy = {
     note: 'Free. iPad only.',
     deviceAlt: 'The Lookie home screen on an iPad: an easel with a painted house, and Start, Gallery and Report buttons.',
   },
-  story: {
-    scroll: 'Scroll',
-  },
-  canvas: {
-    title: 'Wet paint, free hands.',
-    lead: 'There is nothing to hold. Make a fist, swing an arm, and the first line shows up.',
-    labels: ['The painting room', 'Pick a picture', 'Paint in the air'],
-    alts: [
-      'The Lookie home screen on an iPad: an easel with a painted house, and Start, Gallery and Report buttons.',
-      'The Lookie template screen: a dotted balloon outline and a Start painting button.',
-      'The Lookie canvas with red oil paint strokes and four small animals along the bottom.',
-    ],
-  },
   about: {
     kicker: 'What is Lookie?',
     title: 'Hands move, paint appears.',

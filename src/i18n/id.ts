@@ -25,19 +25,6 @@ export const id = {
     note: 'Gratis. Khusus iPad.',
     deviceAlt: 'Layar utama Lookie di iPad: easel dengan lukisan rumah, dan tombol Start, Gallery, Report.',
   },
-  story: {
-    scroll: 'Gulir',
-  },
-  canvas: {
-    title: 'Cat basah, tangan bebas.',
-    lead: 'Tidak ada yang perlu dipegang. Kepalkan tangan, ayunkan lengan, dan garis pertamanya muncul.',
-    labels: ['Ruang lukis', 'Pilih gambar', 'Lukis di udara'],
-    alts: [
-      'Layar utama Lookie di iPad: easel dengan lukisan rumah, dan tombol Start, Gallery, Report.',
-      'Layar pilihan gambar di Lookie: balon bergaris putus-putus dan tombol Start painting.',
-      'Kanvas Lookie dengan sapuan cat minyak merah dan empat hewan kecil di bawahnya.',
-    ],
-  },
   about: {
     kicker: 'Apa itu Lookie?',
     title: 'Tangan bergerak, cat muncul.',
