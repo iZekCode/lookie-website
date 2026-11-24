@@ -2,7 +2,7 @@
 export const id = {
   lang: 'id',
   meta: {
-    title: 'Lookie: melukis di udara untuk anak dengan CP',
+    title: 'Lookie: ubah gerakan kecil jadi karya seni',
     description:
       'Game menggambar interaktif untuk anak dengan Cerebral Palsy (CP) sebagai media latihan motorik. Cukup gerakkan tangan untuk menciptakan karya seni, sementara setiap gerakan dilacak secara real-time menggunakan teknologi computer vision.',
   },
@@ -16,8 +16,8 @@ export const id = {
     home: 'Ke beranda Lookie',
   },
   hero: {
-    titleA: 'Melukis',
-    titleB: 'di udara.',
+    titleA: 'Ubah gerakan kecil',
+    titleB: 'jadi karya seni.',
     sub: 'Lookie mengubah latihan terapi jadi main lukis. Anak dengan cerebral palsy menggerakkan tangan dan lengannya di depan iPad, lalu cat muncul di kanvas.',
     primary: 'Coba Lookie',
     secondary: 'Kenalan dengan Lookie',
