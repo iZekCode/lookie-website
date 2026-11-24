@@ -213,7 +213,8 @@ a {
   --cloud: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 48' preserveAspectRatio='none'%3E%3Cpath d='M0 48V32C20 32 28 12 56 12C78 12 84 26 106 26C128 26 134 4 168 4C196 4 200 24 224 24C250 24 254 10 286 10C314 10 318 28 342 28C368 28 372 14 398 14C410 14 416 26 420 32V48Z'/%3E%3C/svg%3E");
   position: relative;
   background: var(--bg, var(--cream));
-  padding-block: clamp(72px, 10vw, 128px) clamp(72px, 10vw, 128px);
+  --pad: clamp(72px, 10vw, 128px);
+  padding-block: var(--pad) calc(var(--pad) + 48px);
 }
 .sheet::before {
   content: '';
