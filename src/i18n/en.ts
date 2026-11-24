@@ -39,26 +39,26 @@ export const en: Copy = {
     ],
   },
   how: {
-    title: 'From picking a picture to checking the report',
+    title: 'Here’s how Lookie works',
     steps: [
       {
         title: 'Pick a picture',
-        text: 'There are 39 dotted outlines to colour in. A child can also paint freely on a blank canvas.',
+        text: 'Choose from 39 dotted outline templates ready to colour in. Have an idea of your own? Create a custom template by uploading an image or simply describing what you’d like to draw. Or start with a blank canvas and let your creativity run free!',
         alt: 'Screen recording of Lookie: choosing Template mode, then picking a dotted octagon outline.',
       },
       {
-        title: 'Make a fist, swing your arm',
-        text: 'Stand in front of the iPad until your hands and arms show on screen. Make a fist and swing your arm, and paint follows the movement. Each hand has its own colour.',
+        title: 'Make a fist, then move your arm',
+        text: 'Stand in front of the iPad until your hands and arms are visible on screen. Make a fist to start painting, then move your arm to create brushstrokes. Each hand has its own colour!',
         alt: 'Screen recording of Lookie: hands and arms moving in front of the camera paint red and blue lines on the canvas.',
       },
       {
-        title: 'See it in the gallery',
-        text: 'Every finished painting goes up on the gallery wall, so a child can look back at everything they have made.',
+        title: 'Explore your art gallery',
+        text: 'Every finished painting finds its place on the gallery wall. Children can come back anytime to see and enjoy everything they’ve created.',
         alt: 'Screen recording of the Lookie gallery: paintings hanging on a wall, swiped sideways.',
       },
       {
-        title: 'Check the report',
-        text: 'Parents can see how the child moved: which hand they used, how high they reached, and how it changes over time. The numbers are camera estimates, not a diagnosis.',
+        title: 'Follow progress through reports',
+        text: 'Parents can see their child’s hand activity, including which hand they use, arm reach, painting time, and stroke accuracy. These reports offer a glimpse of how their movements change over time. All measurements are camera-based estimates, not medical assessments or diagnoses.',
         alt: 'Screen recording of the Lookie report: the painting, how much each hand was used, range of motion and progress over time.',
       },
     ],

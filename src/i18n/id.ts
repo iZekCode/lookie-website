@@ -37,26 +37,26 @@ export const id = {
     ],
   },
   how: {
-    title: 'Dari memilih gambar sampai melihat laporan',
+    title: 'Begini cara bermain dengan Lookie',
     steps: [
       {
         title: 'Pilih gambar',
-        text: 'Ada 39 gambar bergaris putus-putus untuk diwarnai. Anak juga boleh melukis bebas di kanvas kosong.',
+        text: 'Pilih dari 39 gambar bergaris putus-putus yang siap diwarnai. Punya ide gambar sendiri? Anak juga bisa membuat template sendiri dengan mengunggah gambar atau cukup menuliskan apa yang ingin digambar. Atau, mulai dari kanvas kosong dan bebas berkreasi!',
         alt: 'Rekaman layar Lookie: memilih mode Template, lalu memilih gambar segi delapan bergaris putus-putus.',
       },
       {
-        title: 'Kepalkan tangan, ayunkan lengan',
-        text: 'Berdiri di depan iPad sampai tangan dan lengan kelihatan di layar. Kepalkan tangan lalu ayunkan lengan, dan cat muncul mengikuti gerakannya. Tiap tangan punya warnanya sendiri.',
+        title: 'Kepalkan tangan, lalu gerakkan lengan',
+        text: 'Berdiri di depan iPad hingga tangan dan lengan terlihat di layar. Kepalkan tangan untuk mulai melukis, lalu gerakkan lengan untuk membuat goresan. Setiap tangan punya warna masing-masing!',
         alt: 'Rekaman layar Lookie: tangan dan lengan yang bergerak di depan kamera melukis garis merah dan biru di kanvas.',
       },
       {
-        title: 'Lihat di galeri',
-        text: 'Lukisan yang selesai dipajang di dinding galeri, jadi anak bisa melihat lagi semua karyanya.',
+        title: 'Lihat semua karya di galeri',
+        text: 'Setiap lukisan yang selesai akan dipajang di dinding galeri. Anak bisa melihat kembali dan menikmati semua karya yang sudah dibuat.',
         alt: 'Rekaman layar galeri Lookie: lukisan-lukisan tergantung di dinding dan digeser ke samping.',
       },
       {
-        title: 'Cek laporannya',
-        text: 'Orang tua bisa melihat bagaimana anak bergerak: tangan mana yang dipakai, seberapa tinggi lengannya terangkat, dan perkembangannya dari waktu ke waktu. Angkanya perkiraan dari kamera, bukan diagnosis.',
+        title: 'Lihat perkembangan lewat laporan',
+        text: 'Orang tua bisa melihat aktivitas tangan anak, seperti tangan yang digunakan, jangkauan gerak lengan, durasi bermain, dan ketepatan goresan. Laporan ini memberikan gambaran aktivitas anak dari waktu ke waktu. Angka yang ditampilkan merupakan perkiraan dari kamera, bukan pengukuran medis atau diagnosis.',
         alt: 'Rekaman layar laporan Lookie: lukisan, porsi tangan kiri dan kanan, jangkauan gerak, dan grafik perkembangan.',
       },
     ],
