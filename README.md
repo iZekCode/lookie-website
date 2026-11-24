@@ -16,11 +16,11 @@ npm run build    # writes dist/
 
 The top of the landing page is one pinned story (`Story.astro`, `src/scripts/story.ts`):
 
-1. A full-screen blue page with one big eye from the logo. It looks around, blinks twice, splits in two and slides into a ladybug's eyes while the ladybug is drawn around them. Any scroll, tap or key skips it, and it plays once per browser session.
-2. Scrolling splits the ladybug into four animals (they cross-fade into the butterfly, bee and snail on the way), then moves them out to the corners while the headline fades in and the blue turns to cream.
+1. A full-screen blue page with two big eyes from the logo. They look left and right, blink twice and slide onto a ladybug's face while the ladybug is drawn around them. The logo eyes stay on top of the animals from then on (they are slightly larger than the painted eyes and hide them). Any scroll, tap or key skips it, and it plays once per browser session.
+2. Scrolling multiplies the pair of eyes into four pairs. Each pair travels to an empty spot and the animal (ladybug, butterfly, bee, snail) grows around it. The animals then move out to the corners while the headline fades in and the blue turns to cream. The eyes follow the pointer.
 3. `ParallaxCanvas.astro` (`src/scripts/canvas.ts`) is a big canvas that the page scrolls through, with layers at different speeds and paint strokes that draw themselves.
 
-With reduced motion enabled, or without scripting, none of this runs: the hero is a plain static layout with the four animals in the corners. The eye positions inside the ladybug picture are measured constants at the top of `story.ts`; re-measure them if `kepik.png` changes.
+With reduced motion enabled, or without scripting, none of this runs: the hero is a plain static layout with the four animals in the corners. The eye positions inside each animal picture are measured constants at the top of `story.ts`; re-measure them if a critter picture changes.
 
 ## Pages
 

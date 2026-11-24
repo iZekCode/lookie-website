@@ -78,7 +78,7 @@ const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
     width: 44px;
     height: 44px;
     border-radius: 13px;
-    border: 3px solid var(--ink);
+    box-shadow: 0 6px 10px -6px rgba(42, 33, 69, 0.5);
     transition: transform 0.3s var(--ease-bounce);
   }
   .brand:hover :global(.brand-icon) {
@@ -111,20 +111,21 @@ const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
     gap: 12px;
   }
   .try {
-    padding: 0.6em 1.2em;
-    font-size: 0.92rem;
-    box-shadow: 0 4px 0 var(--ink);
+    padding: 0.5em 1.2em 0.6em;
+    font-size: 1.15rem;
   }
   .lang {
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: var(--paper);
-    border: 3px solid var(--ink);
+    background: linear-gradient(180deg, #fffdf6, #fbeed2);
     border-radius: 99px;
-    padding: 3px;
+    padding: 4px;
     font-weight: 800;
     font-size: 0.82rem;
+    box-shadow:
+      inset 0 2px 5px rgba(170, 120, 40, 0.22),
+      0 8px 14px -10px rgba(42, 33, 69, 0.45);
   }
   .lang a {
     position: relative;
@@ -141,11 +142,15 @@ const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
   }
   .thumb {
     position: absolute;
-    top: 3px;
-    bottom: 3px;
-    left: 3px;
-    width: calc(50% - 3px);
-    background: var(--blue);
+    top: 4px;
+    bottom: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    background: linear-gradient(180deg, #5aa4ff, #1f5fd6);
+    box-shadow:
+      inset 0 -3px 5px rgba(0, 0, 60, 0.25),
+      inset 0 2px 2px rgba(255, 255, 255, 0.55),
+      0 5px 8px -4px rgba(31, 95, 214, 0.6);
     border-radius: 99px;
     transition: transform 0.35s var(--ease-bounce);
   }
