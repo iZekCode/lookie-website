@@ -55,7 +55,7 @@ export const id = {
       {
         title: 'Pilih gambar',
         text: 'Ada 39 gambar bergaris putus-putus untuk diwarnai. Anak juga boleh melukis bebas di kanvas kosong.',
-        alt: 'Rekaman layar Lookie: dari layar utama ke mode Template, lalu memilih gambar segi delapan bergaris putus-putus.',
+        alt: 'Rekaman layar Lookie: memilih mode Template, lalu memilih gambar segi delapan bergaris putus-putus.',
       },
       {
         title: 'Kepalkan tangan, ayunkan lengan',

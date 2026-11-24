@@ -47,7 +47,7 @@ The four videos in `public/clips/` come from one screen recording of the app (`l
 
 | Clip | Part of the recording | What it shows |
 | --- | --- | --- |
-| `pick` | 0:03.1 to 0:11.3 | Home screen, choose a mode, choose Template, pick the octagon |
+| `pick` | 0:04.85 to 0:11.3 | Choose a mode, choose Template, pick the octagon |
 | `paint` | 0:26.5 to 0:42.0 | Hands and arms painting red and blue strokes |
 | `gallery` | 1:41.0 to 1:46.2 | Swiping through the gallery wall |
 | `report` | 1:49.1 to 2:03.0 | The per-painting report, then the overall report |
