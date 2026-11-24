@@ -95,11 +95,9 @@ export const id = {
     ],
   },
   cta: {
-    title: 'Mau mencoba Lookie?',
+    title: 'Yuk, melukis bareng Lookie!',
     text: 'Lookie sudah bisa dicoba lewat TestFlight. Versi App Store menyusul.',
     testflight: 'Coba Lookie di TestFlight',
-    appstore: 'Segera hadir di App Store',
-    scan: 'Buka dari komputer? Scan dengan iPad.',
     qrAlt: 'Kode QR ke undangan TestFlight Lookie',
   },
   footer: {

@@ -1,6 +1,4 @@
 ---
-import { Image } from 'astro:assets';
-import icon from '../assets/icon.png';
 import type { Copy } from '../i18n/id';
 import QRCode from 'qrcode';
 import { testflightUrl } from '../lib/links';
@@ -20,21 +18,17 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
       <p class="lead" data-reveal style="--d:1">{c.text}</p>
       <div class="btns" data-reveal style="--d:2">
         <a class="btn btn--red" href={testflightUrl} rel="noopener">{c.testflight}</a>
-        <span class="soon" aria-disabled="true">{c.appstore}</span>
-      </div>
-      <div class="scan" data-reveal style="--d:3">
-        <div class="qr" role="img" aria-label={c.qrAlt} set:html={qr} />
-        <p>{c.scan}</p>
       </div>
     </div>
-    <Image src={icon} alt="" width={360} height={360} class="mascot" data-reveal style="--d:1" />
+    <a class="qr" href={testflightUrl} rel="noopener" aria-label={c.qrAlt} data-reveal style="--d:1">
+      <span set:html={qr} />
+    </a>
   </div>
 </section>
 
 <style>
   .cta {
     --bg: #ffc933;
-    padding-bottom: 150px;
   }
   .inner {
     display: flex;
@@ -44,6 +38,7 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
     flex-wrap: wrap;
   }
   .txt {
+    flex: 1 1 320px;
     max-width: 640px;
   }
   .h2 {
@@ -59,56 +54,30 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
     flex-wrap: wrap;
     gap: 14px;
   }
-  .soon {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.95em 1.6em;
-    border-radius: 999px;
-    border: 2px dashed rgba(42, 33, 69, 0.45);
-    color: var(--ink);
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    cursor: default;
-    user-select: none;
-  }
-  .scan {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-top: 1.6rem;
-    max-width: 380px;
-  }
   .qr {
+    display: block;
     flex: none;
-    width: 104px;
-    height: 104px;
-    padding: 10px;
-    border-radius: 22px;
+    width: clamp(200px, 26vw, 320px);
+    aspect-ratio: 1;
+    padding: clamp(16px, 2.4vw, 28px);
+    border-radius: 12%;
     background: #fff;
-    box-shadow: inset 0 -6px 10px rgba(0, 0, 60, 0.1), 0 14px 20px -12px rgba(120, 60, 0, 0.5);
+    box-shadow: inset 0 -10px 16px rgba(0, 0, 60, 0.1), 0 40px 50px -26px rgba(120, 60, 0, 0.6);
+    rotate: 3deg;
+    transition: rotate 0.3s ease;
   }
+  .qr:hover {
+    rotate: 0deg;
+  }
+  .qr span,
   .qr :global(svg) {
     display: block;
     width: 100%;
     height: 100%;
   }
-  .scan p {
-    font-weight: 600;
-    color: var(--ink);
-  }
-  .cta :global(.mascot) {
-    width: clamp(150px, 22vw, 260px);
-    height: auto;
-    border-radius: 36%;
-    box-shadow:
-      inset 0 -14px 24px -8px rgba(0, 0, 60, 0.3),
-      inset 0 8px 12px -2px rgba(255, 255, 255, 0.6),
-      0 40px 50px -26px rgba(120, 60, 0, 0.6);
-    rotate: 6deg;
-    animation: wave 3.6s ease-in-out infinite;
-  }
-  @keyframes wave {
-    0%, 100% { transform: rotate(0); }
-    50% { transform: rotate(-8deg) translateY(-8px); }
+  @media (max-width: 760px) {
+    .qr {
+      margin-inline: auto;
+    }
   }
 </style>
