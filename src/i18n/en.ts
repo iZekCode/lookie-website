@@ -52,22 +52,27 @@ export const en: Copy = {
   },
   how: {
     kicker: 'How to play',
-    title: 'From standing up to a finished painting',
+    title: 'From picking a picture to checking the report',
     steps: [
       {
         title: 'Pick a picture',
         text: 'There are 39 dotted outlines to colour in. A child can also paint freely on a blank canvas.',
-        alt: 'The Lookie template screen: a dotted balloon outline and a Start painting button.',
+        alt: 'Screen recording of Lookie: choosing Template mode, then picking a dotted octagon outline.',
       },
       {
-        title: 'Make a fist',
-        text: 'Stand in front of the iPad until your hand and arm show on screen, then make a fist to start painting.',
-        alt: 'The Lookie mode screen: Free for a blank canvas, Template for a dotted outline.',
+        title: 'Make a fist, swing your arm',
+        text: 'Stand in front of the iPad until your hands and arms show on screen. Make a fist and swing your arm, and paint follows the movement. Each hand has its own colour.',
+        alt: 'Screen recording of Lookie: hands and arms moving in front of the camera paint red and blue lines on the canvas.',
       },
       {
-        title: 'Swing your arm',
-        text: 'Paint follows the arm, and each hand has its own colour. A finished painting goes into the gallery.',
-        alt: 'The Lookie canvas with red oil paint strokes and four small animals along the bottom.',
+        title: 'See it in the gallery',
+        text: 'Every finished painting goes up on the gallery wall, so a child can look back at everything they have made.',
+        alt: 'Screen recording of the Lookie gallery: paintings hanging on a wall, swiped sideways.',
+      },
+      {
+        title: 'Check the report',
+        text: 'Parents can see how the child moved: which hand they used, how high they reached, and how it changes over time. The numbers are camera estimates, not a diagnosis.',
+        alt: 'Screen recording of the Lookie report: the painting, how much each hand was used, range of motion and progress over time.',
       },
     ],
   },

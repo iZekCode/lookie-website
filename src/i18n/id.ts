@@ -50,22 +50,27 @@ export const id = {
   },
   how: {
     kicker: 'Cara main',
-    title: 'Dari berdiri sampai jadi lukisan',
+    title: 'Dari memilih gambar sampai melihat laporan',
     steps: [
       {
         title: 'Pilih gambar',
         text: 'Ada 39 gambar bergaris putus-putus untuk diwarnai. Anak juga boleh melukis bebas di kanvas kosong.',
-        alt: 'Layar pilihan gambar di Lookie: balon bergaris putus-putus dan tombol Start painting.',
+        alt: 'Rekaman layar Lookie: memilih mode Template, lalu memilih gambar segi delapan bergaris putus-putus.',
       },
       {
-        title: 'Kepalkan tangan',
-        text: 'Berdiri di depan iPad sampai tangan dan lengan kelihatan di layar, lalu kepalkan tangan untuk mulai melukis.',
-        alt: 'Layar pilih mode di Lookie: Free untuk kanvas kosong, Template untuk gambar bergaris.',
+        title: 'Kepalkan tangan, ayunkan lengan',
+        text: 'Berdiri di depan iPad sampai tangan dan lengan kelihatan di layar. Kepalkan tangan lalu ayunkan lengan, dan cat muncul mengikuti gerakannya. Tiap tangan punya warnanya sendiri.',
+        alt: 'Rekaman layar Lookie: tangan dan lengan yang bergerak di depan kamera melukis garis merah dan biru di kanvas.',
       },
       {
-        title: 'Ayunkan lengan',
-        text: 'Cat muncul mengikuti gerakan lengan, dan tiap tangan punya warnanya sendiri. Lukisan yang selesai masuk ke galeri.',
-        alt: 'Kanvas Lookie dengan sapuan cat minyak merah dan empat hewan kecil di bawahnya.',
+        title: 'Lihat di galeri',
+        text: 'Lukisan yang selesai dipajang di dinding galeri, jadi anak bisa melihat lagi semua karyanya.',
+        alt: 'Rekaman layar galeri Lookie: lukisan-lukisan tergantung di dinding dan digeser ke samping.',
+      },
+      {
+        title: 'Cek laporannya',
+        text: 'Orang tua bisa melihat bagaimana anak bergerak: tangan mana yang dipakai, seberapa tinggi lengannya terangkat, dan perkembangannya dari waktu ke waktu. Angkanya perkiraan dari kamera, bukan diagnosis.',
+        alt: 'Rekaman layar laporan Lookie: lukisan, porsi tangan kiri dan kanan, jangkauan gerak, dan grafik perkembangan.',
       },
     ],
   },

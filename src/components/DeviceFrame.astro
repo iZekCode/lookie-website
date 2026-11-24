@@ -1,20 +1,19 @@
 ---
-// An iPad bezel around a screenshot.
-import { Image } from 'astro:assets';
-import type { ImageMetadata } from 'astro';
+// An iPad bezel around a short screen recording. The video is played by src/scripts/clips.ts while it is on screen.
+import { assetUrl } from '../i18n';
 
 interface Props {
-  src: ImageMetadata;
-  alt: string;
+  clip: string;
+  label: string;
   class?: string;
-  width?: number;
-  loading?: 'eager' | 'lazy';
 }
-const { src, alt, class: className = '', width = 1000, loading = 'lazy' } = Astro.props;
+const { clip, label, class: className = '' } = Astro.props;
 ---
 
 <div class:list={['ipad', className]}>
-  <Image src={src} alt={alt} width={width} loading={loading} class="shot" widths={[500, 800, 1100]} sizes="(max-width: 900px) 90vw, 560px" />
+  <video class="shot" muted loop playsinline preload="metadata" data-clip poster={assetUrl(`clips/${clip}.jpg`)} aria-label={label}>
+    <source src={assetUrl(`clips/${clip}.mp4`)} type="video/mp4" />
+  </video>
 </div>
 
 <style>
@@ -39,9 +38,13 @@ const { src, alt, class: className = '', width = 1000, loading = 'lazy' } = Astr
     background: #2e2b3d;
     transform: translateY(-50%);
   }
-  .ipad :global(.shot) {
+  .shot {
+    display: block;
     width: 100%;
     height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #fff;
     border-radius: 3.2% / 4.4%;
   }
 </style>

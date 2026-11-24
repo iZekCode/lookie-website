@@ -36,10 +36,31 @@ Indonesian is the default and English lives under `/en`. The ID/EN switch in the
 
 ## Pictures
 
-- `src/assets/app/`: simulator screenshots (cropped to the app's own landscape frame) and the hand images from the app's asset catalog.
+- `public/clips/`: four short, silent screen recordings (pick a picture, painting, gallery, report) used in the "How to play" section, each with a still poster. They were cut from a screen recording of the app and encoded as 960x720 H.264. See the README section on clips to redo them.
 - `src/assets/critters/`: renders of the app's own 3D animals (from `animal_idle.usdz`). To redo them, build `scripts/render-critters.swift` (see the comment at its top), then run `node scripts/finish-critters.mjs <folder>`; it crops each animal into a square PNG. The old flat Figma art is in `docs/design-source/critters-2d/`.
 - `src/assets/logo/`: the app's own letter SVGs. The eyes in the hero are real paths, so the pupils can follow the pointer.
 - `docs/design-source/`: the original Figma marketing frames, kept for reference only.
+
+## Clips
+
+The four videos in `public/clips/` come from one screen recording of the app (`lookie_demo.mov`, about two minutes). Each was cut at a screen change, with no sound:
+
+| Clip | Part of the recording | What it shows |
+| --- | --- | --- |
+| `pick` | 0:04.85 to 0:11.3 | Choose a mode, choose Template, pick the octagon |
+| `paint` | 0:26.5 to 0:42.0 | Hands and arms painting red and blue strokes |
+| `gallery` | 1:41.0 to 1:46.2 | Swiping through the gallery wall |
+| `report` | 1:49.1 to 2:03.0 | The per-painting report, then the overall report |
+
+To cut one again (needs `ffmpeg`):
+
+```bash
+ffmpeg -ss 0:26.5 -to 0:42.0 -i lookie_demo.mov -an \
+  -vf "fps=30,scale=960:720:flags=lanczos,format=yuv420p" \
+  -c:v libx264 -preset slow -crf 27 -movflags +faststart public/clips/paint.mp4
+```
+
+Each clip also has a `.jpg` poster, shown before the video loads and when the visitor prefers reduced motion. Videos play only while they are on screen (`src/scripts/clips.ts`).
 
 ## Deploy
 
