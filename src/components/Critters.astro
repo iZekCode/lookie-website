@@ -1,0 +1,165 @@
+---
+import { Image } from 'astro:assets';
+import kepik from '../assets/critters/kepik.png';
+import kupu from '../assets/critters/kupu.png';
+import lebah from '../assets/critters/lebah.png';
+import siput from '../assets/critters/siput.png';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const c = copy.critters;
+const pics = [kepik, kupu, lebah, siput];
+const tint = ['#ffd1c9', '#cfe6ff', '#fff0b3', '#d9f3c9'];
+---
+
+<section class="crit sheet">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker" data-reveal>{c.kicker}</p>
+      <h2 class="h2" data-reveal style="--d:1">{c.title}</h2>
+      <p class="lead" data-reveal style="--d:2">{c.lead}</p>
+      <p class="poke" data-reveal style="--d:3">{c.tapHint}</p>
+    </div>
+
+    <ul class="row">
+      {
+        c.items.map((it, i) => (
+          <li data-reveal style={`--d:${i}`}>
+            <button type="button" class="pet" data-critter data-lines={JSON.stringify(it.lines)} style={`--tint:${tint[i]}`} aria-label={`${it.name}: ${it.lines[0]}`}>
+              <span class="bubble" aria-hidden="true"></span>
+              <Image src={pics[i]} alt="" width={320} height={320} />
+              <span class="name">{it.name}</span>
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .crit {
+    background: var(--leaf-l);
+  }
+  .head {
+    text-align: center;
+    margin-bottom: 3.4rem;
+  }
+  .head .lead {
+    margin-inline: auto;
+  }
+  .h2 {
+    margin-bottom: 1rem;
+  }
+  .poke {
+    margin-top: 1.1rem;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: var(--leaf);
+    filter: brightness(0.7);
+  }
+  .row {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .pet {
+    position: relative;
+    width: 100%;
+    background: var(--tint);
+    border: 4px solid var(--ink);
+    border-radius: 36px;
+    box-shadow: 0 8px 0 var(--ink);
+    padding: 40px 14px 18px;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    transition: transform 0.25s var(--ease-bounce), box-shadow 0.25s;
+  }
+  .pet:hover {
+    transform: translateY(-6px) rotate(-1.5deg);
+    box-shadow: 0 14px 0 var(--ink);
+  }
+  .pet:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 var(--ink);
+  }
+  .pet :global(img) {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    animation: idle 3.6s ease-in-out infinite;
+    transform-origin: 50% 90%;
+  }
+  .row li:nth-child(2) .pet :global(img) { animation-delay: -0.9s; }
+  .row li:nth-child(3) .pet :global(img) { animation-delay: -1.8s; }
+  .row li:nth-child(4) .pet :global(img) { animation-delay: -2.7s; }
+  .pet.hop :global(img) {
+    animation: hop 0.7s var(--ease-bounce);
+  }
+  .name {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+  }
+  .bubble {
+    position: absolute;
+    left: 50%;
+    top: -8px;
+    translate: -50% -100%;
+    background: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 18px;
+    padding: 0.3em 0.9em;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    white-space: nowrap;
+    opacity: 0;
+    scale: 0.6;
+    transform-origin: 50% 100%;
+    transition: opacity 0.2s, scale 0.35s var(--ease-bounce);
+    pointer-events: none;
+    z-index: 2;
+  }
+  .bubble::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -11px;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    border-right: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink);
+    transform: translateX(-50%) rotate(45deg);
+  }
+  .pet.talk .bubble {
+    opacity: 1;
+    scale: 1;
+  }
+  @keyframes idle {
+    0%, 100% { transform: translateY(0) rotate(-2deg) scale(1, 1); }
+    50% { transform: translateY(-8px) rotate(3deg) scale(1.02, 0.98); }
+  }
+  @keyframes hop {
+    0% { transform: scale(1, 1); }
+    25% { transform: translateY(-30px) scale(0.92, 1.1) rotate(-6deg); }
+    55% { transform: translateY(0) scale(1.12, 0.86); }
+    80% { transform: translateY(-6px) scale(0.98, 1.03) rotate(3deg); }
+    100% { transform: scale(1, 1); }
+  }
+  @media (max-width: 900px) {
+    .row {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 56px;
+    }
+  }
+</style>

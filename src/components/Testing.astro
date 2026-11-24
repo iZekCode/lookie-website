@@ -1,0 +1,70 @@
+---
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const t = copy.testing;
+---
+
+<section class="test sheet">
+  <div class="wrap">
+    <div class="card" data-reveal>
+      <p class="ribbon">{t.kicker}</p>
+      <h2 class="h2">{t.title}</h2>
+      <div class="cols">
+        <p class="lead">{t.p1}</p>
+        <p class="lead">{t.p2}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .test {
+    background: var(--paper);
+  }
+  .card {
+    position: relative;
+    max-width: 920px;
+    margin-inline: auto;
+    background: var(--cream);
+    border: 4px solid var(--ink);
+    border-radius: 40px;
+    box-shadow: 0 10px 0 var(--ink);
+    padding: clamp(40px, 6vw, 72px) clamp(24px, 5vw, 64px) clamp(32px, 5vw, 56px);
+    text-align: center;
+  }
+  .ribbon {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    translate: -50% 0;
+    rotate: -2deg;
+    background: var(--red-d);
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    padding: 0.15em 1.2em;
+    border: 3px solid var(--ink);
+  }
+  .h2 {
+    margin-bottom: 1.4rem;
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    text-align: left;
+  }
+  .lead {
+    color: var(--ink);
+  }
+  @media (max-width: 760px) {
+    .cols {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+  }
+</style>

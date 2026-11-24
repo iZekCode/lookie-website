@@ -1,0 +1,242 @@
+---
+import homeShot from '../assets/app/home.png';
+import kepik from '../assets/critters/kepik.png';
+import kupu from '../assets/critters/kupu.png';
+import lebah from '../assets/critters/lebah.png';
+import siput from '../assets/critters/siput.png';
+import { Image } from 'astro:assets';
+import DeviceFrame from './DeviceFrame.astro';
+import Wordmark from './Wordmark.astro';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const h = copy.hero;
+const fliers = [
+  { src: kupu, cls: 'f1', depth: 34 },
+  { src: lebah, cls: 'f2', depth: -26 },
+  { src: kepik, cls: 'f3', depth: 20 },
+  { src: siput, cls: 'f4', depth: -16 },
+];
+---
+
+<section class="hero" id="top">
+  <div class="wrap hero-in">
+    <div class="copy">
+      <p class="kicker" data-reveal>{h.kicker}</p>
+      <Wordmark class="mark" />
+      <h1 data-reveal style="--d:2">
+        <span>{h.titleA}</span> <span class="hl">{h.titleB}</span>
+      </h1>
+      <p class="lead" data-reveal style="--d:3">{h.sub}</p>
+      <div class="cta" data-reveal style="--d:4">
+        <a class="btn" href="#coba">{h.primary}</a>
+        <a class="btn btn--ghost" href="#tentang">{h.secondary}</a>
+      </div>
+      <p class="note" data-reveal style="--d:5">{h.note}</p>
+    </div>
+
+    <div class="visual" data-parallax>
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+      <div class="tilt">
+        <DeviceFrame src={homeShot} alt={h.deviceAlt} width={1100} loading="eager" />
+      </div>
+      {
+        fliers.map((f) => (
+          <span class={`fly ${f.cls}`} style={`--depth:${f.depth}`}>
+            <Image src={f.src} alt="" width={220} height={220} />
+          </span>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="ribbon" aria-hidden="true">
+    <div class="track">
+      {
+        [0, 1].map(() => (
+          <ul>
+            {copy.marquee.map((t) => (
+              <li>{t}</li>
+            ))}
+          </ul>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    padding-top: clamp(24px, 4vw, 56px);
+    padding-bottom: 120px;
+    overflow: clip;
+  }
+  .hero-in {
+    display: grid;
+    grid-template-columns: 1.02fr 1fr;
+    gap: clamp(24px, 4vw, 64px);
+    align-items: center;
+  }
+  .mark {
+    width: min(100%, 470px);
+    margin: 0.4rem 0 1.1rem;
+    filter: drop-shadow(0 8px 0 rgba(42, 33, 69, 0.14));
+  }
+  h1 {
+    font-size: clamp(2.4rem, 1.5rem + 3.6vw, 4.4rem);
+    margin-bottom: 1rem;
+  }
+  .hl {
+    position: relative;
+    color: #fff;
+    padding: 0 0.25em;
+    margin-left: -0.1em;
+    background: linear-gradient(transparent 6%, var(--blue) 6% 94%, transparent 94%);
+    border-radius: 0.2em;
+    transform: rotate(-1.5deg);
+    display: inline-block;
+    box-decoration-break: clone;
+  }
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin: 1.8rem 0 1rem;
+  }
+  .note {
+    font-weight: 600;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+
+  .visual {
+    position: relative;
+    min-height: 300px;
+    --px: 0;
+    --py: 0;
+  }
+  .tilt {
+    transform: rotate(3deg);
+    transition: transform 0.6s var(--ease-bounce);
+    animation: float-card 7s ease-in-out infinite;
+  }
+  .visual:hover .tilt {
+    transform: rotate(0.5deg) scale(1.02);
+  }
+  @keyframes float-card {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -12px; }
+  }
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+  }
+  .b1 { width: 62%; aspect-ratio: 1; background: var(--sun); top: -12%; right: -8%; animation: blob 9s ease-in-out infinite; }
+  .b2 { width: 42%; aspect-ratio: 1; background: var(--pink); bottom: -14%; left: -8%; animation: blob 11s ease-in-out -3s infinite; }
+  .b3 { width: 26%; aspect-ratio: 1; background: var(--sky-d); top: 28%; left: -12%; animation: blob 8s ease-in-out -5s infinite; }
+  @keyframes blob {
+    0%, 100% { border-radius: 50% 50% 46% 54% / 55% 45% 55% 45%; transform: rotate(0); }
+    50% { border-radius: 42% 58% 54% 46% / 46% 58% 42% 54%; transform: rotate(12deg) scale(1.05); }
+  }
+
+  .fly {
+    position: absolute;
+    width: clamp(64px, 11vw, 120px);
+    translate: calc(var(--px) * var(--depth) * 1px) calc(var(--py) * var(--depth) * 1px);
+    transition: translate 0.25s ease-out;
+    filter: drop-shadow(0 8px 6px rgba(42, 33, 69, 0.2));
+  }
+  .fly :global(img) {
+    width: 100%;
+    height: auto;
+    animation: bob 3.6s ease-in-out infinite;
+  }
+  .f1 { top: -9%; left: 6%; }
+  .f2 { top: 2%; right: -5%; }
+  .f3 { bottom: -7%; right: 12%; }
+  .f4 { bottom: 4%; left: -6%; }
+  .f1 :global(img) { animation-name: flutter; animation-duration: 2.8s; }
+  .f2 :global(img) { animation-duration: 2.2s; animation-delay: -1s; }
+  .f3 :global(img) { animation-name: roll; animation-duration: 4.4s; }
+  .f4 :global(img) { animation-name: slide; animation-duration: 6s; }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-12px) rotate(4deg); }
+  }
+  @keyframes flutter {
+    0%, 100% { transform: translate(0, 0) rotate(-8deg); }
+    33% { transform: translate(10px, -14px) rotate(6deg); }
+    66% { transform: translate(-8px, -6px) rotate(-4deg); }
+  }
+  @keyframes roll {
+    0%, 100% { transform: translateX(0) rotate(0); }
+    50% { transform: translateX(-16px) rotate(-14deg); }
+  }
+  @keyframes slide {
+    0%, 100% { transform: translateX(0) scaleX(1); }
+    45% { transform: translateX(18px) scaleX(1); }
+    50% { transform: translateX(18px) scaleX(-1); }
+    95% { transform: translateX(0) scaleX(-1); }
+  }
+
+  .ribbon {
+    position: absolute;
+    left: -4%;
+    right: -4%;
+    bottom: 56px;
+    transform: rotate(-1.6deg);
+    background: var(--red-d);
+    color: #fff;
+    border-block: 4px solid var(--ink);
+    overflow: hidden;
+    z-index: 2;
+  }
+  .track {
+    display: flex;
+    width: max-content;
+    animation: scroll 38s linear infinite;
+  }
+  .track ul {
+    display: flex;
+    margin: 0;
+    padding: 0.5em 0;
+    list-style: none;
+  }
+  .track li {
+    font-family: var(--font-display);
+    font-size: clamp(1.2rem, 1rem + 1vw, 1.7rem);
+    white-space: nowrap;
+    padding-inline: 1.1em;
+    display: flex;
+    align-items: center;
+    gap: 2.2em;
+  }
+  .track li::after {
+    content: '';
+    width: 0.5em;
+    height: 0.5em;
+    background: var(--sun);
+    border-radius: 50%;
+  }
+  @keyframes scroll {
+    to { transform: translateX(-50%); }
+  }
+
+  @media (max-width: 900px) {
+    .hero-in {
+      grid-template-columns: 1fr;
+    }
+    .visual {
+      max-width: 560px;
+      margin-inline: auto;
+      width: 100%;
+    }
+  }
+</style>

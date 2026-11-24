@@ -1,0 +1,218 @@
+---
+// A small canvas where visitors can try the idea with a mouse or finger.
+import { Image, getImage } from 'astro:assets';
+import kepik from '../assets/critters/kepik.png';
+import kupu from '../assets/critters/kupu.png';
+import lebah from '../assets/critters/lebah.png';
+import siput from '../assets/critters/siput.png';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const p = copy.play;
+
+const brushes = await Promise.all(
+  [
+    { key: 'kepik', img: kepik, name: copy.critters.items[0].name },
+    { key: 'kupu', img: kupu, name: copy.critters.items[1].name },
+    { key: 'lebah', img: lebah, name: copy.critters.items[2].name },
+    { key: 'siput', img: siput, name: copy.critters.items[3].name },
+  ].map(async (b) => ({ ...b, sprite: (await getImage({ src: b.img, width: 240, height: 240 })).src })),
+);
+const colors = [
+  { key: 'red', hex: '#E8281E', name: p.colors.red },
+  { key: 'blue', hex: '#2D8EF0', name: p.colors.blue },
+  { key: 'yellow', hex: '#FFC400', name: p.colors.yellow },
+  { key: 'green', hex: '#3DAE2B', name: p.colors.green },
+];
+---
+
+<section class="play sheet" id="coba">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker" data-reveal>{p.kicker}</p>
+      <h2 class="h2" data-reveal style="--d:1">{p.title}</h2>
+      <p class="lead" data-reveal style="--d:2">{p.lead}</p>
+    </div>
+
+    <div class="stage-wrap" data-reveal style="--d:2">
+      <div class="stage" data-paint>
+        <canvas class="guide" aria-hidden="true"></canvas>
+        <canvas class="ink" role="img" aria-label={p.canvasLabel}></canvas>
+        <img class="buddy" alt="" src={brushes[0].sprite} width="96" height="96" draggable="false" />
+        <span class="hint" data-hint>{p.hint}</span>
+      </div>
+
+      <div class="tools">
+        <div class="group" role="group" aria-label={p.brush}>
+          {
+            brushes.map((b, i) => (
+              <button type="button" class="brush" data-brush={b.sprite} aria-pressed={i === 0 ? 'true' : 'false'} aria-label={b.name} title={b.name}>
+                <Image src={b.img} alt="" width={80} height={80} />
+              </button>
+            ))
+          }
+        </div>
+        <div class="group" role="group" aria-label={p.paint}>
+          {
+            colors.map((c, i) => (
+              <button type="button" class="swatch" data-color={c.hex} style={`--c:${c.hex}`} aria-pressed={i === 0 ? 'true' : 'false'} aria-label={c.name} title={c.name} />
+            ))
+          }
+        </div>
+        <div class="group">
+          <button type="button" class="btn btn--ghost small" data-shape>{p.shape}</button>
+          <button type="button" class="btn btn--ghost small" data-clear>{p.clear}</button>
+        </div>
+      </div>
+      <p class="note">{p.note}</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .play {
+    background: var(--sky);
+  }
+  .head {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .head .lead {
+    margin-inline: auto;
+  }
+  .stage-wrap {
+    max-width: 920px;
+    margin-inline: auto;
+  }
+  .stage {
+    position: relative;
+    height: clamp(340px, 52vw, 540px);
+    background: #fff;
+    border: 4px solid var(--ink);
+    border-radius: 36px;
+    box-shadow: 0 10px 0 var(--ink);
+    overflow: hidden;
+    cursor: none;
+    background-image: radial-gradient(rgba(42, 33, 69, 0.06) 1.5px, transparent 1.5px);
+    background-size: 22px 22px;
+  }
+  .stage canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .stage .ink {
+    touch-action: none;
+  }
+  .buddy {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 96px;
+    height: 96px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.25s;
+    will-change: transform;
+    filter: drop-shadow(0 6px 4px rgba(42, 33, 69, 0.25));
+  }
+  .stage.live .buddy {
+    opacity: 1;
+  }
+  .hint {
+    position: absolute;
+    left: 50%;
+    bottom: 18px;
+    transform: translateX(-50%);
+    font-family: var(--font-display);
+    font-size: clamp(1.1rem, 0.9rem + 1vw, 1.5rem);
+    white-space: nowrap;
+    background: var(--sun);
+    border: 3px solid var(--ink);
+    padding: 0.1em 0.8em;
+    border-radius: 99px;
+    pointer-events: none;
+    animation: pulse 1.8s ease-in-out infinite;
+    transition: opacity 0.3s;
+  }
+  .stage.used .hint {
+    opacity: 0;
+    animation: none;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.08) rotate(-2deg); }
+  }
+  .tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px 28px;
+    margin-top: 28px;
+  }
+  .group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  .brush,
+  .swatch {
+    border: 3px solid var(--ink);
+    background: var(--paper);
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s var(--ease-bounce), box-shadow 0.2s;
+  }
+  .brush {
+    width: 56px;
+    height: 56px;
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+  }
+  .brush :global(img) {
+    width: 42px;
+    height: 42px;
+  }
+  .swatch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--c);
+  }
+  .brush:hover,
+  .swatch:hover {
+    transform: translateY(-4px) rotate(-6deg);
+  }
+  .brush[aria-pressed='true'],
+  .swatch[aria-pressed='true'] {
+    transform: translateY(-4px) scale(1.12);
+    box-shadow: 0 5px 0 var(--ink);
+    background-color: var(--sun);
+  }
+  .swatch[aria-pressed='true'] {
+    background-color: var(--c);
+    outline: 3px solid var(--ink);
+    outline-offset: 3px;
+  }
+  .small {
+    padding: 0.65em 1.1em;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 0 var(--ink);
+  }
+  .note {
+    text-align: center;
+    margin-top: 22px;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+  @media (hover: none) {
+    .stage {
+      cursor: auto;
+    }
+  }
+</style>

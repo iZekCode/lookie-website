@@ -1,0 +1,206 @@
+@font-face {
+  font-family: 'Schoolbell';
+  src: url('../assets/fonts/Schoolbell-Regular.ttf') format('truetype');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('../assets/fonts/PlusJakartaSans.ttf') format('truetype');
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+:root {
+  --cream: #fff4dc;
+  --paper: #fffbf1;
+  --sky: #e6f2ff;
+  --sky-d: #bcdcfb;
+  --blue: #2d7de6;
+  --blue-d: #1b4fb8;
+  --ink: #2a2145;
+  --ink-soft: #5b5272;
+  --red: #c9301a;
+  --red-d: #8e1a0c;
+  --sun: #ffc933;
+  --leaf: #5db13c;
+  --leaf-l: #e0f7d6;
+  --pink: #ff9ec4;
+  --radius: 28px;
+  --shadow: 0 6px 0 var(--ink);
+  --font-display: 'Schoolbell', 'Comic Sans MS', cursive;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --gutter: clamp(20px, 5vw, 64px);
+  --max: 1180px;
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  line-height: 1.65;
+  overflow-x: clip;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: 0.01em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 8px;
+}
+
+.wrap {
+  width: min(100% - var(--gutter) * 2, var(--max));
+  margin-inline: auto;
+}
+
+.kicker {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-d);
+  background: var(--sky);
+  padding: 0.35em 0.9em;
+  border-radius: 99px;
+  margin-bottom: 1rem;
+}
+
+.h2 {
+  font-size: clamp(2.2rem, 1.4rem + 3.4vw, 4rem);
+}
+
+.lead {
+  font-size: clamp(1.05rem, 1rem + 0.4vw, 1.3rem);
+  color: var(--ink-soft);
+  max-width: 38em;
+}
+
+.btn {
+  --bg: var(--blue);
+  --fg: #fff;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.5em;
+  font: 700 1rem/1 var(--font-body);
+  color: var(--fg);
+  background: var(--bg);
+  border: 3px solid var(--ink);
+  border-radius: 99px;
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.18s var(--ease-bounce), box-shadow 0.18s;
+}
+.btn:hover {
+  transform: translateY(-3px) rotate(-1.5deg);
+  box-shadow: 0 9px 0 var(--ink);
+}
+.btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 2px 0 var(--ink);
+}
+.btn--ghost {
+  --bg: var(--paper);
+  --fg: var(--ink);
+}
+.btn--red {
+  --bg: var(--red);
+}
+.btn--sun {
+  --bg: var(--sun);
+  --fg: var(--ink);
+}
+
+/* Sections stack like rounded sheets of paper. */
+.sheet {
+  position: relative;
+  border-radius: 56px 56px 0 0;
+  margin-top: -56px;
+  padding-block: clamp(72px, 10vw, 128px) clamp(72px, 10vw, 128px);
+}
+
+/* Elements that slide in as they scroll into view. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(36px) scale(0.98);
+  transition: opacity 0.7s ease, transform 0.8s var(--ease-bounce);
+  transition-delay: calc(var(--d, 0) * 90ms);
+}
+[data-reveal].in {
+  opacity: 1;
+  transform: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

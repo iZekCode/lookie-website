@@ -1,0 +1,73 @@
+---
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const c = copy.cp;
+---
+
+<section class="cp sheet">
+  <div class="wrap narrow">
+    <p class="kicker" data-reveal>{c.kicker}</p>
+    <h2 class="h2" data-reveal style="--d:1">{c.title}</h2>
+
+    <svg class="path" viewBox="0 0 600 90" aria-hidden="true" data-reveal style="--d:2">
+      <path d="M8 60 C 70 10, 120 10, 170 50 S 270 90, 330 45 S 440 5, 500 40 S 570 70, 592 30" />
+      <circle class="dot" r="9" />
+    </svg>
+
+    <p class="lead" data-reveal style="--d:3">{c.p1}</p>
+    <p class="lead big" data-reveal style="--d:4">{c.p2}</p>
+  </div>
+</section>
+
+<style>
+  .cp {
+    background: var(--sky-d);
+  }
+  .narrow {
+    max-width: 760px;
+    text-align: center;
+  }
+  .cp .kicker {
+    background: var(--paper);
+  }
+  .cp .lead {
+    margin-inline: auto;
+    color: var(--ink);
+  }
+  .h2 {
+    margin-bottom: 1rem;
+  }
+  .path {
+    width: min(100%, 520px);
+    margin: 0 auto 1.6rem;
+    overflow: visible;
+  }
+  .path path {
+    fill: none;
+    stroke: var(--blue-d);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-dasharray: 3 16;
+  }
+  .dot {
+    fill: var(--red);
+    stroke: var(--ink);
+    stroke-width: 3;
+    offset-path: path('M8 60 C 70 10, 120 10, 170 50 S 270 90, 330 45 S 440 5, 500 40 S 570 70, 592 30');
+    animation: travel 6s ease-in-out infinite;
+  }
+  @keyframes travel {
+    from { offset-distance: 0%; }
+    50% { offset-distance: 100%; }
+    to { offset-distance: 0%; }
+  }
+  .big {
+    margin-top: 1.1rem;
+    font-weight: 700;
+    font-size: clamp(1.2rem, 1rem + 0.8vw, 1.5rem);
+  }
+</style>

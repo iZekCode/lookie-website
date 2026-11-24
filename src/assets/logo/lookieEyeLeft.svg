@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="379.146" height="491.867" viewBox="0 0 379.146 491.867" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="o &#194;&#183; mata kiri">
+<path id="Vector" d="M209.793 477.051C303.324 468.868 370.094 358.76 358.926 231.117C347.759 103.475 262.884 6.63356 169.353 14.8165C75.822 22.9994 9.05286 133.108 20.2201 260.75C31.3874 388.393 116.262 485.234 209.793 477.051Z" fill="url(#paint0_radial_0_14)"/>
+<path id="Vector_2" d="M238.573 453.938C296.563 453.938 343.573 386.78 343.573 303.938C343.573 221.095 296.563 153.938 238.573 153.938C180.583 153.938 133.573 221.095 133.573 303.938C133.573 386.78 180.583 453.938 238.573 453.938Z" fill="#050505"/>
+<path id="Vector_3" d="M261.573 255.938C282.56 255.938 299.573 238.924 299.573 217.938C299.573 196.951 282.56 179.938 261.573 179.938C240.586 179.938 223.573 196.951 223.573 217.938C223.573 238.924 240.586 255.938 261.573 255.938Z" fill="white"/>
+</g>
+<defs>
+<radialGradient id="paint0_radial_0_14" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(156.411 178.969) rotate(-5) scale(272 371.2)">
+<stop offset="0.65" stop-color="white"/>
+<stop offset="0.9" stop-color="#F7F6FC"/>
+<stop offset="1" stop-color="#DFDEF0"/>
+</radialGradient>
+</defs>
+</svg>

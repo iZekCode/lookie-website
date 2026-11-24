@@ -1,0 +1,168 @@
+---
+import { Image } from 'astro:assets';
+import icon from '../assets/icon.png';
+import { localePath, otherLang, type Lang } from '../i18n';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  lang: Lang;
+  copy: Copy;
+  // Where the same page lives in the other language, so the toggle can jump there.
+  twinPath: string;
+  onHome?: boolean;
+}
+const { lang, copy, twinPath, onHome = false } = Astro.props;
+const other = otherLang(lang);
+const home = localePath(lang);
+const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
+---
+
+<header class="bar" data-header>
+  <div class="wrap bar-in">
+    <a class="brand" href={home} aria-label={copy.nav.home}>
+      <Image src={icon} alt="" width={96} height={96} class="brand-icon" />
+      <span class="brand-name">Lookie</span>
+    </a>
+
+    <nav class="links" aria-label="Main">
+      <a href={anchor('#tentang')}>{copy.nav.about}</a>
+      <a href={anchor('#cara-main')}>{copy.nav.how}</a>
+      <a href={anchor('#orang-tua')}>{copy.nav.parents}</a>
+      <a href={localePath(lang, 'support')}>{copy.nav.support}</a>
+    </nav>
+
+    <div class="right">
+      <div class="lang" data-lang-toggle data-current={lang} role="group" aria-label={copy.nav.toggleLabel}>
+        <span class="thumb" aria-hidden="true"></span>
+        <a href={localePath('id', twinPath)} data-lang="id" aria-current={lang === 'id' ? 'true' : undefined} hreflang="id" lang="id">ID</a>
+        <a href={localePath('en', twinPath)} data-lang="en" aria-current={lang === 'en' ? 'true' : undefined} hreflang="en" lang="en">EN</a>
+      </div>
+      <a class="btn btn--sun try" href={anchor('#coba')}>{copy.nav.try}</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding-block: 12px;
+    transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+  }
+  .bar.scrolled {
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 2px 0 rgba(42, 33, 69, 0.08);
+    padding-block: 8px;
+  }
+  .bar-in {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .brand :global(.brand-icon) {
+    width: 44px;
+    height: 44px;
+    border-radius: 13px;
+    border: 3px solid var(--ink);
+    transition: transform 0.3s var(--ease-bounce);
+  }
+  .brand:hover :global(.brand-icon) {
+    transform: rotate(-12deg) scale(1.08);
+  }
+  .brand-name {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    color: var(--blue-d);
+  }
+  .links {
+    display: flex;
+    gap: 6px;
+  }
+  .links a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.5em 0.9em;
+    border-radius: 99px;
+    transition: background 0.2s, transform 0.2s var(--ease-bounce);
+  }
+  .links a:hover {
+    background: var(--sky);
+    transform: translateY(-2px);
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .try {
+    padding: 0.6em 1.2em;
+    font-size: 0.92rem;
+    box-shadow: 0 4px 0 var(--ink);
+  }
+  .lang {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    border-radius: 99px;
+    padding: 3px;
+    font-weight: 800;
+    font-size: 0.82rem;
+  }
+  .lang a {
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-align: center;
+    min-width: 38px;
+    padding: 0.4em 0.5em;
+    border-radius: 99px;
+    transition: color 0.25s;
+  }
+  .lang a[aria-current='true'] {
+    color: #fff;
+  }
+  .thumb {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 3px;
+    width: calc(50% - 3px);
+    background: var(--blue);
+    border-radius: 99px;
+    transition: transform 0.35s var(--ease-bounce);
+  }
+  .lang[data-current='en'] .thumb {
+    transform: translateX(100%);
+  }
+  .lang.flip[data-current='id'] .thumb {
+    transform: translateX(100%);
+  }
+  .lang.flip[data-current='en'] .thumb {
+    transform: none;
+  }
+  @media (max-width: 860px) {
+    .links {
+      display: none;
+    }
+  }
+  @media (max-width: 520px) {
+    .brand-name {
+      display: none;
+    }
+    .try {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,96 @@
+---
+// The Lookie logo, built from the app's own letter files so the eyes can look around.
+import L from '../assets/logo/lookieL.svg?raw';
+import K from '../assets/logo/lookieK.svg?raw';
+import I from '../assets/logo/lookieI.svg?raw';
+import E from '../assets/logo/lookieE.svg?raw';
+import EyeLeft from '../assets/logo/lookieEyeLeft.svg?raw';
+import EyeRight from '../assets/logo/lookieEyeRight.svg?raw';
+
+interface Props {
+  class?: string;
+  label?: string;
+}
+const { class: className = '', label = 'Lookie' } = Astro.props;
+
+const place = (svg: string, x: number, y: number) => svg.replace('<svg ', `<svg x="${x}" y="${y}" `);
+const wrapPupil = (svg: string) =>
+  svg.replace(/(<path id="Vector_2"[\s\S]*?\/>\s*<path id="Vector_3"[\s\S]*?\/>)/, '<g class="pupil">$1</g>');
+
+const parts = [
+  { cls: 'l', svg: place(L, 0, 26) },
+  { cls: 'eye', svg: place(wrapPupil(EyeLeft), 409, 93) },
+  { cls: 'eye', svg: place(wrapPupil(EyeRight), 757, 57) },
+  { cls: 'k', svg: place(K, 1126, 35) },
+  { cls: 'i', svg: place(I, 1600, 0) },
+  { cls: 'e', svg: place(E, 1864, 93) },
+];
+---
+
+<svg
+  class:list={['wordmark', className]}
+  viewBox="0 0 2284 604"
+  role="img"
+  aria-label={label}
+  data-eyes
+>
+  {
+    parts.map((p, i) => (
+      <g class={`wm-letter wm-${p.cls}`} style={`--i:${i}`} set:html={p.svg} />
+    ))
+  }
+</svg>
+
+<style is:global>
+  .wordmark {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+  .wm-letter {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+    animation:
+      wm-drop 0.9s var(--ease-bounce) both,
+      wm-wobble 5s ease-in-out calc(1s + var(--i) * 0.35s) infinite;
+    animation-delay: calc(var(--i) * 90ms), calc(1s + var(--i) * 0.35s);
+  }
+  .wm-letter:hover {
+    animation: wm-jump 0.6s var(--ease-bounce);
+  }
+  .wm-eye {
+    transform-origin: 50% 50%;
+  }
+  .wordmark .pupil {
+    transition: transform 0.18s ease-out;
+  }
+  .wordmark.blink .wm-eye {
+    animation: wm-blink 0.22s ease-in-out;
+  }
+  @keyframes wm-drop {
+    from {
+      transform: translateY(-140%) scale(0.9, 1.1);
+      opacity: 0;
+    }
+    60% {
+      opacity: 1;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes wm-wobble {
+    0%, 100% { transform: rotate(0) translateY(0); }
+    50% { transform: rotate(calc((var(--i) - 2.5) * 0.6deg)) translateY(-1.5%); }
+  }
+  @keyframes wm-jump {
+    0% { transform: none; }
+    35% { transform: translateY(-14%) scale(0.94, 1.08); }
+    70% { transform: translateY(0) scale(1.06, 0.92); }
+    100% { transform: none; }
+  }
+  @keyframes wm-blink {
+    50% { transform: scaleY(0.08); }
+  }
+</style>

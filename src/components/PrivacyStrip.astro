@@ -1,0 +1,74 @@
+---
+import { localePath, type Lang } from '../i18n';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+  lang: Lang;
+}
+const { copy, lang } = Astro.props;
+const p = copy.privacy;
+---
+
+<section class="priv sheet">
+  <div class="wrap inner">
+    <svg class="cam" viewBox="0 0 120 120" aria-hidden="true" data-reveal>
+      <rect x="10" y="32" width="70" height="56" rx="14" />
+      <path d="M84 50 L112 34 V86 L84 70 Z" />
+      <line x1="14" y1="108" x2="106" y2="12" class="slash" />
+    </svg>
+    <div class="txt">
+      <h2 class="h2" data-reveal style="--d:1">{p.title}</h2>
+      <p data-reveal style="--d:2">{p.text}</p>
+      <a class="btn btn--sun" href={localePath(lang, 'privacy')} data-reveal style="--d:3">{p.link}</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .priv {
+    background: var(--red-d);
+    color: #fff;
+  }
+  .inner {
+    display: flex;
+    gap: clamp(24px, 5vw, 64px);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .cam {
+    width: clamp(100px, 16vw, 160px);
+    flex: none;
+  }
+  .cam rect,
+  .cam path {
+    fill: var(--sun);
+    stroke: var(--ink);
+    stroke-width: 6;
+    stroke-linejoin: round;
+  }
+  .slash {
+    stroke: #fff;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 140;
+    stroke-dashoffset: 140;
+    transition: stroke-dashoffset 0.8s ease 0.4s;
+  }
+  .cam.in .slash {
+    stroke-dashoffset: 0;
+  }
+  .txt {
+    max-width: 560px;
+  }
+  .h2 {
+    font-size: clamp(2.2rem, 1.4rem + 3vw, 3.6rem);
+    margin-bottom: 0.8rem;
+  }
+  .txt p {
+    font-size: 1.15rem;
+    margin-bottom: 1.6rem;
+    opacity: 0.94;
+  }
+</style>

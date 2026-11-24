@@ -1,0 +1,57 @@
+---
+import '../styles/global.css';
+import Doodles from '../components/Doodles.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { assetUrl, localePath, useCopy, type Lang } from '../i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description: string;
+  // The page's path without the language part ('' for home, 'privacy' for the policy).
+  twinPath: string;
+}
+const { lang, title, description, twinPath } = Astro.props;
+const copy = useCopy(lang);
+const site = Astro.site ?? new URL('https://izekcode.github.io');
+const abs = (path: string) => new URL(path, site).href;
+const canonical = abs(localePath(lang, twinPath));
+const og = abs(assetUrl('og.jpg'));
+---
+
+<!doctype html>
+<html lang={lang} data-home={twinPath === '' ? 'true' : 'false'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#fff4dc" />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="id" href={abs(localePath('id', twinPath))} />
+    <link rel="alternate" hreflang="en" href={abs(localePath('en', twinPath))} />
+    <link rel="alternate" hreflang="x-default" href={abs(localePath('id', twinPath))} />
+    <link rel="icon" type="image/png" href={assetUrl('favicon.png')} />
+    <link rel="apple-touch-icon" href={assetUrl('apple-touch-icon.png')} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lookie" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={og} />
+    <meta property="og:locale" content={lang === 'id' ? 'id_ID' : 'en_US'} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <slot name="head" />
+  </head>
+  <body>
+    <Doodles />
+    <a class="sr-only" href="#main">Skip to content</a>
+    <SiteHeader lang={lang} copy={copy} twinPath={twinPath} onHome={twinPath === ''} />
+    <slot />
+    <SiteFooter lang={lang} copy={copy} />
+    <script>
+      import '../scripts/site';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import icon from '../assets/icon.png';
+import { localePath, type Lang } from '../i18n';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  lang: Lang;
+  copy: Copy;
+}
+const { lang, copy } = Astro.props;
+---
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="who">
+      <Image src={icon} alt="" width={96} height={96} class="foot-icon" />
+      <div>
+        <p class="name">Lookie</p>
+        <p class="made">{copy.footer.made}</p>
+      </div>
+    </div>
+    <nav class="legal" aria-label="Legal">
+      <a href={localePath(lang, 'privacy')}>{copy.footer.privacy}</a>
+      <a href={localePath(lang, 'terms')}>{copy.footer.terms}</a>
+      <a href={localePath(lang, 'support')}>{copy.footer.support}</a>
+    </nav>
+  </div>
+  <p class="wrap medical">{copy.footer.medical}</p>
+</footer>
+
+<style>
+  .foot {
+    position: relative;
+    margin-top: -56px;
+    background: var(--ink);
+    color: #efeaff;
+    border-radius: 56px 56px 0 0;
+    padding: 96px 0 40px;
+  }
+  .foot-in {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 28px;
+    align-items: center;
+  }
+  .who {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .who :global(.foot-icon) {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+  }
+  .name {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    line-height: 1;
+  }
+  .made {
+    font-size: 0.9rem;
+    opacity: 0.75;
+  }
+  .legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+  }
+  .legal a {
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .legal a:hover {
+    border-color: var(--sun);
+  }
+  .medical {
+    margin-top: 32px;
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+</style>

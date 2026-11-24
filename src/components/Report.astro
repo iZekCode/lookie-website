@@ -1,0 +1,233 @@
+---
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const r = copy.report;
+const circumference = 2 * Math.PI * 52;
+---
+
+<section class="report sheet" id="laporan">
+  <div class="wrap grid">
+    <div class="text">
+      <p class="kicker" data-reveal>{r.kicker}</p>
+      <h2 class="h2" data-reveal style="--d:1">{r.title}</h2>
+      <p class="lead" data-reveal style="--d:2">{r.lead}</p>
+      <p class="disc" data-reveal style="--d:3">{r.disclaimer}</p>
+    </div>
+
+    <div class="mock" data-reveal style="--d:2" data-report>
+      <p class="label">{r.mockLabel}</p>
+      <div class="panel">
+        <p class="panel-title">{r.mockTitle}</p>
+
+        <div class="row top">
+          <div class="donut-card">
+            <p class="cap">{r.dominant}</p>
+            <svg viewBox="0 0 140 140" class="donut" aria-hidden="true">
+              <circle cx="70" cy="70" r="52" class="track" />
+              <circle cx="70" cy="70" r="52" class="seg left" stroke-dasharray={`${circumference * 0.48} ${circumference}`} />
+              <circle
+                cx="70"
+                cy="70"
+                r="52"
+                class="seg right"
+                stroke-dasharray={`${circumference * 0.52} ${circumference}`}
+                stroke-dashoffset={-circumference * 0.48}
+              />
+            </svg>
+            <p class="legend">
+              <span class="l"><i></i>{r.left} <b data-count="48">48</b>%</span>
+              <span class="r"><i></i>{r.right} <b data-count="52">52</b>%</span>
+            </p>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><b data-count="30">30</b><span>{r.sessions}</span></div>
+            <div class="stat"><b data-count="45">45</b><span>{r.minutes}</span></div>
+            <div class="stat"><b data-count="5">5</b><span>{r.days}</span></div>
+          </div>
+        </div>
+
+        <div class="bars" aria-hidden="true">
+          <span class="l"></span>
+          <span class="r"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .report {
+    background: linear-gradient(180deg, #8fcdf7, #d7ecff);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+  }
+  .kicker {
+    background: var(--paper);
+  }
+  .h2 {
+    margin-bottom: 1.1rem;
+  }
+  .lead {
+    color: var(--ink);
+  }
+  .disc {
+    margin-top: 1.4rem;
+    padding: 0.9em 1.2em;
+    background: rgba(255, 255, 255, 0.7);
+    border-left: 6px solid var(--blue);
+    border-radius: 6px 18px 18px 6px;
+    font-size: 0.95rem;
+    max-width: 34em;
+  }
+  .mock {
+    max-width: 520px;
+    width: 100%;
+    margin-inline: auto;
+  }
+  .label {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    background: var(--sun);
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    padding: 0.1em 0.7em;
+    transform: rotate(-3deg);
+    margin: 0 0 -14px 14px;
+    position: relative;
+    z-index: 1;
+  }
+  .panel {
+    background: #fff8ec;
+    border: 4px solid var(--ink);
+    border-radius: 32px;
+    box-shadow: 0 10px 0 var(--ink);
+    padding: 36px 26px 26px;
+    transform: rotate(1.6deg);
+    transition: transform 0.5s var(--ease-bounce);
+  }
+  .mock:hover .panel {
+    transform: rotate(0);
+  }
+  .panel-title {
+    text-align: center;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+  .row.top {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 14px;
+  }
+  .donut-card,
+  .stat {
+    background: #fff;
+    border-radius: 20px;
+    padding: 14px;
+    border: 2px solid rgba(42, 33, 69, 0.08);
+  }
+  .cap {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+  .donut {
+    width: 128px;
+    margin: 6px auto;
+    transform: rotate(-90deg);
+  }
+  .donut circle {
+    fill: none;
+    stroke-width: 22;
+  }
+  .donut .track {
+    stroke: #f1e6d3;
+  }
+  .donut .seg {
+    transition: stroke-dasharray 1.2s var(--ease-bounce) 0.3s;
+  }
+  .left {
+    stroke: #4f7fd8;
+  }
+  .right {
+    stroke: #e8a93c;
+  }
+  .mock:not(.in) .seg {
+    stroke-dasharray: 0 400 !important;
+  }
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .legend i {
+    display: inline-block;
+    width: 0.7em;
+    height: 0.7em;
+    border-radius: 50%;
+    margin-right: 0.3em;
+  }
+  .legend .l i { background: #4f7fd8; }
+  .legend .r i { background: #e8a93c; }
+  .stats {
+    display: grid;
+    gap: 8px;
+  }
+  .stat {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 10px 14px;
+    background: #eaf4ff;
+  }
+  .stat b {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    color: var(--blue-d);
+    font-weight: 400;
+    min-width: 1.4em;
+  }
+  .stat span {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--ink-soft);
+  }
+  .bars {
+    display: flex;
+    height: 16px;
+    margin-top: 16px;
+    background: #f1e6d3;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+  .bars span {
+    height: 100%;
+    width: 0;
+    transition: width 1.2s var(--ease-bounce) 0.5s;
+  }
+  .bars .l { background: #4f7fd8; }
+  .bars .r { background: #e8a93c; }
+  .mock.in .bars .l { width: 48%; }
+  .mock.in .bars .r { width: 52%; }
+  @media (max-width: 860px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 480px) {
+    .row.top {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

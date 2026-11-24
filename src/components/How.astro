@@ -1,0 +1,219 @@
+---
+import { Image } from 'astro:assets';
+import templates from '../assets/app/templates.png';
+import mode from '../assets/app/mode.png';
+import canvas from '../assets/app/canvas.png';
+import handOpen from '../assets/app/hand-open.png';
+import handFist from '../assets/app/hand-fist.png';
+import DeviceFrame from './DeviceFrame.astro';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const h = copy.how;
+---
+
+<section class="how sheet" id="cara-main">
+  <div class="wrap">
+    <div class="head">
+      <p class="kicker" data-reveal>{h.kicker}</p>
+      <h2 class="h2" data-reveal style="--d:1">{h.title}</h2>
+    </div>
+
+    <div class="steps">
+      <article class="step" data-reveal>
+        <div class="vis stack">
+          <DeviceFrame src={mode} alt="" class="back" width={800} />
+          <DeviceFrame src={templates} alt={h.steps[0].alt} class="front" width={800} />
+        </div>
+        <div class="txt">
+          <span class="badge">1</span>
+          <h3>{h.steps[0].title}</h3>
+          <p>{h.steps[0].text}</p>
+        </div>
+      </article>
+
+      <article class="step flip" data-reveal>
+        <div class="vis hands" aria-hidden="true">
+          <div class="disc">
+            <Image src={handOpen} alt="" width={360} height={360} class="h open" />
+            <Image src={handFist} alt="" width={360} height={360} class="h fist" />
+            <span class="spark s1"></span>
+            <span class="spark s2"></span>
+            <span class="spark s3"></span>
+          </div>
+        </div>
+        <div class="txt">
+          <span class="badge">2</span>
+          <h3>{h.steps[1].title}</h3>
+          <p>{h.steps[1].text}</p>
+        </div>
+      </article>
+
+      <article class="step" data-reveal>
+        <div class="vis single">
+          <DeviceFrame src={canvas} alt={h.steps[2].alt} width={1000} />
+        </div>
+        <div class="txt">
+          <span class="badge">3</span>
+          <h3>{h.steps[2].title}</h3>
+          <p>{h.steps[2].text}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .how {
+    background: linear-gradient(180deg, #2f8bec, #1b55c0);
+    color: #fff;
+  }
+  .how .kicker {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  .head {
+    margin-bottom: 4rem;
+  }
+  .steps {
+    display: grid;
+    gap: clamp(56px, 9vw, 120px);
+  }
+  .step {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: clamp(28px, 5vw, 72px);
+    align-items: center;
+  }
+  .step.flip {
+    grid-template-columns: 1fr 1.15fr;
+  }
+  .step.flip .vis {
+    order: 2;
+  }
+  .badge {
+    display: inline-grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    background: var(--sun);
+    color: var(--ink);
+    border: 4px solid var(--ink);
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: 2rem;
+    box-shadow: 0 5px 0 var(--ink);
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: clamp(2.2rem, 1.6rem + 2vw, 3.4rem);
+    margin-bottom: 0.7rem;
+  }
+  .txt p {
+    font-size: 1.15rem;
+    max-width: 28em;
+    opacity: 0.92;
+  }
+  .vis.single :global(.ipad) {
+    transform: rotate(-2.5deg);
+    transition: transform 0.5s var(--ease-bounce);
+  }
+  .vis.single:hover :global(.ipad) {
+    transform: rotate(0) scale(1.02);
+  }
+
+  .stack {
+    position: relative;
+    padding: 0 0 12% 0;
+  }
+  .stack :global(.front) {
+    width: 82%;
+    margin-left: 18%;
+    transform: rotate(2.5deg);
+    position: relative;
+    z-index: 1;
+    transition: transform 0.5s var(--ease-bounce);
+  }
+  .stack :global(.back) {
+    position: absolute;
+    width: 62%;
+    left: 0;
+    bottom: 0;
+    transform: rotate(-6deg);
+    transition: transform 0.5s var(--ease-bounce);
+  }
+  .stack:hover :global(.front) {
+    transform: rotate(0.5deg) translateY(-6px);
+  }
+  .stack:hover :global(.back) {
+    transform: rotate(-9deg) translateX(-10px);
+  }
+
+  .hands {
+    display: grid;
+    place-items: center;
+  }
+  .disc {
+    position: relative;
+    width: min(100%, 400px);
+    aspect-ratio: 1;
+    background: var(--cream);
+    border: 5px solid var(--ink);
+    border-radius: 50%;
+    box-shadow: 0 10px 0 var(--ink);
+  }
+  .disc :global(.h) {
+    position: absolute;
+    inset: 12%;
+    width: 76%;
+    height: 76%;
+    object-fit: contain;
+  }
+  .disc :global(.open) {
+    animation: show-open 3.2s ease-in-out infinite;
+  }
+  .disc :global(.fist) {
+    animation: show-fist 3.2s ease-in-out infinite;
+  }
+  @keyframes show-open {
+    0%, 40% { opacity: 1; transform: scale(1) rotate(-4deg); }
+    50%, 90% { opacity: 0; transform: scale(0.7) rotate(8deg); }
+    100% { opacity: 1; transform: scale(1) rotate(-4deg); }
+  }
+  @keyframes show-fist {
+    0%, 40% { opacity: 0; transform: scale(0.7); }
+    50% { opacity: 1; transform: scale(1.15); }
+    60%, 90% { opacity: 1; transform: scale(1) rotate(3deg); }
+    100% { opacity: 0; transform: scale(0.7); }
+  }
+  .spark {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background: var(--red);
+    border-radius: 50%;
+    opacity: 0;
+    animation: pop 3.2s ease-out infinite;
+  }
+  .s1 { top: 14%; right: 12%; background: var(--red); animation-delay: 1.5s; }
+  .s2 { top: 30%; left: 6%; background: var(--blue); animation-delay: 1.6s; }
+  .s3 { bottom: 12%; right: 20%; background: var(--sun); animation-delay: 1.7s; }
+  @keyframes pop {
+    0% { opacity: 0; transform: scale(0); }
+    8% { opacity: 1; transform: scale(1.6); }
+    30%, 100% { opacity: 0; transform: scale(2.4) translateY(-14px); }
+  }
+
+  @media (max-width: 860px) {
+    .step,
+    .step.flip {
+      grid-template-columns: 1fr;
+    }
+    .step.flip .vis {
+      order: 0;
+    }
+  }
+</style>
