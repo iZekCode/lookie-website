@@ -7,9 +7,7 @@ import Pain from './Pain.astro';
 import How from './How.astro';
 import Audience from './Audience.astro';
 import Report from './Report.astro';
-import Critters from './Critters.astro';
 import Testing from './Testing.astro';
-import PrivacyStrip from './PrivacyStrip.astro';
 import Cta from './Cta.astro';
 import { useCopy, type Lang } from '../i18n';
 
@@ -29,9 +27,7 @@ const copy = useCopy(lang);
     <How copy={copy} />
     <Audience copy={copy} />
     <Report copy={copy} />
-    <Critters copy={copy} />
     <Testing copy={copy} />
-    <PrivacyStrip copy={copy} lang={lang} />
     <Cta copy={copy} />
   </main>
 </Base>

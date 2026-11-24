@@ -101,28 +101,11 @@ export const id = {
     minutes: 'Menit',
     days: 'Hari aktif',
   },
-  critters: {
-    kicker: 'Teman melukis',
-    title: 'Empat teman kecil',
-    lead: 'Tiap hewan jadi kuas. Anak memilih satu, lalu hewan itu mengikuti tangannya dan meninggalkan cat di kanvas.',
-    tapHint: 'Colek mereka',
-    items: [
-      { name: 'Kepik', lines: ['Ayo mulai!', 'Aku suka merah.', 'Jangan geli ya.'] },
-      { name: 'Kupu-kupu', lines: ['Terbang yuk!', 'Ikuti aku.', 'Sayapku basah cat.'] },
-      { name: 'Lebah', lines: ['Dengung, dengung!', 'Cat ini manis.', 'Kita lukis bunga.'] },
-      { name: 'Siput', lines: ['Pelan-pelan saja.', 'Aku sampai kok.', 'Tidak perlu buru-buru.'] },
-    ],
-  },
   testing: {
     kicker: 'Hasil uji',
     title: 'Sudah dicoba anak-anak',
     p1: 'Lookie dikembangkan dengan arahan tenaga medis, lalu diuji bersama anak dengan CP dan orang tuanya.',
     p2: 'Dari uji awal, anak-anak senang dan betah melukis. Kami masih terus menguji dan mendengarkan masukan.',
-  },
-  privacy: {
-    title: 'Kamera tidak ke mana-mana',
-    text: 'Gambar dari kamera dibaca di dalam iPad. Tidak direkam, tidak disimpan, tidak dikirim. Tanpa akun, semua lukisan hanya ada di iPad itu.',
-    link: 'Baca kebijakan privasi',
   },
   cta: {
     title: 'Mau mencoba Lookie?',

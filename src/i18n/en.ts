@@ -103,28 +103,11 @@ export const en: Copy = {
     minutes: 'Minutes',
     days: 'Active days',
   },
-  critters: {
-    kicker: 'Painting buddies',
-    title: 'Four little friends',
-    lead: 'Each animal is a brush. A child picks one, and it follows their hand and leaves paint on the canvas.',
-    tapHint: 'Give them a poke',
-    items: [
-      { name: 'Ladybug', lines: ['Let’s go!', 'I like red.', 'Don’t tickle.'] },
-      { name: 'Butterfly', lines: ['Fly with me!', 'Follow me.', 'My wings are wet with paint.'] },
-      { name: 'Bee', lines: ['Bzz, bzz!', 'This paint is sweet.', 'Let’s paint a flower.'] },
-      { name: 'Snail', lines: ['Nice and slow.', 'I’ll get there.', 'No rush at all.'] },
-    ],
-  },
   testing: {
     kicker: 'Testing',
     title: 'Children have tried it',
     p1: 'Lookie was built with guidance from medical experts, then tested with children with CP and their parents.',
     p2: 'In early testing, the children had fun and stuck with the painting. We’re still testing and still listening.',
-  },
-  privacy: {
-    title: 'The camera stays put',
-    text: 'Camera images are read inside the iPad. Nothing is recorded, saved or sent. Without an account, every painting lives only on that iPad.',
-    link: 'Read the privacy policy',
   },
   cta: {
     title: 'Want to try Lookie?',
