@@ -25,7 +25,7 @@ export const en: Copy = {
     secondary: 'Meet Lookie',
     note: 'Free. iPad only.',
     videoAlt:
-      'A short tour of Lookie on an iPad: the home screen, choosing a picture, filling the paint buckets with a fist, painting with an arm sweep, the finished work in the gallery, and the progress report.',
+      'A short tour of Lookie on an iPad: the home screen, choosing a picture, painting with a fist and an arm sweep, the finished work in the gallery, and the progress report.',
   },
   about: {
     title: 'Hands move, paint appears.',

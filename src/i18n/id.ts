@@ -23,7 +23,7 @@ export const id = {
     secondary: 'Kenalan dengan Lookie',
     note: 'Gratis. Khusus iPad.',
     videoAlt:
-      'Tur singkat Lookie di iPad: layar utama, memilih gambar, mengisi ember cat dengan kepalan tangan, melukis dengan ayunan lengan, hasil karya di galeri, dan laporan perkembangan.',
+      'Tur singkat Lookie di iPad: layar utama, memilih gambar, melukis dengan kepalan tangan dan ayunan lengan, hasil karya di galeri, dan laporan perkembangan.',
   },
   about: {
     title: 'Tangan bergerak, cat muncul.',
