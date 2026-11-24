@@ -62,11 +62,11 @@ export const id = {
     ],
   },
   testing: {
-    title: 'Diuji bersama anak, diarahkan para ahli',
-    intro: 'Lookie dikembangkan dengan arahan tenaga medis, lalu diuji bersama anak dengan CP dan orang tuanya.',
+    title: 'Diuji bersama anak, dengan arahan tenaga medis',
+    intro: 'Lookie dikembangkan dengan masukan tenaga medis dan diuji coba langsung bersama anak dengan CP serta orang tua mereka.',
     kids: {
       title: 'Uji coba bersama anak',
-      text: 'Anak-anak senang dan betah melukis.',
+      text: 'Anak-anak diajak mencoba Lookie secara langsung. Mereka menikmati proses melukis dan betah mencoba berbagai gerakan.',
       alts: [
         'Seorang anak perempuan berhijab abu-abu mengangkat tangan ke arah iPad yang menampilkan lukisan penuh warna.',
         'Seorang anak laki-laki berbaju merah mengangkat lengannya untuk melukis di iPad, sementara terapis tersenyum di sampingnya.',

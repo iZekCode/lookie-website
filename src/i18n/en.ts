@@ -64,11 +64,11 @@ export const en: Copy = {
     ],
   },
   testing: {
-    title: 'Tested with children, guided by experts',
-    intro: 'Lookie was built with guidance from medical experts, then tested with children with CP and their parents.',
+    title: 'Tested with children, guided by medical professionals',
+    intro: 'Lookie was developed with input from medical professionals and tested firsthand with children with CP and their parents.',
     kids: {
-      title: 'Testing with children',
-      text: 'The children had fun and stuck with the painting.',
+      title: 'Tried and tested with children',
+      text: 'Children got to experience Lookie for themselves. They enjoyed painting and were happy to keep exploring different movements.',
       alts: [
         'A girl in a grey hijab raises her hand toward an iPad showing a colourful painting.',
         'A boy in a red sweater raises his arm to paint on an iPad while a therapist smiles beside him.',
