@@ -1,0 +1,209 @@
+---
+// A big canvas that the page scrolls through: screenshots, paint and animals each drift at their own pace.
+import { Image } from 'astro:assets';
+import homeShot from '../assets/app/home.png';
+import templates from '../assets/app/templates.png';
+import canvasShot from '../assets/app/canvas.png';
+import kepik from '../assets/critters/kepik.png';
+import kupu from '../assets/critters/kupu.png';
+import lebah from '../assets/critters/lebah.png';
+import siput from '../assets/critters/siput.png';
+import DeviceFrame from './DeviceFrame.astro';
+import Ribbon from './Ribbon.astro';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const c = copy.canvas;
+---
+
+<section class="pc" id="kanvas">
+  <Ribbon items={copy.marquee} />
+
+  <div class="paper" data-pc>
+    <div class="item blob b1" data-s="-0.25"></div>
+    <div class="item blob b2" data-s="-0.4"></div>
+    <div class="item blob b3" data-s="-0.15"></div>
+
+    <svg class="strokes" viewBox="0 0 1000 1500" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g class="oil red">
+        <path pathLength="1" data-draw="0 0.45" d="M-60 250 C 160 70, 380 400, 600 230 S 930 110, 1080 330" />
+      </g>
+      <g class="oil blue">
+        <path pathLength="1" data-draw="0.25 0.7" d="M-60 820 C 140 650, 360 960, 560 790 S 900 660, 1080 860" />
+      </g>
+      <g class="oil yellow">
+        <path pathLength="1" data-draw="0.5 0.95" d="M-60 1320 C 160 1160, 380 1430, 600 1270 S 900 1180, 1080 1360" />
+      </g>
+      <g class="oil green">
+        <path pathLength="1" data-draw="0.15 0.55" d="M820 470 C 900 560, 760 640, 800 560 S 940 420, 880 380" />
+      </g>
+    </svg>
+
+    <div class="item copy" data-s="0.08">
+      <h2 class="h2">{c.title}</h2>
+      <p class="lead">{c.lead}</p>
+    </div>
+
+    <div class="item fr f1" data-s="0.18" data-x="-1" data-r="-1">
+      <DeviceFrame src={homeShot} alt={c.alts[0]} width={900} />
+      <span class="tag">{c.labels[0]}</span>
+    </div>
+    <div class="item fr f2" data-s="-0.12" data-x="1" data-r="1">
+      <DeviceFrame src={templates} alt={c.alts[1]} width={900} />
+      <span class="tag">{c.labels[1]}</span>
+    </div>
+    <div class="item fr f3" data-s="0.22" data-x="-1" data-r="-1">
+      <DeviceFrame src={canvasShot} alt={c.alts[2]} width={900} />
+      <span class="tag">{c.labels[2]}</span>
+    </div>
+
+    <div class="item pet c1" data-s="0.75" data-x="1" data-r="2"><Image src={kepik} alt="" width={180} height={180} /></div>
+    <div class="item pet c2" data-s="-0.5" data-x="-1" data-r="-2"><Image src={kupu} alt="" width={180} height={180} /></div>
+    <div class="item pet c3" data-s="0.6" data-x="1" data-r="2"><Image src={lebah} alt="" width={180} height={180} /></div>
+    <div class="item pet c4" data-s="0.35" data-x="-1" data-r="-2"><Image src={siput} alt="" width={180} height={180} /></div>
+  </div>
+</section>
+
+<style>
+  .pc {
+    position: relative;
+    padding-block: 0 clamp(72px, 10vw, 140px);
+    background: transparent;
+  }
+  .paper {
+    --arrive: 1;
+    position: relative;
+    margin: clamp(56px, 8vw, 110px) auto 0;
+    width: min(100% - var(--gutter) * 1.2, 1240px);
+    height: max(150svh, 900px);
+    background: #fffdf6;
+    border: 4px solid var(--ink);
+    border-radius: 44px;
+    box-shadow: 0 12px 0 var(--ink);
+    overflow: hidden;
+    transform: scale(calc(0.9 + 0.1 * var(--arrive)));
+    transform-origin: 50% 40%;
+    background-image: radial-gradient(rgba(42, 33, 69, 0.07) 1.5px, transparent 1.5px);
+    background-size: 24px 24px;
+  }
+  .item {
+    position: absolute;
+    will-change: transform;
+  }
+
+  .blob {
+    border-radius: 50%;
+  }
+  .b1 { width: 52%; aspect-ratio: 1; left: -14%; top: 6%; background: var(--sky-d); }
+  .b2 { width: 40%; aspect-ratio: 1; right: -10%; top: 38%; background: var(--sun); }
+  .b3 { width: 34%; aspect-ratio: 1; left: 24%; top: 76%; background: var(--pink); }
+
+  .strokes {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .oil path {
+    fill: none;
+    stroke: var(--c);
+    stroke-width: 74;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 0;
+  }
+  .paper.live .oil path {
+    stroke-dashoffset: 1;
+  }
+  .red { --c: #e8281e; }
+  .blue { --c: #2d8ef0; }
+  .yellow { --c: #ffc400; }
+  .green { --c: #3dae2b; }
+
+  .copy {
+    left: 50%;
+    top: 5%;
+    translate: -50% 0;
+    width: min(88%, 720px);
+    text-align: center;
+    z-index: 3;
+    background: rgba(255, 253, 246, 0.86);
+    padding: 22px 26px;
+    border-radius: 28px;
+  }
+  .copy .h2 {
+    margin-bottom: 0.7rem;
+  }
+  .copy .lead {
+    margin-inline: auto;
+  }
+
+  .fr {
+    z-index: 2;
+  }
+  .f1 { left: 4%; top: 30%; width: 46%; }
+  .f2 { right: 3%; top: 47%; width: 44%; }
+  .f3 { left: 9%; top: 68%; width: 46%; }
+  .fr :global(.ipad) {
+    box-shadow:
+      0 0 0 2px #3b3850,
+      0 24px 40px -14px rgba(42, 33, 69, 0.5);
+  }
+  .f1 :global(.ipad) { transform: rotate(-4deg); }
+  .f2 :global(.ipad) { transform: rotate(3.5deg); }
+  .f3 :global(.ipad) { transform: rotate(-2.5deg); }
+  .tag {
+    position: absolute;
+    left: 6%;
+    bottom: -14px;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    background: var(--sun);
+    border: 3px solid var(--ink);
+    border-radius: 12px;
+    padding: 0.05em 0.7em 0.15em;
+    box-shadow: 0 4px 0 var(--ink);
+    transform: rotate(-3deg);
+  }
+  .f2 .tag { left: auto; right: 6%; transform: rotate(3deg); background: var(--pink); }
+  .f3 .tag { background: var(--leaf-l); }
+
+  .pet {
+    z-index: 4;
+    width: clamp(64px, 11%, 140px);
+    filter: drop-shadow(0 8px 6px rgba(42, 33, 69, 0.22));
+  }
+  .pet :global(img) {
+    width: 100%;
+    height: auto;
+    animation: bob 3.4s ease-in-out infinite;
+  }
+  .c1 { right: 9%; top: 20%; }
+  .c2 { left: 6%; top: 56%; }
+  .c3 { right: 7%; top: 78%; }
+  .c4 { right: 34%; top: 91%; }
+  .c2 :global(img) { animation-delay: -1s; animation-duration: 2.6s; }
+  .c3 :global(img) { animation-delay: -2s; animation-duration: 3s; }
+  .c4 :global(img) { animation-delay: -0.5s; animation-duration: 5s; }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-4deg); }
+    50% { transform: translateY(-12px) rotate(5deg); }
+  }
+
+  @media (max-width: 760px) {
+    .paper {
+      height: max(170svh, 1000px);
+      border-radius: 32px;
+    }
+    .copy { top: 3%; }
+    .f1 { left: 3%; top: 28%; width: 74%; }
+    .f2 { right: 3%; top: 47%; width: 74%; }
+    .f3 { left: 3%; top: 66%; width: 74%; }
+    .c1 { top: 24%; }
+    .oil path { stroke-width: 56; }
+    .tag { font-size: 1.05rem; }
+  }
+</style>

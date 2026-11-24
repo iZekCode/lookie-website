@@ -17,7 +17,7 @@ const home = localePath(lang);
 const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
 ---
 
-<header class="bar" data-header>
+<header class:list={['bar', { solid: onHome }]} data-header>
   <div class="wrap bar-in">
     <a class="brand" href={home} aria-label={copy.nav.home}>
       <Image src={icon} alt="" width={96} height={96} class="brand-icon" />
@@ -48,8 +48,14 @@ const anchor = (hash: string) => (onHome ? hash : `${home}${hash}`);
     top: 0;
     z-index: 50;
     padding-block: 12px;
-    transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
+    transition: opacity 0.7s ease, background 0.3s, box-shadow 0.3s, padding 0.3s;
   }
+  .bar.solid {
+    position: fixed;
+    left: 0;
+    right: 0;
+  }
+  .bar.solid,
   .bar.scrolled {
     background: color-mix(in srgb, var(--paper) 88%, transparent);
     backdrop-filter: blur(14px);

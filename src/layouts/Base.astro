@@ -18,6 +18,15 @@ const site = Astro.site ?? new URL('https://izekcode.github.io');
 const abs = (path: string) => new URL(path, site).href;
 const canonical = abs(localePath(lang, twinPath));
 const og = abs(assetUrl('og.jpg'));
+// Runs before the page paints: switches on the scroll story, and the opening on the first visit of a session.
+const openingFlags = `(function () {
+  var d = document.documentElement;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  d.classList.add('story-js');
+  var seen = false;
+  try { seen = sessionStorage.getItem('lookie-opened') === '1'; } catch (e) {}
+  if (!seen && window.scrollY < 4) d.classList.add('opening');
+})();`;
 ---
 
 <!doctype html>
@@ -43,6 +52,7 @@ const og = abs(assetUrl('og.jpg'));
     <meta property="og:locale" content={lang === 'id' ? 'id_ID' : 'en_US'} />
     <meta name="twitter:card" content="summary_large_image" />
     <slot name="head" />
+    {twinPath === '' && <script is:inline set:html={openingFlags} />}
   </head>
   <body>
     <Doodles />

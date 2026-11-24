@@ -1,0 +1,289 @@
+---
+// The opening: one big eye blinks twice and turns into a ladybug's eyes. Scrolling then splits the ladybug into four animals, and they settle around the headline.
+import { Image } from 'astro:assets';
+import kepik from '../assets/critters/kepik.png';
+import kupu from '../assets/critters/kupu.png';
+import lebah from '../assets/critters/lebah.png';
+import siput from '../assets/critters/siput.png';
+import Wordmark from './Wordmark.astro';
+import { eyeLeftSvg, eyeRightSvg } from '../lib/eyes';
+import type { Copy } from '../i18n/id';
+
+interface Props {
+  copy: Copy;
+}
+const { copy } = Astro.props;
+const h = copy.hero;
+// Slot 0 is the ladybug itself. The others start as ladybugs and turn into these.
+const pals = [null, kupu, lebah, siput];
+---
+
+<section class="story" id="top" data-story>
+  <div class="stage">
+    <div class="eyes" aria-hidden="true">
+      <div class="eye e1" data-eye><div class="lid" set:html={eyeLeftSvg} /></div>
+      <div class="eye e2" data-eye><div class="lid" set:html={eyeRightSvg} /></div>
+    </div>
+
+    <div class="pals" aria-hidden="true">
+      {
+        pals.map((swap, i) => (
+          <div class={`pal pal${i}`} data-pal={i}>
+            <div class="bob">
+              <Image src={kepik} alt="" width={640} height={640} widths={[480, 800, 1100]} sizes="(max-width: 700px) 60vw, 640px" class="base" loading="eager" />
+              {swap && <Image src={swap} alt="" width={640} height={640} widths={[480, 800, 1100]} sizes="(max-width: 700px) 60vw, 640px" class="swap" loading="eager" />}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="hero-copy" data-copy>
+      <p class="kicker">{h.kicker}</p>
+      <Wordmark class="mark" />
+      <h1>
+        <span>{h.titleA}</span> <span class="hl">{h.titleB}</span>
+      </h1>
+      <p class="lead">{h.sub}</p>
+      <div class="cta">
+        <a class="btn" href="#coba">{h.primary}</a>
+        <a class="btn btn--ghost" href="#tentang">{h.secondary}</a>
+      </div>
+      <p class="note">{h.note}</p>
+    </div>
+
+    <div class="hint" data-hint aria-hidden="true">
+      <span>{copy.story.scroll}</span>
+      <i></i>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Without scripting, or with reduced motion, this is a plain hero: the four animals sit at the corners of the headline. */
+  .story {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    padding: 96px 0 72px;
+    overflow: clip;
+  }
+  .stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
+  .eyes {
+    display: none;
+  }
+  .pal {
+    position: absolute;
+    width: clamp(84px, 16vw, 210px);
+    aspect-ratio: 1;
+  }
+  .pal0 { left: 4%; top: 4%; }
+  .pal1 { right: 4%; top: 4%; }
+  .pal2 { left: 4%; bottom: 4%; }
+  .pal3 { right: 4%; bottom: 4%; }
+  .bob {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .bob :global(img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .bob :global(.swap) {
+    opacity: 1;
+  }
+  .pal1 :global(.base),
+  .pal2 :global(.base),
+  .pal3 :global(.base) {
+    opacity: 0;
+  }
+  .hero-copy {
+    position: relative;
+    z-index: 2;
+    width: min(100% - var(--gutter) * 2, 760px);
+    text-align: center;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    padding-block: 40px;
+  }
+  .hero-copy :global(.mark) {
+    width: min(100%, 440px, 44vh);
+    margin: 0.2rem 0 1rem;
+    filter: drop-shadow(0 8px 0 rgba(42, 33, 69, 0.14));
+  }
+  h1 {
+    font-size: clamp(2.2rem, 1.2rem + 3.2vw, 4rem);
+    margin-bottom: 0.8rem;
+  }
+  .hl {
+    color: #fff;
+    padding: 0 0.25em;
+    background: linear-gradient(transparent 6%, var(--blue) 6% 94%, transparent 94%);
+    border-radius: 0.2em;
+    transform: rotate(-1.5deg);
+    display: inline-block;
+  }
+  .lead {
+    margin-inline: auto;
+  }
+  .cta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin: 1.6rem 0 0.9rem;
+  }
+  .note {
+    font-weight: 600;
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+  }
+  .hint {
+    display: none;
+  }
+
+  /* With scripting: the section is tall and its stage stays pinned while the page scrolls through it. */
+  :global(html.story-js) .story {
+    height: 520vh;
+    display: block;
+    padding: 0;
+    overflow: visible;
+  }
+  :global(html.story-js) .stage {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    overflow: hidden;
+    display: block;
+    background: var(--stage-bg, var(--blue));
+  }
+  :global(html.story-js) .pal {
+    left: 0;
+    top: 0;
+    width: var(--pal, 400px);
+    height: var(--pal, 400px);
+    aspect-ratio: auto;
+    transform-origin: 50% 50%;
+    will-change: transform;
+  }
+  :global(html.story-js) .pal .bob :global(.base) {
+    opacity: 1;
+  }
+  :global(html.story-js) .pal .bob :global(.swap) {
+    opacity: 0;
+  }
+  :global(html.story-js) .pal0 {
+    z-index: 4;
+  }
+  :global(html.story-js) .hero-copy {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    opacity: 0;
+    padding-block: 0;
+    will-change: transform, opacity;
+  }
+  :global(html.story-js) .pals {
+    position: absolute;
+    inset: 0;
+  }
+  :global(html.story-js) .settled .bob {
+    animation: bob 3.6s ease-in-out infinite;
+  }
+  :global(html.story-js) .settled .pal1 .bob { animation-delay: -0.9s; animation-duration: 3s; }
+  :global(html.story-js) .settled .pal2 .bob { animation-delay: -1.8s; animation-duration: 2.6s; }
+  :global(html.story-js) .settled .pal3 .bob { animation-delay: -2.7s; animation-duration: 4.2s; }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-3%) rotate(3deg); }
+  }
+
+  /* The opening. Only the eyes exist until the ladybug is drawn around them. */
+  :global(html.opening) .eyes {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+  }
+  :global(html.opening) .pal0 {
+    clip-path: circle(0% at 57.2% 57.9%);
+  }
+  .eye {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: var(--ew, 240px);
+    height: var(--eh, 310px);
+    translate: -50% -50%;
+    opacity: 0;
+    will-change: transform;
+  }
+  .lid {
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 55%;
+  }
+  .eye :global(.eye-svg) {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+  .eye :global(.pupil) {
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .e2 {
+    z-index: 1;
+  }
+
+  .hint {
+    position: absolute;
+    left: 50%;
+    bottom: 22px;
+    translate: -50% 0;
+    z-index: 5;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: #fff;
+    opacity: 0;
+    pointer-events: none;
+  }
+  :global(html.story-js) .hint {
+    display: flex;
+  }
+  .hint i {
+    width: 26px;
+    height: 42px;
+    border: 3px solid currentColor;
+    border-radius: 14px;
+    position: relative;
+  }
+  .hint i::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 7px;
+    width: 5px;
+    height: 9px;
+    margin-left: -2.5px;
+    border-radius: 3px;
+    background: currentColor;
+    animation: wheel 1.5s ease-in-out infinite;
+  }
+  @keyframes wheel {
+    0% { transform: translateY(0); opacity: 1; }
+    80%, 100% { transform: translateY(14px); opacity: 0; }
+  }
+</style>

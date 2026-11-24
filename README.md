@@ -12,6 +12,16 @@ npm run dev      # http://localhost:4321
 npm run build    # writes dist/
 ```
 
+## The opening and scroll story
+
+The top of the landing page is one pinned story (`Story.astro`, `src/scripts/story.ts`):
+
+1. A full-screen blue page with one big eye from the logo. It looks around, blinks twice, splits in two and slides into a ladybug's eyes while the ladybug is drawn around them. Any scroll, tap or key skips it, and it plays once per browser session.
+2. Scrolling splits the ladybug into four animals (they cross-fade into the butterfly, bee and snail on the way), then moves them out to the corners while the headline fades in and the blue turns to cream.
+3. `ParallaxCanvas.astro` (`src/scripts/canvas.ts`) is a big canvas that the page scrolls through, with layers at different speeds and paint strokes that draw themselves.
+
+With reduced motion enabled, or without scripting, none of this runs: the hero is a plain static layout with the four animals in the corners. The eye positions inside the ladybug picture are measured constants at the top of `story.ts`; re-measure them if `kepik.png` changes.
+
 ## Pages
 
 | Indonesian | English | What |
