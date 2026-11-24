@@ -20,7 +20,6 @@ export const en: Copy = {
     titleB: 'into art.',
     sub: 'Interactive drawing game for children with Cerebral Palsy to support motor skill exercise. Children with Cerebral Palsy paint by moving their hands, with computer vision tracking every movement.',
     primary: 'Try Lookie',
-    secondary: 'Meet Lookie',
     videoAlt:
       'A short tour of Lookie on an iPad: the home screen, choosing a picture, painting with a fist and an arm sweep, the finished work in the gallery, and the progress report.',
   },
