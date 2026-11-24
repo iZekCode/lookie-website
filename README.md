@@ -68,4 +68,4 @@ Each clip also has a `.jpg` poster, shown before the video loads and when the vi
 
 `.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`. It reads the base path from the repo name, so renaming the repo is enough to move the site's URL.
 
-The last section links to the public TestFlight invite (`src/lib/links.ts`) and shows a QR code of the same link, drawn at build time. Set `PUBLIC_TESTFLIGHT_URL` to use a different invite. The App Store button is a placeholder until the app is released.
+The last section links to the app's App Store page (`src/lib/links.ts`) and shows a QR code of the same link, drawn at build time. Set `PUBLIC_APPSTORE_URL` to use a different link.

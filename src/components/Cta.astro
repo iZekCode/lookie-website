@@ -1,14 +1,14 @@
 ---
 import type { Copy } from '../i18n/id';
 import QRCode from 'qrcode';
-import { testflightUrl } from '../lib/links';
+import { appStoreUrl } from '../lib/links';
 
 interface Props {
   copy: Copy;
 }
 const { copy } = Astro.props;
 const c = copy.cta;
-const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color: { dark: '#2a2145', light: '#0000' } });
+const qr = await QRCode.toString(appStoreUrl, { type: 'svg', margin: 0, color: { dark: '#2a2145', light: '#0000' } });
 ---
 
 <section class="cta sheet" id="mencoba">
@@ -17,11 +17,11 @@ const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color:
       <h2 class="h2" data-reveal>{c.title}</h2>
       <p class="lead" data-reveal style="--d:1">{c.text}</p>
       <div class="btns" data-reveal style="--d:2">
-        <a class="btn btn--red" href={testflightUrl} rel="noopener">{c.testflight}</a>
+        <a class="btn btn--red" href={appStoreUrl} rel="noopener">{c.download}</a>
       </div>
     </div>
     <div class="scan" data-reveal style="--d:1">
-      <a class="qr" href={testflightUrl} rel="noopener" aria-label={c.qrAlt}>
+      <a class="qr" href={appStoreUrl} rel="noopener" aria-label={c.qrAlt}>
         <span set:html={qr} />
       </a>
       <p>{c.scan}</p>

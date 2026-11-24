@@ -98,10 +98,10 @@ export const en: Copy = {
   },
   cta: {
     title: 'Come paint with Lookie!',
-    text: 'Lookie is open for testing on TestFlight, and the App Store version is on its way.',
-    testflight: 'Try Lookie on TestFlight',
-    scan: 'Scan with your iPad to try Lookie',
-    qrAlt: 'QR code for the Lookie TestFlight invite',
+    text: 'Lookie is now available on the App Store! Start creating and turn little moves into works of art.',
+    download: 'Download Lookie on the App Store',
+    scan: 'Scan the QR code with your iPad to download Lookie.',
+    qrAlt: 'QR code to download Lookie on the App Store',
   },
   footer: {
     tagline: 'Turn little moves into art',
