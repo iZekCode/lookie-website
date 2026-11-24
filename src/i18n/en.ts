@@ -96,9 +96,26 @@ export const en: Copy = {
   },
   testing: {
     kicker: 'Testing',
-    title: 'Children have tried it',
-    p1: 'Lookie was built with guidance from medical experts, then tested with children with CP and their parents.',
-    p2: 'In early testing, the children had fun and stuck with the painting. We’re still testing and still listening.',
+    title: 'Tested with children, guided by experts',
+    intro: 'Lookie was built with guidance from medical experts, then tested with children with CP and their parents.',
+    kids: {
+      title: 'Testing with children',
+      text: 'The children had fun and stuck with the painting.',
+      alts: [
+        'A girl in a grey hijab raises her hand toward an iPad showing a colourful painting.',
+        'A boy in a red sweater raises his arm to paint on an iPad while a therapist smiles beside him.',
+      ],
+    },
+    experts: {
+      title: 'Guidance from experts',
+      quote: 'The concept is great and fun. It has real potential as a therapy tool at home. Please keep developing it.',
+      name: 'dr. Rizky Kusuma Wardhani, Sp.K.F.R., Ped. (K)',
+      role: 'Head of the Physical Medicine and Rehabilitation Department, RSCM',
+      alts: [
+        'Two team members with a rehabilitation doctor, holding an iPad that shows the Lookie home screen.',
+        'Three women stand together in front of the Physical Medicine and Rehabilitation sign at RSCM, one of them holding an iPad with Lookie on it.',
+      ],
+    },
   },
   team: {
     kicker: 'Team',

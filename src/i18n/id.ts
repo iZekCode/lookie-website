@@ -94,9 +94,26 @@ export const id = {
   },
   testing: {
     kicker: 'Hasil uji',
-    title: 'Sudah dicoba anak-anak',
-    p1: 'Lookie dikembangkan dengan arahan tenaga medis, lalu diuji bersama anak dengan CP dan orang tuanya.',
-    p2: 'Dari uji awal, anak-anak senang dan betah melukis. Kami masih terus menguji dan mendengarkan masukan.',
+    title: 'Diuji bersama anak, diarahkan para ahli',
+    intro: 'Lookie dikembangkan dengan arahan tenaga medis, lalu diuji bersama anak dengan CP dan orang tuanya.',
+    kids: {
+      title: 'Uji coba bersama anak',
+      text: 'Anak-anak senang dan betah melukis.',
+      alts: [
+        'Seorang anak perempuan berhijab abu-abu mengangkat tangan ke arah iPad yang menampilkan lukisan penuh warna.',
+        'Seorang anak laki-laki berbaju merah mengangkat lengannya untuk melukis di iPad, sementara terapis tersenyum di sampingnya.',
+      ],
+    },
+    experts: {
+      title: 'Arahan para ahli',
+      quote: 'Konsepnya bagus dan menyenangkan. Sangat potensial untuk dijadikan media terapi di rumah. Teruskan pengembangannya.',
+      name: 'dr. Rizky Kusuma Wardhani, Sp.K.F.R., Ped. (K)',
+      role: 'Kepala Departemen Kedokteran Fisik dan Rehabilitasi, RSCM',
+      alts: [
+        'Dua anggota tim bersama dokter rehabilitasi medik, memegang iPad yang menampilkan layar awal Lookie.',
+        'Tiga perempuan berdiri di depan tulisan Kedokteran Fisik dan Rehabilitasi di RSCM, salah satunya memegang iPad berisi Lookie.',
+      ],
+    },
   },
   team: {
     kicker: 'Tim',
