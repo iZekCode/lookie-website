@@ -4,7 +4,7 @@ import type { Copy } from './id';
 export const en: Copy = {
   lang: 'en',
   meta: {
-    title: 'Lookie: painting in the air for children with CP',
+    title: 'Lookie: turn little moves into art',
     description:
       'Interactive drawing game for children with cerebral palsy (CP) to support motor skill exercise. Children with CP paint by moving their hands, with computer vision tracking every movement.',
   },
@@ -18,8 +18,8 @@ export const en: Copy = {
     home: 'Lookie home',
   },
   hero: {
-    titleA: 'Paint',
-    titleB: 'in the air.',
+    titleA: 'Turn little moves',
+    titleB: 'into art.',
     sub: 'Lookie turns therapy exercises into painting. A child with cerebral palsy moves their hands and arms in front of the iPad, and paint shows up on the canvas.',
     primary: 'Try Lookie',
     secondary: 'Meet Lookie',
