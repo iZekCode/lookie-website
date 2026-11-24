@@ -1,4 +1,4 @@
-**Terakhir diperbarui: 18 November 2026**
+**Terakhir diperbarui: 25 November 2026**
 
 Lookie adalah aplikasi melukis untuk anak di iPad. Anak bisa melukis di udara: kamera depan mendeteksi gerakan tangan dan lengan, lalu goresan cat muncul di kanvas. Kebijakan ini menjelaskan data apa saja yang kami simpan, tujuan penggunaannya, dan cara menghapusnya. Kami menyusunnya secara ringkas agar mudah dipahami oleh orang tua.
 
@@ -16,15 +16,11 @@ Lookie adalah aplikasi melukis untuk anak di iPad. Anak bisa melukis di udara: k
 
 ## Siapa yang menggunakan Lookie?
 
-Lookie dirancang untuk anak dan digunakan bersama orang tua atau wali. Akun dibuat oleh orang tua atau wali, bukan oleh anak. Satu akun digunakan untuk satu anak.
-
-Kami tidak meminta nama lengkap, tanggal lahir, alamat, atau nomor telepon anak.
+Lookie dirancang untuk anak dan digunakan bersama orang tua atau wali. Akun dibuat oleh orang tua atau wali, bukan oleh anak. Satu akun digunakan untuk satu anak. Kami tidak meminta nama lengkap, tanggal lahir, alamat, atau nomor telepon anak.
 
 ## Tanpa akun (Mode Tamu)
 
-Anak tetap bisa melukis tanpa membuat akun. Dalam mode ini, lukisan, statistik, dan nama panggilan hanya disimpan di iPad yang digunakan. Kami tidak menerima data apa pun dari aktivitas tersebut.
-
-Jika aplikasi dihapus atau iPad diganti, lukisan yang tersimpan akan hilang. Informasi ini juga tersedia di halaman profil aplikasi.
+Anak tetap bisa melukis tanpa membuat akun. Dalam mode ini, lukisan, statistik, dan nama panggilan hanya disimpan di iPad yang digunakan. Kami tidak menerima data apa pun dari aktivitas tersebut. Jika aplikasi dihapus atau iPad diganti, lukisan yang tersimpan akan hilang. Informasi ini juga tersedia di halaman profil aplikasi.
 
 ## Data yang kami simpan setelah Masuk dengan Apple
 
@@ -44,15 +40,11 @@ Statistik gerakan merupakan perkiraan dua dimensi berdasarkan kamera. Data ini b
 
 ## Kamera
 
-Lookie menggunakan kamera depan hanya saat anak melukis untuk mengenali posisi tangan dan lengan. Proses pengenalan dilakukan langsung di iPad menggunakan framework Vision dari Apple.
-
-Gambar dari kamera tidak direkam, tidak disimpan, dan tidak dikirim ke mana pun. Data yang disimpan hanya berupa angka hasil pengenalan gerakan seperti yang dijelaskan pada tabel di atas.
+Lookie menggunakan kamera depan hanya saat anak melukis untuk mengenali posisi tangan dan lengan. Proses pengenalan dilakukan langsung di iPad menggunakan framework Vision dari Apple. Gambar dari kamera tidak direkam, tidak disimpan, dan tidak dikirim ke mana pun. Data yang disimpan hanya berupa angka hasil pengenalan gerakan seperti yang dijelaskan pada tabel di atas.
 
 ## Fitur custom template
 
-Fitur pembuatan template membutuhkan akun yang sudah masuk. Anak dapat memilih foto dari galeri, mengambil foto langsung, atau mengetik beberapa kata untuk membuat template.
-
-Foto yang dipilih (diperkecil menjadi JPEG dengan ukuran maksimal 768 piksel) atau teks yang dimasukkan akan dikirim melalui server kami ke Google Gemini. Layanan ini mengubah foto atau teks tersebut menjadi garis gambar yang dapat diwarnai.
+Fitur pembuatan template membutuhkan akun yang sudah masuk. Anak dapat memilih foto dari galeri, mengambil foto langsung, atau mengetik beberapa kata untuk membuat template. Foto yang dipilih (diperkecil menjadi JPEG dengan ukuran maksimal 768 piksel) atau teks yang dimasukkan akan dikirim melalui server kami ke Google Gemini. Layanan ini mengubah foto atau teks tersebut menjadi garis gambar yang dapat diwarnai.
 
 - Kami tidak menyimpan foto maupun teks yang dikirim. Data yang disimpan hanya berupa garis gambar hasilnya.
 - Selama Google Gemini memproses permintaan, ketentuan pengelolaan data dari Google berlaku.
@@ -85,17 +77,11 @@ Orang tua dapat menghapus data melalui beberapa cara:
 
 ## Hak orang tua
 
-Orang tua atau wali berhak untuk melihat, meminta salinan, memperbaiki, dan menghapus data anak, serta menarik persetujuan yang telah diberikan.
-
-Kirim permintaan melalui littlecrewproject@gmail.com. Kami akan membalas dalam 7 hari kerja.
-
-Menarik persetujuan berarti menghapus akun.
+Orang tua atau wali berhak untuk melihat, meminta salinan, memperbaiki, dan menghapus data anak, serta menarik persetujuan yang telah diberikan. Kirim permintaan melalui littlecrewproject@gmail.com. Kami akan membalas dalam 7 hari kerja. Menarik persetujuan berarti menghapus akun.
 
 ## Keamanan
 
-Data dikirim melalui koneksi HTTPS. Lukisan disimpan di penyimpanan pribadi, dan aturan akses pada tingkat baris (row-level security) memastikan setiap akun hanya dapat membaca datanya sendiri.
-
-Tidak ada sistem yang sepenuhnya aman dari risiko kebocoran. Jika terjadi kebocoran data yang berdampak pada pengguna, kami akan memberikan pemberitahuan sesuai hukum yang berlaku.
+Data dikirim melalui koneksi HTTPS. Lukisan disimpan di penyimpanan pribadi, dan aturan akses pada tingkat baris (row-level security) memastikan setiap akun hanya dapat membaca datanya sendiri. Tidak ada sistem yang sepenuhnya aman dari risiko kebocoran. Jika terjadi kebocoran data yang berdampak pada pengguna, kami akan memberikan pemberitahuan sesuai hukum yang berlaku.
 
 ## Perubahan kebijakan
 

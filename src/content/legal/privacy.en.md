@@ -1,4 +1,4 @@
-**Last updated: 18 November 2026**
+**Last updated: 25 November 2026**
 
 Lookie is a painting app for children on iPad. Children paint in the air: the front camera detects their hand and arm movements, and brushstrokes appear on the canvas. This policy explains what data we store, why we use it, and how it can be deleted. We have kept it concise and easy for parents to understand.
 
@@ -16,15 +16,11 @@ Lookie is a painting app for children on iPad. Children paint in the air: the fr
 
 ## Who uses Lookie?
 
-Lookie is designed for children to use together with a parent or guardian. Accounts are created by parents or guardians, not by children. Each account is for one child.
-
-We do not ask for a child's full name, date of birth, address, or phone number.
+Lookie is designed for children to use together with a parent or guardian. Accounts are created by parents or guardians, not by children. Each account is for one child. We do not ask for a child's full name, date of birth, address, or phone number.
 
 ## Without an account (Guest Mode)
 
-Children can paint without creating an account. In this mode, paintings, statistics, and nicknames are stored only on the iPad being used. We do not receive any data from this activity.
-
-If the app is deleted or the iPad is replaced, the stored paintings will be lost. This information is also stated on the app's profile page.
+Children can paint without creating an account. In this mode, paintings, statistics, and nicknames are stored only on the iPad being used. We do not receive any data from this activity. If the app is deleted or the iPad is replaced, the stored paintings will be lost. This information is also stated on the app's profile page.
 
 ## Data we store after Sign in with Apple
 
@@ -44,15 +40,11 @@ Movement statistics are two-dimensional estimates based on camera data. They are
 
 ## Camera
 
-Lookie uses the front camera only while a child is painting, to detect the position of their hands and arms. This detection happens directly on the iPad using Apple's Vision framework.
-
-Camera images are not recorded, stored, or sent anywhere. The only data we store are the movement measurements described in the table above.
+Lookie uses the front camera only while a child is painting, to detect the position of their hands and arms. This detection happens directly on the iPad using Apple's Vision framework. Camera images are not recorded, stored, or sent anywhere. The only data we store are the movement measurements described in the table above.
 
 ## Custom template creation
 
-The custom template creation feature requires a signed-in account. Children can choose a photo from their gallery, take a new photo, or type a few words to create a template.
-
-The selected photo (resized to a JPEG with a maximum size of 768 pixels) or entered text is sent through our server to Google Gemini. The service turns the photo or text into an outline that can be coloured in.
+The custom template creation feature requires a signed-in account. Children can choose a photo from their gallery, take a new photo, or type a few words to create a template. The selected photo (resized to a JPEG with a maximum size of 768 pixels) or entered text is sent through our server to Google Gemini. The service turns the photo or text into an outline that can be coloured in.
 
 - We do not store the photos or text submitted. Only the resulting outline is stored.
 - Google's data terms apply while Gemini processes the request.
@@ -85,17 +77,11 @@ Parents can delete data in the following ways:
 
 ## Parents' rights
 
-Parents or guardians have the right to view, request a copy of, correct, and delete their child's data, as well as withdraw their consent.
-
-Send your request to littlecrewproject@gmail.com. We will respond within 7 business days.
-
-Withdrawing consent means deleting the account.
+Parents or guardians have the right to view, request a copy of, correct, and delete their child's data, as well as withdraw their consent. Send your request to littlecrewproject@gmail.com. We will respond within 7 business days. Withdrawing consent means deleting the account.
 
 ## Security
 
-Data is transmitted over HTTPS. Paintings are stored in private storage, and row-level security rules ensure that each account can only read its own data.
-
-No system is completely secure. If a data breach affects users, we will notify them as required by applicable law.
+Data is transmitted over HTTPS. Paintings are stored in private storage, and row-level security rules ensure that each account can only read its own data. No system is completely secure. If a data breach affects users, we will notify them as required by applicable law.
 
 ## Changes to this policy
 

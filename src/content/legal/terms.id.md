@@ -1,4 +1,4 @@
-**Terakhir diperbarui: 18 November 2026**
+**Terakhir diperbarui: 25 November 2026**
 
 Syarat ini berlaku bagi siapa pun yang menggunakan Lookie, aplikasi melukis di udara untuk iPad. Dengan menekan tombol Mulai, orang tua atau wali menyetujui syarat penggunaan ini dan Kebijakan Privasi atas nama anak.
 
@@ -7,9 +7,7 @@ Syarat ini berlaku bagi siapa pun yang menggunakan Lookie, aplikasi melukis di u
 
 ## 1. Siapa yang boleh menggunakan Lookie?
 
-Lookie ditujukan untuk anak yang menggunakan aplikasi bersama orang tua atau wali. Orang tua atau wali yang menekan tombol Mulai dan membuat akun bertanggung jawab atas penggunaan aplikasi tersebut.
-
-Jika kamu masih anak-anak, mintalah orang tua untuk membaca syarat penggunaan ini.
+Lookie ditujukan untuk anak yang menggunakan aplikasi bersama orang tua atau wali. Orang tua atau wali yang menekan tombol Mulai dan membuat akun bertanggung jawab atas penggunaan aplikasi tersebut. Jika kamu masih anak-anak, mintalah orang tua untuk membaca syarat penggunaan ini.
 
 ## 2. Akun
 
@@ -32,11 +30,7 @@ Jika kamu masih anak-anak, mintalah orang tua untuk membaca syarat penggunaan in
 
 ## 5. Bukan alat medis
 
-Statistik gerakan pada halaman Laporan merupakan perkiraan dua dimensi berdasarkan kamera depan, yang ditujukan untuk hiburan dan memberikan gambaran umum mengenai aktivitas anak.
-
-Statistik tersebut bukan diagnosis, terapi, maupun pengganti saran dari dokter atau terapis. Jika kamu memiliki kekhawatiran mengenai gerakan atau perkembangan anak, konsultasikan dengan tenaga kesehatan.
-
-Hentikan aktivitas jika anak merasa sakit atau lelah. Pastikan tersedia ruang yang aman di sekitar anak saat melukis dan selalu dampingi anak selama menggunakan aplikasi.
+Statistik gerakan pada halaman Laporan merupakan perkiraan dua dimensi berdasarkan kamera depan, yang ditujukan untuk hiburan dan memberikan gambaran umum mengenai aktivitas anak. Statistik tersebut bukan diagnosis, terapi, maupun pengganti saran dari dokter atau terapis. Jika kamu memiliki kekhawatiran mengenai gerakan atau perkembangan anak, konsultasikan dengan tenaga kesehatan. Hentikan aktivitas jika anak merasa sakit atau lelah. Pastikan tersedia ruang yang aman di sekitar anak saat melukis dan selalu dampingi anak selama menggunakan aplikasi.
 
 ## 6. Penggunaan yang dilarang
 
@@ -44,23 +38,15 @@ Kamu tidak diperbolehkan membongkar atau menyalahgunakan aplikasi maupun server 
 
 ## 7. Ketersediaan layanan
 
-Lookie disediakan sebagaimana adanya dan dapat digunakan secara gratis.
-
-Fitur yang membutuhkan koneksi internet, seperti pencadangan, masuk ke akun, dan pembuatan template, dapat mengalami gangguan ketika server atau jaringan bermasalah.
-
-Kami berhak mengubah, menambahkan, atau menghentikan fitur yang tersedia di dalam aplikasi.
+Lookie disediakan sebagaimana adanya dan dapat digunakan secara gratis. Fitur yang membutuhkan koneksi internet, seperti pencadangan, masuk ke akun, dan pembuatan template, dapat mengalami gangguan ketika server atau jaringan bermasalah. Kami berhak mengubah, menambahkan, atau menghentikan fitur yang tersedia di dalam aplikasi.
 
 ## 8. Batas tanggung jawab
 
-Sejauh diizinkan oleh hukum yang berlaku, kami tidak bertanggung jawab atas kerugian tidak langsung maupun kehilangan lukisan yang belum berhasil dicadangkan. Contohnya, ketika aplikasi dihapus saat menggunakan Mode Tamu atau sebelum proses pencadangan selesai.
-
-Ketentuan ini tidak menghilangkan hak konsumen yang menurut hukum tidak dapat dikecualikan.
+Sejauh diizinkan oleh hukum yang berlaku, kami tidak bertanggung jawab atas kerugian tidak langsung maupun kehilangan lukisan yang belum berhasil dicadangkan. Contohnya, ketika aplikasi dihapus saat menggunakan Mode Tamu atau sebelum proses pencadangan selesai. Ketentuan ini tidak menghilangkan hak konsumen yang menurut hukum tidak dapat dikecualikan.
 
 ## 9. Penghentian penggunaan
 
-Kamu dapat berhenti menggunakan Lookie kapan saja dengan menghapus akun.
-
-Kami juga berhak menangguhkan atau menutup akun yang melanggar syarat penggunaan ini.
+Kamu dapat berhenti menggunakan Lookie kapan saja dengan menghapus akun. Kami juga berhak menangguhkan atau menutup akun yang melanggar syarat penggunaan ini.
 
 ## 10. Perubahan syarat penggunaan
 
@@ -68,9 +54,7 @@ Jika terdapat perubahan penting pada syarat penggunaan ini, aplikasi akan menamp
 
 ## 11. Hukum yang berlaku
 
-Syarat penggunaan ini tunduk pada hukum Republik Indonesia.
-
-Jika terjadi perselisihan, penyelesaiannya akan diupayakan terlebih dahulu melalui musyawarah. Jika tidak tercapai kesepakatan, perselisihan akan diselesaikan melalui Pengadilan Negeri Tangerang, Indonesia.
+Syarat penggunaan ini tunduk pada hukum Republik Indonesia. Jika terjadi perselisihan, penyelesaiannya akan diupayakan terlebih dahulu melalui musyawarah. Jika tidak tercapai kesepakatan, perselisihan akan diselesaikan melalui Pengadilan Negeri Tangerang, Indonesia.
 
 ## 12. Kontak
 
