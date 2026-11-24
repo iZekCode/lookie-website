@@ -16,7 +16,6 @@ export const id = {
     home: 'Ke beranda Lookie',
   },
   hero: {
-    kicker: 'Game menggambar untuk iPad',
     titleA: 'Melukis',
     titleB: 'di udara.',
     sub: 'Lookie mengubah latihan terapi jadi main lukis. Anak dengan cerebral palsy menggerakkan tangan dan lengannya di depan iPad, lalu cat muncul di kanvas.',
@@ -26,20 +25,17 @@ export const id = {
     deviceAlt: 'Layar utama Lookie di iPad: easel dengan lukisan rumah, dan tombol Start, Gallery, Report.',
   },
   about: {
-    kicker: 'Apa itu Lookie?',
     title: 'Tangan bergerak, cat muncul.',
     p1: 'Lookie adalah game menggambar untuk anak dengan cerebral palsy (CP). Anak berdiri di depan iPad, mengepalkan tangan, lalu mengayunkan lengan. Kamera depan membaca gerakannya, dan cat minyak muncul di kanvas.',
     p2: 'Gerakan menjangkau, menyapu, dan mengepal itu juga yang dilatih di terapi. Bedanya, di sini anak sedang melukis, bukan disuruh mengulang latihan.',
     stickers: ['Lukis pakai tangan', 'Cat minyak basah', 'Gratis di iPad'],
   },
   cp: {
-    kicker: 'Sedikit latar belakang',
     title: 'Apa itu cerebral palsy?',
     p1: 'Cerebral palsy (CP) memengaruhi cara seseorang mengendalikan gerakan dan menjaga postur tubuh. Anak dengan CP bergerak dengan cara yang berbeda dari anak lain, dan sebagian gerakan terasa lebih sulit baginya.',
     p2: 'Karena itu mereka perlu terapi rutin. Dan latihannya tidak berhenti di ruang terapi.',
   },
   pain: {
-    kicker: 'Masalahnya',
     title: 'Terapi di rumah tidak selalu mudah',
     lead: 'Anak dengan CP perlu terapi minimal seminggu sekali. Di luar sesi itu, latihannya diteruskan di rumah bersama orang tua. Di sinilah biasanya mulai seret.',
     items: [
@@ -49,7 +45,6 @@ export const id = {
     ],
   },
   how: {
-    kicker: 'Cara main',
     title: 'Dari memilih gambar sampai melihat laporan',
     steps: [
       {
@@ -93,7 +88,6 @@ export const id = {
     },
   },
   testing: {
-    kicker: 'Hasil uji',
     title: 'Diuji bersama anak, diarahkan para ahli',
     intro: 'Lookie dikembangkan dengan arahan tenaga medis, lalu diuji bersama anak dengan CP dan orang tuanya.',
     kids: {
@@ -116,7 +110,6 @@ export const id = {
     },
   },
   team: {
-    kicker: 'Tim',
     title: 'Orang-orang di balik Lookie',
     linkedin: 'Profil LinkedIn',
     members: [
