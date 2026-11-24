@@ -111,10 +111,13 @@ export const en: Copy = {
   },
   cta: {
     title: 'Want to try Lookie?',
-    text: 'Send us an email or a message on Instagram, and we’ll tell you how to try it.',
+    text: 'Lookie is open for testing on TestFlight, and the App Store version is on its way. Questions? Send an email or a message on Instagram.',
+    testflight: 'Try Lookie on TestFlight',
+    appstore: 'Coming soon to the App Store',
+    scan: 'On a computer? Scan this with your iPad.',
+    qrAlt: 'QR code for the Lookie TestFlight invite',
     email: 'Send an email',
     instagram: 'Instagram @playwithlookie',
-    testflight: 'Try on TestFlight',
   },
   footer: {
     privacy: 'Privacy policy',

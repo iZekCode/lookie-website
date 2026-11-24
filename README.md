@@ -45,4 +45,4 @@ Indonesian is the default and English lives under `/en`. The ID/EN switch in the
 
 `.github/workflows/deploy.yml` builds and publishes to GitHub Pages on every push to `main`. It reads the base path from the repo name, so renaming the repo is enough to move the site's URL.
 
-Optional: set `PUBLIC_TESTFLIGHT_URL` at build time to show a TestFlight button in the last section. Without it the button stays hidden.
+The last section links to the public TestFlight invite (`src/lib/links.ts`) and shows a QR code of the same link, drawn at build time. Set `PUBLIC_TESTFLIGHT_URL` to use a different invite. The App Store button is a placeholder until the app is released.

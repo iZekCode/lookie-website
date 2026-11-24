@@ -109,10 +109,13 @@ export const id = {
   },
   cta: {
     title: 'Mau mencoba Lookie?',
-    text: 'Kirim email atau pesan lewat Instagram. Nanti kami kabari cara mencobanya.',
+    text: 'Lookie sudah bisa dicoba lewat TestFlight. Versi App Store menyusul. Ada pertanyaan? Kirim email atau pesan lewat Instagram.',
+    testflight: 'Coba Lookie di TestFlight',
+    appstore: 'Segera hadir di App Store',
+    scan: 'Buka dari komputer? Scan dengan iPad.',
+    qrAlt: 'Kode QR ke undangan TestFlight Lookie',
     email: 'Kirim email',
     instagram: 'Instagram @playwithlookie',
-    testflight: 'Coba di TestFlight',
   },
   footer: {
     privacy: 'Kebijakan privasi',

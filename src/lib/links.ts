@@ -1,2 +1,2 @@
-// Set PUBLIC_TESTFLIGHT_URL when there is a public TestFlight link; the button stays hidden until then.
-export const testflightUrl: string | undefined = import.meta.env.PUBLIC_TESTFLIGHT_URL || undefined;
+// The public TestFlight invite. Set PUBLIC_TESTFLIGHT_URL at build time to point somewhere else.
+export const testflightUrl: string = import.meta.env.PUBLIC_TESTFLIGHT_URL || 'https://testflight.apple.com/join/Xq48RAKk';

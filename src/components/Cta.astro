@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import icon from '../assets/icon.png';
 import type { Copy } from '../i18n/id';
+import QRCode from 'qrcode';
 import { testflightUrl } from '../lib/links';
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 }
 const { copy } = Astro.props;
 const c = copy.cta;
+const qr = await QRCode.toString(testflightUrl, { type: 'svg', margin: 0, color: { dark: '#2a2145', light: '#0000' } });
 ---
 
 <section class="cta sheet" id="mencoba">
@@ -17,8 +19,15 @@ const c = copy.cta;
       <h2 class="h2" data-reveal>{c.title}</h2>
       <p class="lead" data-reveal style="--d:1">{c.text}</p>
       <div class="btns" data-reveal style="--d:2">
-        {testflightUrl && <a class="btn btn--red" href={testflightUrl} rel="noopener">{c.testflight}</a>}
-        <a class="btn btn--red" href="mailto:filbertnaldow@gmail.com">{c.email}</a>
+        <a class="btn btn--red" href={testflightUrl} rel="noopener">{c.testflight}</a>
+        <span class="soon" aria-disabled="true">{c.appstore}</span>
+      </div>
+      <div class="scan" data-reveal style="--d:3">
+        <div class="qr" role="img" aria-label={c.qrAlt} set:html={qr} />
+        <p>{c.scan}</p>
+      </div>
+      <div class="btns more" data-reveal style="--d:3">
+        <a class="btn btn--ghost" href="mailto:filbertnaldow@gmail.com">{c.email}</a>
         <a class="btn btn--ghost" href="https://www.instagram.com/playwithlookie/" rel="noopener" target="_blank">{c.instagram}</a>
       </div>
     </div>
@@ -53,6 +62,46 @@ const c = copy.cta;
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
+  }
+  .soon {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.95em 1.6em;
+    border-radius: 999px;
+    border: 2px dashed rgba(42, 33, 69, 0.45);
+    color: var(--ink);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    cursor: default;
+    user-select: none;
+  }
+  .scan {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 1.6rem;
+    max-width: 380px;
+  }
+  .qr {
+    flex: none;
+    width: 104px;
+    height: 104px;
+    padding: 10px;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: inset 0 -6px 10px rgba(0, 0, 60, 0.1), 0 14px 20px -12px rgba(120, 60, 0, 0.5);
+  }
+  .qr :global(svg) {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .scan p {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .more {
+    margin-top: 1.6rem;
   }
   .cta :global(.mascot) {
     width: clamp(150px, 22vw, 260px);
