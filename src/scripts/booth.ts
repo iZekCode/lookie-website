@@ -1,5 +1,5 @@
 // Booth mode (?booth): the landing page scrolls by itself while nobody is touching it.
-import { isBooth, quiet, step } from './booth-loop';
+import { isBooth, quiet, step } from './booth-loop.ts';
 
 const INPUTS = ['pointerdown', 'pointerup', 'pointermove', 'touchstart', 'touchmove', 'touchend', 'wheel', 'keydown'];
 
@@ -21,16 +21,15 @@ export function initBooth() {
   };
   INPUTS.forEach((name) => window.addEventListener(name, touched, { passive: true }));
 
-  // Keeps visitors on the landing page.
-  document.addEventListener(
-    'click',
-    (event) => {
-      const link = (event.target as Element).closest('a[href]');
-      if (!link || link.closest('[data-lang-toggle]') || link.getAttribute('href')?.startsWith('#')) return;
-      event.preventDefault();
-    },
-    true,
-  );
+  // Keeps visitors on the landing page: no tap, middle click or long press menu on links that leave it.
+  const stay = (event: Event) => {
+    const link = (event.target as Element).closest('a[href]');
+    if (!link || link.closest('[data-lang-toggle]') || link.getAttribute('href')?.startsWith('#')) return;
+    event.preventDefault();
+  };
+  ['click', 'auxclick', 'contextmenu'].forEach((name) => document.addEventListener(name, stay, true));
+  // Lets the CSS switch off the iPad's long press preview.
+  document.documentElement.dataset.booth = 'true';
 
   const stayAwake = () => {
     if (document.visibilityState === 'visible') navigator.wakeLock?.request('screen').catch(() => {});

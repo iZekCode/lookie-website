@@ -229,6 +229,11 @@ a {
   pointer-events: none;
 }
 
+/* Booth mode: no long press preview on links that would leave the page. */
+html[data-booth] a:not([href^='#']) {
+  -webkit-touch-callout: none;
+}
+
 /* Elements that slide in as they scroll into view. */
 [data-reveal] {
   opacity: 0;

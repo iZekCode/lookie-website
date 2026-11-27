@@ -16,7 +16,7 @@ npm run build    # writes dist/
 
 For an exhibition booth, open `https://playwithlookie.com/?booth` (or `/en/?booth`). After 30 seconds without input the landing page scrolls to the bottom, glides back up and starts again. Any touch, click, mouse move, wheel or key stops it.
 
-Links that leave the page do nothing in this mode; the QR code still works for scanning. The page asks the browser to keep the screen on, but turn off Auto-Lock on the device too. It needs an internet connection. Timings are in `src/scripts/booth-loop.ts`.
+Links that leave the page do nothing in this mode (tap, middle click, right click or long press); the QR code still works for scanning. The page asks the browser to keep the screen on, but turn off Auto-Lock on the device too. It needs an internet connection. Timings are in `src/scripts/booth-loop.ts`.
 
 ## Look
 
