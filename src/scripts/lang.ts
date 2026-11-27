@@ -1,4 +1,6 @@
 // Remembers the language a visitor picked, and animates the ID/EN switch before moving to the other page.
+import { isBooth, withBooth } from './booth-loop';
+
 const KEY = 'lookie-lang';
 
 function read(): string | null {
@@ -17,6 +19,11 @@ function write(value: string) {
   }
 }
 
+// Booth mode must survive a change of language.
+function keepBooth(href: string): string {
+  return isBooth(window.location.search) ? withBooth(href) : href;
+}
+
 export function initLang() {
   const toggle = document.querySelector<HTMLElement>('[data-lang-toggle]');
   if (!toggle) return;
@@ -28,7 +35,7 @@ export function initLang() {
     if (saved && saved !== current) {
       const target = toggle.querySelector<HTMLAnchorElement>(`a[data-lang="${saved}"]`);
       if (target) {
-        window.location.replace(target.href);
+        window.location.replace(keepBooth(target.href));
         return;
       }
     }
@@ -45,7 +52,7 @@ export function initLang() {
       event.preventDefault();
       toggle.classList.add('flip');
       window.setTimeout(() => {
-        window.location.href = link.href;
+        window.location.href = keepBooth(link.href);
       }, 260);
     });
   });

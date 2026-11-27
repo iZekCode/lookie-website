@@ -12,6 +12,12 @@ npm run dev      # http://localhost:4321
 npm run build    # writes dist/
 ```
 
+## Booth mode
+
+For an exhibition booth, open `https://playwithlookie.com/?booth` (or `/en/?booth`). After 30 seconds without input the landing page scrolls to the bottom, glides back up and starts again. Any touch, click, mouse move, wheel or key stops it.
+
+Links that leave the page do nothing in this mode; the QR code still works for scanning. The page asks the browser to keep the screen on, but turn off Auto-Lock on the device too. It needs an internet connection. Timings are in `src/scripts/booth-loop.ts`.
+
 ## Look
 
 Soft 3D: puffy surfaces lit from the top left (the `.puffy` class in `src/styles/global.css`, tinted with `--tint`), glossy buttons like the logo's letters, and cloudy section edges (`.sheet::before`). No outlines and no hard shadows. A section sets `--bg` to its own colour so the cloud edge matches it.
