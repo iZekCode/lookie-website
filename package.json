@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "assets": "node scripts/prepare-assets.mjs"
+    "assets": "node scripts/prepare-assets.mjs",
+    "test": "node --test tests/*.test.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.6",
